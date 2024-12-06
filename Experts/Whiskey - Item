@@ -104,7 +104,54 @@ nodes:
     positionAbsolute:
       x: 1214.2231104859748
       'y': 440.41529660469905
+  - id: 57tmbf5Bj2r8KhpWm-VND
+    type: file
+    position:
+      x: 577.2358017828832
+      'y': 38.96868249930156
+    data:
+      id: 57tmbf5Bj2r8KhpWm-VND
+      title: Data
+      fileName: >-
+        11 Camphora Place, Ranui - SWR Full Report (2024-11-24T01_28_24.387Z)
+        (1).pdf
+      flowState:
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Whiskey - Item
+          path: Experts/Whiskey - Item
+          sha: 46788062fcf7467b8590bfb1ead28e18fd906911
+          size: 3414
+          url: >-
+            https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Item?ref=main
+          html_url: >-
+            https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Item
+          git_url: >-
+            https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/46788062fcf7467b8590bfb1ead28e18fd906911
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/apps-whiskey/main/Experts/Whiskey%20-%20Item
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Item?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/46788062fcf7467b8590bfb1ead28e18fd906911
+            html: >-
+              https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Item
+    width: 192
+    height: 322
+    selected: true
+    dragging: false
+    positionAbsolute:
+      x: 577.2358017828832
+      'y': 38.96868249930156
 edges:
+  - source: 57tmbf5Bj2r8KhpWm-VND
+    sourceHandle: b
+    target: i3azgsanEWL2A_oyCBBUA
+    targetHandle: t
+    id: af2fv8
   - source: i3azgsanEWL2A_oyCBBUA
     sourceHandle: r
     target: Fy7QF5EL5NeuAv8mMcgnI
