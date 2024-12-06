@@ -1,0 +1,11 @@
+title: Whiskey.model
+model:
+  engine_name: openai-gpt
+  model_name: gpt-4o
+  api_key: OPENAI_API_KEY
+temperature: 0
+max_tokens: 500
+database: ''
+stream: true
+prompt: |
+  You are a waste management expert and will take in provided .CSV data and output requested reports.
