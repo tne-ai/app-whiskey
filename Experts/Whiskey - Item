@@ -1,0 +1,50 @@
+nodes:
+  - id: uGKaM8ksadENuQPZtziTZ
+    type: file
+    position:
+      x: 597.7432076415915
+      'y': 162.44825553830987
+    data:
+      id: uGKaM8ksadENuQPZtziTZ
+      title: Data
+      fileName: Exemplar Input Data - WasteX.csv
+      flowState: &ref_0
+        backend: git
+        repo: apps-whiskey
+    width: 192
+    height: 250
+    selected: false
+    positionAbsolute:
+      x: 597.7432076415915
+      'y': 162.44825553830987
+    dragging: false
+  - id: i3azgsanEWL2A_oyCBBUA
+    type: llm
+    position:
+      x: 732.1350456437364
+      'y': 521.4530204138084
+    data:
+      id: i3azgsanEWL2A_oyCBBUA
+      title: New Model
+      input: ''
+      slashgptManifest: Whiskey.model
+      toolJson: ''
+      toolCode: ''
+      outputType: overwrite
+      outputToCanvas: false
+      useUserQuery: false
+      flowState: *ref_0
+    width: 206
+    height: 466
+    selected: true
+    dragging: false
+    positionAbsolute:
+      x: 732.1350456437364
+      'y': 521.4530204138084
+edges:
+  - source: uGKaM8ksadENuQPZtziTZ
+    sourceHandle: b
+    target: i3azgsanEWL2A_oyCBBUA
+    targetHandle: t
+    id: d9DIdU
+description: null
