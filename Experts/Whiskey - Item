@@ -2,8 +2,8 @@ nodes:
   - id: uGKaM8ksadENuQPZtziTZ
     type: file
     position:
-      x: 597.7432076415915
-      'y': 162.44825553830987
+      x: 879.38503691473
+      'y': 105.16517161834948
     data:
       id: uGKaM8ksadENuQPZtziTZ
       title: Data
@@ -15,14 +15,14 @@ nodes:
     height: 250
     selected: false
     positionAbsolute:
-      x: 597.7432076415915
-      'y': 162.44825553830987
+      x: 879.38503691473
+      'y': 105.16517161834948
     dragging: false
   - id: i3azgsanEWL2A_oyCBBUA
     type: llm
     position:
-      x: 732.1350456437364
-      'y': 521.4530204138084
+      x: 692.8372355947828
+      'y': 473.9300873313527
     data:
       id: i3azgsanEWL2A_oyCBBUA
       title: New Model
@@ -31,17 +31,90 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       useUserQuery: false
       flowState: *ref_0
     width: 206
     height: 466
-    selected: true
+    selected: false
     dragging: false
     positionAbsolute:
-      x: 732.1350456437364
-      'y': 521.4530204138084
+      x: 692.8372355947828
+      'y': 473.9300873313527
+  - id: Fy7QF5EL5NeuAv8mMcgnI
+    type: llm
+    position:
+      x: 1109.2158523347114
+      'y': 746.5755863968454
+    data:
+      id: Fy7QF5EL5NeuAv8mMcgnI
+      title: New Model
+      input: ''
+      slashgptManifest: ie_item_generator.model
+      toolJson: ''
+      toolCode: ''
+      outputType: overwrite
+      outputToCanvas: false
+      useUserQuery: true
+      flowState: &ref_1
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Whiskey - Item
+          path: Experts/Whiskey - Item
+          sha: d414743fc97d839786ca9d6e15c94072b9930e69
+          size: 1127
+          url: >-
+            https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Item?ref=main
+          html_url: >-
+            https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Item
+          git_url: >-
+            https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/d414743fc97d839786ca9d6e15c94072b9930e69
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/apps-whiskey/main/Experts/Whiskey%20-%20Item
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Item?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/d414743fc97d839786ca9d6e15c94072b9930e69
+            html: >-
+              https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Item
+    width: 206
+    height: 490
+    selected: false
+    positionAbsolute:
+      x: 1109.2158523347114
+      'y': 746.5755863968454
+    dragging: false
+  - id: uN2MpYgGekOcMSGySn3M9
+    type: file
+    position:
+      x: 1214.2231104859748
+      'y': 440.41529660469905
+    data:
+      id: uN2MpYgGekOcMSGySn3M9
+      title: Data
+      fileName: ie_item_template.txt
+      flowState: *ref_1
+    width: 192
+    height: 226
+    selected: false
+    dragging: false
+    positionAbsolute:
+      x: 1214.2231104859748
+      'y': 440.41529660469905
 edges:
+  - source: i3azgsanEWL2A_oyCBBUA
+    sourceHandle: r
+    target: Fy7QF5EL5NeuAv8mMcgnI
+    targetHandle: l
+    id: FG96XA
+  - source: uN2MpYgGekOcMSGySn3M9
+    sourceHandle: b
+    target: Fy7QF5EL5NeuAv8mMcgnI
+    targetHandle: t
+    id: D0WB3u
   - source: uGKaM8ksadENuQPZtziTZ
     sourceHandle: b
     target: i3azgsanEWL2A_oyCBBUA
