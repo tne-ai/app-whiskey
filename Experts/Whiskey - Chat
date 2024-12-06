@@ -2,8 +2,8 @@ nodes:
   - id: uGKaM8ksadENuQPZtziTZ
     type: file
     position:
-      x: 597.7432076415915
-      'y': 162.44825553830987
+      x: 892.9337342883837
+      'y': 177.98459904603578
     data:
       id: uGKaM8ksadENuQPZtziTZ
       title: Data
@@ -15,8 +15,8 @@ nodes:
     height: 250
     selected: false
     positionAbsolute:
-      x: 597.7432076415915
-      'y': 162.44825553830987
+      x: 892.9337342883837
+      'y': 177.98459904603578
     dragging: false
   - id: i3azgsanEWL2A_oyCBBUA
     type: llm
@@ -36,12 +36,59 @@ nodes:
       flowState: *ref_0
     width: 206
     height: 466
-    selected: true
+    selected: false
     dragging: false
     positionAbsolute:
       x: 732.1350456437364
       'y': 521.4530204138084
+  - id: mo7Zf_fy8iD7MqK1fQthy
+    type: file
+    position:
+      x: 533.0661689082194
+      'y': 104.54214315169357
+    data:
+      id: mo7Zf_fy8iD7MqK1fQthy
+      title: Data
+      fileName: >-
+        11 Camphora Place, Ranui - SWR Full Report (2024-11-24T01_28_24.387Z)
+        (1).pdf
+      flowState:
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Whiskey - Chat
+          path: Experts/Whiskey - Chat
+          sha: d414743fc97d839786ca9d6e15c94072b9930e69
+          size: 1127
+          url: >-
+            https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Chat?ref=main
+          html_url: >-
+            https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Chat
+          git_url: >-
+            https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/d414743fc97d839786ca9d6e15c94072b9930e69
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/apps-whiskey/main/Experts/Whiskey%20-%20Chat
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Chat?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/d414743fc97d839786ca9d6e15c94072b9930e69
+            html: >-
+              https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Chat
+    width: 192
+    height: 322
+    selected: true
+    dragging: false
+    positionAbsolute:
+      x: 533.0661689082194
+      'y': 104.54214315169357
 edges:
+  - source: mo7Zf_fy8iD7MqK1fQthy
+    sourceHandle: b
+    target: i3azgsanEWL2A_oyCBBUA
+    targetHandle: t
+    id: cTtxtI
   - source: uGKaM8ksadENuQPZtziTZ
     sourceHandle: b
     target: i3azgsanEWL2A_oyCBBUA
