@@ -1,0 +1,51 @@
+Sourcing of Materials/Plant/Equipment For Projects,,,,,,,,,
+Category ,Source ,,Material details  ,Unit,Quantity,Distance travelled,Transport vehicle Type,"Emission Factor 
+(kg CO2e/unit)","Emissions= (Quantity × Emission Factor)
+E= Q x F (kg CO2e per year)"
+,Supplier Name,Source location ,,,,Kms.,,,
+Concrete: In-situ / Ready mix ,,,Strength (MPa) ,m3 ,,,,100,0
+,,,Primary aggregate size ,,,,,,
+,,,"Type / Mix (e.g. Normal, pumped, special) ",,,,,,
+,,,Precast component (if applicable) ,,,,,,
+Concrete: Pre-cast ,,,Precast component,Number of units (By unit type) ,,,,200,0
+Cement   ,,,,Tonnes ,,,,600,0
+,,,,,,,,,
+Aggregate  ,,,"High-level type (e.g. Aggregate, topsoil, natural sand, riprap, ballast) ",Tonnes  ,,,,10,0
+,,,Type detail (e.g. GAP 65) ,,,,,,
+Surfacing: Asphalt and Bitumen ,,,Mix details ,Tonnes  ,,,,50,0
+Metals ,,,"Type (e.g. Steel, Iron etc)  ",Tonnes  ,,,,2,0
+Plastics ,,,Type (e.g. HDPE pipe) ,Tonnes  ,,,,5,0
+Timber,,,"Type (Native Timber. Non-Native)
+Size",m3 ,,,,15,0
+Transport of General Equipment & Other Materials ,,,Major equipment ,Tonnes or m3 ,,,,20,0
+Other transported materials  ,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+Other materials*,,,,,,,,,0
+* Insert additional rows above this if required.,,,,,,,,,
+,,,,,,,,,Grand Total Emissions (kg CO2e)
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,0
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Notes:,a) The grey shaded cells are to be completed by the Contractor and yellow shaded cells are to be completed by the Project Manager (AC).,,,,,,,,
+,b) The contractors are required to complete only the relevant fields applicable to the project. Put N/A for the categories that are not applicable to the project.,,,,,,,,
+,"c) For transportation of more than one type of material in a single freight truck, details should be added in the column labeled as Transport Vehicle Type..",,,,,,,,
+,"e) Contractors can find emission factors through resources provided by the Ministry for the Environment, EECA, and the GEM protocol, which offer comprehensive guidelines for calculating greenhouse gas emissions specific to various industries, including construction and transportation.",,,,,,,,
+,"f) Once completed, the project manager should email this report to pcfsustainability@aucklandcouncil.govt.nz.",,,,,,,,
+,g) These emission factors are sourced from the Ministry for the Environment's 2023 guide for New Zealand​ (Ministry for the Environment)​​ (McHugh & Shaw)​.,,,,,,,,
