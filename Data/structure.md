@@ -48,20 +48,7 @@ Example:
 
 ---
 
-## 5. Recommendations (If Applicable)
-**Cost-Saving Opportunities**:  
-Highlight any potential optimizations.  
-Example:  
-*Switching to Supplier B for Material X could save 10% in costs.*
-
-**Data Gaps or Issues**:  
-Note any missing or inconsistent data that might need correction.  
-Example:  
-*The density for Material Y was not provided, so it was excluded from the weight calculation.*
-
----
-
-## 6. Next Steps
+## 5. Next Steps
 **Suggestions for Further Analysis**:  
 Example:  
 *Would you like to explore supplier-specific cost trends or generate a summary report?*
@@ -69,9 +56,3 @@ Example:
 **Actionable Items**:  
 Example:  
 *Please provide density data for Material Y to complete the calculations.*
-
----
-
-## 7. Appendix (Optional)
-**Raw Data or Additional Details**:  
-Include any supplementary information, such as detailed calculations or raw table extracts.
