@@ -13,8 +13,8 @@ nodes:
       flowState: &ref_0
         backend: git
         repo: apps-whiskey
-    width: 212
-    height: 298
+    width: 193
+    height: 322
   - id: 75fsNYGRV1W6FrfX12pFK
     type: file
     position:
@@ -25,8 +25,8 @@ nodes:
       title: Data
       fileName: section2_structure.md
       flowState: *ref_0
-    width: 212
-    height: 226
+    width: 193
+    height: 250
     selected: true
     positionAbsolute:
       x: 1512.380951439661
@@ -42,7 +42,7 @@ nodes:
       title: Data
       fileName: B. WasteX Material Loading (Morgan Stage 2) (1) - Upload Document.csv
       flowState: *ref_0
-    width: 212
+    width: 193
     height: 298
     selected: false
     positionAbsolute:
@@ -59,7 +59,7 @@ nodes:
       title: Data
       fileName: B. WasteX Material Loading (Morgan Stage 2) (1) - Ordered Items.csv
       flowState: *ref_0
-    width: 212
+    width: 193
     height: 298
     selected: false
     positionAbsolute:
@@ -76,8 +76,8 @@ nodes:
       title: Data
       fileName: B. WasteX Material Loading (Morgan Stage 2) (1) - Densities.csv
       flowState: *ref_0
-    width: 212
-    height: 274
+    width: 193
+    height: 298
     selected: false
     positionAbsolute:
       x: 789.8715744229264
@@ -99,7 +99,7 @@ nodes:
       outputToCanvas: false
       useUserQuery: false
       flowState: *ref_0
-    width: 212
+    width: 206
     height: 490
     selected: false
     dragging: false
