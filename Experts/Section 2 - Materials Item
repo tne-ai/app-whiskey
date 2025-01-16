@@ -23,7 +23,7 @@ nodes:
     data:
       id: 75fsNYGRV1W6FrfX12pFK
       title: Data
-      fileName: structure.md
+      fileName: section2_structure.md
       flowState: *ref_0
     width: 212
     height: 226
@@ -149,7 +149,7 @@ nodes:
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Item
     width: 212
     height: 490
-    selected: true
+    selected: false
     positionAbsolute:
       x: 1311.2933030111772
       'y': 818.5773348415032
