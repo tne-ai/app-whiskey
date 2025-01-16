@@ -38,3 +38,5 @@ prompt: |
   - "What recommendations do you have to optimize supplier choices for cost savings?"
   - "Identify any inconsistencies in the quantities or densities provided." 
   - Your job is to deliver a well-structured and actionable report based on the query, ensuring clarity and depth. Follow the principles in `structure.md` to guide your organization and formatting.
+
+  THINK STEP BY STEP. CHECK YOUR MATH
