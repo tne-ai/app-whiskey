@@ -23,11 +23,11 @@ nodes:
     data:
       id: 75fsNYGRV1W6FrfX12pFK
       title: Data
-      fileName: structure.md
+      fileName: section2_structure.md
       flowState: *ref_0
     width: 212
     height: 226
-    selected: false
+    selected: true
     positionAbsolute:
       x: 1512.380951439661
       'y': 284.8196851447365
