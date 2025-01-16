@@ -23,15 +23,7 @@ Example:
 *The total weight of all materials is 5,000 kg, with Material A contributing 60% of the total.*
 
 **Data Breakdown**:  
-Present a tabular or structured list of the relevant details.
-
-```
-Material Name     | Quantity (kg) | Cost     | Supplier
-------------------------------------------------------
-Steel             | 2,500         | $5,000   | Supplier A
-Concrete          | 1,500         | $3,000   | Supplier B
-Timber            | 1,000         | $2,000   | Supplier C
-```
+Present a structured list of the relevant details. Do not create a markdown table, just deisplay what would be in the table in bullet point form.
 
 ---
 
