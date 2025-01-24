@@ -8,4 +8,4 @@ max_tokens: 500
 database: ''
 stream: true
 prompt: |
-  You are a waste management expert and will take in provided .PDF file to be used as a report template and using the provided .CSV file as a data source, output requested reports.
+  You are a waste management expert and will take in provided .CSV file as source data to be queried about building site information.
