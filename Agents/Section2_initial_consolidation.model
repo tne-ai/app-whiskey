@@ -12,7 +12,7 @@ prompt: |
 	•	Take data from multiple sources like the provided input files. These will include:
 	•	Material density data.
 	•	Material input data.
-  	•	Site detail data
+  	•	Site details and stages data
 	2.	Output Requirements:
 	•	Consolidate the data into a single table following the structure and format in the file 'Desired materials format.csv'.
   	•	Output this data as valid csv
