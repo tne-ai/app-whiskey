@@ -2,21 +2,21 @@ nodes:
   - id: uGKaM8ksadENuQPZtziTZ
     type: file
     position:
-      x: 1205.7129565817968
-      'y': 8.34260204680211
+      x: 710.0477909631156
+      'y': 142.2591555648318
     data:
       id: uGKaM8ksadENuQPZtziTZ
       title: Data
-      fileName: Exemplar Input Data - WasteX.csv
+      fileName: SITE DETAILS EXEMPLAR DATA.csv
       flowState: &ref_0
         backend: git
         repo: apps-whiskey
-    width: 192
+    width: 189
     height: 250
-    selected: false
+    selected: true
     positionAbsolute:
-      x: 1205.7129565817968
-      'y': 8.34260204680211
+      x: 710.0477909631156
+      'y': 142.2591555648318
     dragging: false
   - id: i3azgsanEWL2A_oyCBBUA
     type: llm
@@ -97,148 +97,14 @@ nodes:
       title: Data
       fileName: ie_item_template.txt
       flowState: *ref_1
-    width: 192
+    width: 189
     height: 226
     selected: false
     dragging: false
     positionAbsolute:
       x: 1214.2231104859748
       'y': 440.41529660469905
-  - id: 57tmbf5Bj2r8KhpWm-VND
-    type: file
-    position:
-      x: 586.2008545209893
-      'y': 10.280513737361595
-    data:
-      id: 57tmbf5Bj2r8KhpWm-VND
-      title: Data
-      fileName: report.md
-      flowState:
-        backend: git
-        repo: apps-whiskey
-        content:
-          name: Whiskey - Item
-          path: Experts/Whiskey - Item
-          sha: 46788062fcf7467b8590bfb1ead28e18fd906911
-          size: 3414
-          url: >-
-            https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Item?ref=main
-          html_url: >-
-            https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Item
-          git_url: >-
-            https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/46788062fcf7467b8590bfb1ead28e18fd906911
-          download_url: >-
-            https://raw.githubusercontent.com/tne-ai/apps-whiskey/main/Experts/Whiskey%20-%20Item
-          type: file
-          _links:
-            self: >-
-              https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Item?ref=main
-            git: >-
-              https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/46788062fcf7467b8590bfb1ead28e18fd906911
-            html: >-
-              https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Item
-    width: 192
-    height: 226
-    selected: false
-    dragging: false
-    positionAbsolute:
-      x: 586.2008545209893
-      'y': 10.280513737361595
-  - id: RaSf-BJ0FlZD6lQuRgtxZ
-    type: file
-    position:
-      x: 385.69189103844724
-      'y': 9.693710285412905
-    data:
-      id: RaSf-BJ0FlZD6lQuRgtxZ
-      title: Data
-      fileName: Top Level Prompt.txt
-      flowState: &ref_2
-        backend: git
-        repo: apps-whiskey
-        content:
-          name: Whiskey - Item
-          path: Experts/Whiskey - Item
-          sha: 0a3ba16f4f39efa50b9fed4a86b11e515975faf6
-          size: 5109
-          url: >-
-            https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Item?ref=main
-          html_url: >-
-            https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Item
-          git_url: >-
-            https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/0a3ba16f4f39efa50b9fed4a86b11e515975faf6
-          download_url: >-
-            https://raw.githubusercontent.com/tne-ai/apps-whiskey/main/Experts/Whiskey%20-%20Item
-          type: file
-          _links:
-            self: >-
-              https://api.github.com/repos/tne-ai/apps-whiskey/contents/Experts/Whiskey%20-%20Item?ref=main
-            git: >-
-              https://api.github.com/repos/tne-ai/apps-whiskey/git/blobs/0a3ba16f4f39efa50b9fed4a86b11e515975faf6
-            html: >-
-              https://github.com/tne-ai/apps-whiskey/blob/main/Experts/Whiskey%20-%20Item
-    width: 192
-    height: 226
-    selected: false
-    dragging: false
-    positionAbsolute:
-      x: 385.69189103844724
-      'y': 9.693710285412905
-  - id: 9rT4rfXuX8bpS-ZIMqxqb
-    type: file
-    position:
-      x: 785.5332431579852
-      'y': 9.693710285412902
-    data:
-      id: 9rT4rfXuX8bpS-ZIMqxqb
-      title: Data
-      fileName: 11-Camphora-Place,-Ranui---SWR-Full-Report.pdf-0-0.png
-      flowState: *ref_2
-    width: 192
-    height: 338
-    selected: false
-    positionAbsolute:
-      x: 785.5332431579852
-      'y': 9.693710285412902
-    dragging: false
-  - id: QVGoJGwpCAtbrYrwLh0_m
-    type: file
-    position:
-      x: 993.5224666820502
-      'y': 9.693710285412891
-    data:
-      id: QVGoJGwpCAtbrYrwLh0_m
-      title: Data
-      fileName: 11-Camphora-Place,-Ranui---SWR-Full-Report.pdf-4-0.png
-      flowState: *ref_2
-    width: 192
-    height: 338
-    selected: true
-    positionAbsolute:
-      x: 993.5224666820502
-      'y': 9.693710285412891
-    dragging: false
 edges:
-  - source: QVGoJGwpCAtbrYrwLh0_m
-    sourceHandle: b
-    target: i3azgsanEWL2A_oyCBBUA
-    targetHandle: t
-    id: bFigyu
-  - source: 9rT4rfXuX8bpS-ZIMqxqb
-    sourceHandle: b
-    target: i3azgsanEWL2A_oyCBBUA
-    targetHandle: t
-    id: MdvBI9
-  - source: RaSf-BJ0FlZD6lQuRgtxZ
-    sourceHandle: b
-    target: i3azgsanEWL2A_oyCBBUA
-    targetHandle: t
-    id: qGr_ZI
-  - source: 57tmbf5Bj2r8KhpWm-VND
-    sourceHandle: b
-    target: i3azgsanEWL2A_oyCBBUA
-    targetHandle: t
-    id: af2fv8
   - source: i3azgsanEWL2A_oyCBBUA
     sourceHandle: r
     target: Fy7QF5EL5NeuAv8mMcgnI
