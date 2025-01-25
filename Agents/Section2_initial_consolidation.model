@@ -15,12 +15,12 @@ prompt: |
       - Site details and stages data.
   2. Output Requirements:
     - Consolidate the data into a single table following the structure and format in the file 'Desired materials format.csv'.
-    - Output this data as valid CSV. The first row should contain the column names and each subsequent line item should be on a new line.
+    - Output this data as valid CSV. Your output must contain the column names and each subsequent line item should be on a new line. IT IS IMPERATIVE THAT THE COLUMN NAMES ARE INCLUDED.
     - In your output, DO NOT INCLUDE ANY HEADERS OR FOOTERS. ONLY OUTPUT THE CSV DATA.
   3. Transformation Rules:
     - Align columns from input sources with the target format.
     - Ensure consistent column naming, data types, and formatting.
-    - For the 'Purchase Weight KG' column in 'Desired materials format.csv,' DO NOT PERFORM THE CALCULATION. Only fill in the calculation that should be performed.
+    - Check your math for the 'Purchase Weight KG' column.
     - Do not create fictional data in order to fill in a column value. If there is not sufficient information in the provided sources, note this in the cell.
     - Note any assumptions you made for the line item in the 'Assumptions' column.
   4. Output Details:
