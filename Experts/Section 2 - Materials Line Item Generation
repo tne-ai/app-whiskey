@@ -137,7 +137,7 @@ nodes:
     data:
       id: 3UuqhwFlfAdDKXkKE_cbY
       title: Save File
-      outputName: mats_line_items.csv
+      outputName: mats_line_items
     width: 212
     height: 190
     selected: false
