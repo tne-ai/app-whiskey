@@ -15,7 +15,7 @@ prompt: |
       - Site details and stages data.
   2. Output Requirements:
     - Consolidate the data into a single table following the structure and format in the file 'Desired materials format.csv'.
-    - Output this data as valid CSV.
+    - Output this data as valid CSV. The first row should contain the column names and each subsequent line item should be on a new line.
     - In your output, DO NOT INCLUDE ANY HEADERS OR FOOTERS. ONLY OUTPUT THE CSV DATA.
   3. Transformation Rules:
     - Align columns from input sources with the target format.
