@@ -124,33 +124,12 @@ nodes:
       flowState: *ref_1
     width: 212
     height: 490
-    selected: true
+    selected: false
     positionAbsolute:
       x: 882.9859309466378
       'y': 850.8781673811047
     dragging: false
-  - id: 3UuqhwFlfAdDKXkKE_cbY
-    type: out
-    position:
-      x: 894.2116067995712
-      'y': 1411.6703819482607
-    data:
-      id: 3UuqhwFlfAdDKXkKE_cbY
-      title: Save File
-      outputName: mats_line_items
-    width: 212
-    height: 190
-    selected: false
-    positionAbsolute:
-      x: 894.2116067995712
-      'y': 1411.6703819482607
-    dragging: false
 edges:
-  - source: j6ehTSahSz7QIPg8lBnD-
-    sourceHandle: b
-    target: 3UuqhwFlfAdDKXkKE_cbY
-    targetHandle: t
-    id: DNWQug
   - source: wAD9UwqywOiY1FePFe-Xa
     sourceHandle: b
     target: j6ehTSahSz7QIPg8lBnD-
