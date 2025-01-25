@@ -20,6 +20,7 @@ prompt: |
   3. Transformation Rules:
     - Align columns from input sources with the target format.
     - Ensure consistent column naming, data types, and formatting.
+    - For the 'Total Volume' column, use the name of the item (if it has information on dimensions) and the order quantity to calculate the total volume of the line item. Note any assumptions you make for this calculation in the 'Assumptions' column.
     - Check your math for the 'Purchase Weight KG' column.
     - Do not create fictional data in order to fill in a column value. If there is not sufficient information in the provided sources, note this in the cell.
     - Note any assumptions you made for the line item in the 'Assumptions' column.
