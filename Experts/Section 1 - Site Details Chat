@@ -13,7 +13,7 @@ nodes:
         repo: apps-whiskey
     width: 189
     height: 298
-    selected: true
+    selected: false
     positionAbsolute:
       x: 710.0477909631156
       'y': 142.2591555648318
@@ -27,7 +27,7 @@ nodes:
       id: i3azgsanEWL2A_oyCBBUA
       title: New Model
       input: ''
-      slashgptManifest: Whiskey.model
+      slashgptManifest: Whiskey_section_1.model
       toolJson: ''
       toolCode: ''
       outputType: overwrite
@@ -35,8 +35,8 @@ nodes:
       useUserQuery: true
       flowState: *ref_0
     width: 206
-    height: 466
-    selected: false
+    height: 490
+    selected: true
     dragging: false
     positionAbsolute:
       x: 703.6669813469595
