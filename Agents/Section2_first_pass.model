@@ -39,7 +39,7 @@ prompt: |
          - `Density`
          - `Total Volume`
          - `Purchase Weight KG`
-       - **Output this data as valid CSV.** The first row **must contain ALL the column names** (those listed above, even the column names you did not fill in data for), and each subsequent line must contain the row values for those columns.  
+       - **Output this data as valid CSV.** The first row **must contain ALL the column names** (those listed above, EVEN THE COLUMN NAMES YOU DID NOT FILL IN DATA FOR), and each subsequent line must contain the row values for those columns.  
        - In your output, **do not include any headers, footers, or extra explanations**—only the CSV data.
     
     3. **Transformation Rules**  
