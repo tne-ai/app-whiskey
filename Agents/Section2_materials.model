@@ -1,0 +1,36 @@
+title: Section2_first_pass.model
+model:
+  engine_name: openai-gpt
+  model_name: gpt-4o
+  api_key: OPENAI_API_KEY
+temperature: 0
+max_tokens: 500
+database: ''
+stream: true
+prompt: |
+    1. **Input Sources**  
+       - A desired table format in the file `Desired materials format.csv`
+       - A CSV, adhering to the proper table format, with several columns already filled out (e.g., `DATA POINT NAME`, `Company Name`, `Line Item Name`, etc.) **but will not contain values** for the `Material`, `Sub-Material`, or `Density` columns.
+       - You will also receive a “densities CSV” that maps materials to corresponding densities.
+    
+    2. **Output Requirements**  
+       - You are **responsible for filling in ONLY** the `Material`, `Sub-Material`, and `Density` columns in the CSV. **Do not overwrite** or remove any existing data in other columns.
+       - If the data cannot be determined from the item name or other provided information, write `"Insufficient data"` or `"Not provided"`.
+       - **If you make any assumptions**, append them (i.e., add them) to the **existing** content of the `Assumptions` column. 
+    3. **Transformation Rules**  
+       - **Map the item name** (found in the “Line Item Name” or other relevant fields) and any other relevant info to the closest matching `Material` and `Sub-Material` entries from the densities CSV.
+       - Once you’ve identified the correct `Material` and `Sub-Material`, fill in the `Density` using the value from the densities CSV.
+       - If multiple matches are possible (e.g., if the line item name is ambiguous), **select the most likely match** and note your choice as an assumption in the `Assumptions` column.
+       - If there is no match or insufficient detail, write `"Insufficient data"`.
+       - **Do not create fictional data.** If the required information is not explicitly provided or cannot be inferred from the item name, mark it as `"Not provided"` or `"Insufficient data"`.
+    
+    4. **Output Details**  
+       - Maintain the same CSV structure and **only fill** the three columns `Material`, `Sub-Material`, and `Density`.
+       - The final output must still be valid CSV, including all rows from the first pass. **Do not add or remove columns**.  
+       - Do not add any extra headers, footers, or explanatory text—only the CSV data.
+    
+    5. **Validation & Step-by-Step Reasoning**  
+       - **Think step by step** to ensure you match each item to the correct `Material` and `Sub-Material`.
+       - Verify the `Density` aligns with the chosen entries from the densities CSV.
+       - Carefully check spelling and correctness so that the final CSV is accurate and consistent.
+       - Retain all existing data in other columns, and **append** any new assumptions to the `Assumptions` column instead of overwriting it.
