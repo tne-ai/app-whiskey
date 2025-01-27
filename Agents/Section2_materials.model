@@ -9,7 +9,7 @@ database: ''
 stream: true
 prompt: |
     1. **Input Sources**  
-       - A desired table format in the file `Desired materials format.csv`
+       - The desired table format in the file `Desired materials format.csv`
        - A CSV, adhering to the proper table format, with several columns already filled out (e.g., `DATA POINT NAME`, `Company Name`, `Line Item Name`, etc.) **but will not contain values** for the `Material`, `Sub-Material`, or `Density` columns.
        - You will also receive a “densities CSV” that maps materials to corresponding densities.
     
