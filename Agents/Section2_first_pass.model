@@ -1,0 +1,59 @@
+title: Section2_first_pass.model
+model:
+  engine_name: openai-gpt
+  model_name: gpt-4o
+  api_key: OPENAI_API_KEY
+temperature: 0
+max_tokens: 500
+database: ''
+stream: true
+prompt: |
+    1. **Input Sources**  
+       - Take data from multiple sources like the provided input files. These may include:
+         - Material density data.
+         - Material input data.
+         - Site details and stages data.
+    
+    2. **Output Requirements**  
+       - **Consolidate the relevant data** into a single table following the same structure and format as in the file `Desired materials format.csv`, **but only fill** the following columns in your output CSV:
+         ```
+         DATA POINT NAME,
+         Company Name,
+         Site Name,
+         Arrival Date,
+         Stage,
+         Line Item Name,
+         Trade Provider,
+         Trade Provider Address,
+         Purchase Cost NZD,
+         "Order Quantity (m3, lm, m, kg, m2)",
+         % Excess,
+         Created by Name,
+         Created by Email,
+         Site Address,
+         Assumptions
+         ```
+       - **Do not include** any data or placeholder values for the columns:
+         - `Material`
+         - `Sub-Material`
+         - `Density`
+         - `Total Volume`
+         - `Purchase Weight KG`
+       - **Output this data as valid CSV.** The first row **must contain ALL the column names** (those listed above, even the column names you did not fill in data for), and each subsequent line must contain the row values for those columns.  
+       - In your output, **do not include any headers, footers, or extra explanations**—only the CSV data.
+    
+    3. **Transformation Rules**  
+       - Align columns from the input sources with the target output **only** for the columns you are responsible for populating. Leave the other cells blank.  
+       - **Do not create fictional data.** If information is not provided in the sources, note this in the cell (for example, “Not provided” or “Insufficient data”).  
+       - If you make any assumptions, **place them in the ‘Assumptions’ column** for the corresponding line item.  
+       - **Check your math and think step-by-step** for any necessary numeric data in the columns you are responsible for (e.g., `Purchase Cost NZD`, `Order Quantity`, `% Excess`, etc.).
+    
+    4. **Output Details**  
+       - **The consolidated table** must match the schema (column order) you are responsible for from `Desired materials format.csv`.  
+       - The output **must be in valid CSV form**, with **no additional headers, footers, or extraneous text**.  
+    
+    5. **Validation**  
+       - Check for missing or mismatched data and ensure all rows are accurate and complete according to the provided input data.  
+       - **Do not** generate or guess data for the columns you are not responsible for. Leave them **unfilled** (they will be populated elsewhere).  
+    
+    ---
