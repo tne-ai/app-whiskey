@@ -9,22 +9,22 @@ database: ''
 stream: true
 prompt: |
     1. **Input Sources**  
-       - You will receive a CSV generated :
-         - The columns `Material`, `Sub-Material`, and `Density` (along with other columns already filled out).
+       - The desired table format in the file `Desired materials format.csv`
+       - A CSV, adhering to the proper table format, with most columns filled. `Total Volume` and `Purchase Weight KG` will NOT be filled out, and are your job to fill out.
        - Each line item may or may not contain dimension information in its name (e.g., `"H1.2 - 100x45 - bracing & steel packing"`), and there will also be an order quantity field to assist in calculating total volume.
     
     2. **Output Requirements**  
        - **Fill in ONLY** the `Total Volume` and `Purchase Weight KG` columns in the CSV. **Do not overwrite** any existing data in other columns.
-       - **Total Volume** should be calculated in **m²** (per user instruction). If you need to convert from other units (e.g., cm, mm) based on the item name or context, do so carefully.
+       - **Total Volume** should be calculated in **m^3**. If you need to convert from other units (e.g., cm, mm) based on the item name or context, do so carefully. If you are only given dimensions in **m^2**, add a reasonable third dimension given your knowledge of the line item and note assumptions you make in the 'Assumptions' column.
        - **Purchase Weight KG** should be calculated as `(Density) x (Total Volume)`.  
-         - Ensure you use consistent units. If `Density` is in kg/m³ and you are working in m², determine the appropriate conversion based on the dimensions available. (If the context implies 3-dimensional volume, convert accordingly.)
+         - Ensure you use consistent units. Assume `Density` is in kg/m³.
     
     3. **Transformation Rules**  
-       - **Extract and interpret dimensions** from the line item name. For example, `"H1.2 - 100x45 - bracing & steel packing"` might imply:
+       - **Extract and interpret dimensions** from the line item name. For example, `"H1.2 - 100x45 - bracing & steel packing"` with an 'Order Quantity' of 100m might imply:
          - Cross-section of 100 mm x 45 mm, length of 100 m (from the order quantity, if applicable).
-         - Convert these appropriately to derive a final area or volume. (Think carefully: if the user truly wants m², clarify how you interpret “volume.” If physically correct volume is needed, convert to m³, and note assumptions in the `Assumptions` column.)
-       - If **no explicit dimensions** are available in the line item name, use your **own knowledge** of typical product dimensions or references from the data you have. If uncertain, denote it as an assumption.
-       - **Append** any new assumptions to the existing content in the `Assumptions` column. For example, if `Assumptions` already has `"Initial assumption about sub-material"`, you might change it to `"Initial assumption about sub-material; Assuming standard dimension for bracing"`.
+         - Convert these appropriately to derive a final volume. As noted above, if you are only given dimensions in **m^2**, add a reasonable third dimension given your knowledge of the line item and note assumptions you make in the 'Assumptions' column.
+       - If **no explicit dimensions** are available in the line item name, use your **own knowledge** of typical product dimensions or references from the data you have, and denote as an assumption. If there simply is not enough information to go off of, note "Insufficient Data" in the cell; do not completely make up something.
+       - **Append** any new assumptions to the existing content in the `Assumptions` column. Do not overwrite.
        - **Do not create fictional data** without noting it as an assumption in the `Assumptions` column.
     
     4. **Output Details**  
@@ -32,7 +32,7 @@ prompt: |
        - Do not add any extra headers, footers, or explanatory text. Just output the CSV data.
     
     5. **Validation & Step-by-Step Reasoning**  
-       - **Think step by step** when calculating each item’s total volume (in m² or m³, based on the requirement and context) and purchase weight.  
+       - **Think step by step** when calculating each item’s total volume (in m³, based on the requirement and context) and purchase weight.  
        - If a dimension or unit is ambiguous (e.g., `cm`, `mm`, or unspecified), decide on the most likely scenario and make sure to note it in `Assumptions`.  
        - **Double-check your math** and unit conversions to ensure accuracy.  
        - Ensure your calculations align with the provided `Density` column so that `Purchase Weight KG` remains consistent and correct.
