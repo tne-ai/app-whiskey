@@ -1,4 +1,4 @@
-title: Whiskey.model
+title: Whiskey_section_1.model
 model:
   engine_name: openai-gpt
   model_name: gpt-4o
