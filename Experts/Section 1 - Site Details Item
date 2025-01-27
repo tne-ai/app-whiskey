@@ -7,12 +7,12 @@ nodes:
     data:
       id: uGKaM8ksadENuQPZtziTZ
       title: Data
-      fileName: SITE DETAILS EXEMPLAR DATA.csv
+      fileName: Copy of SITE DETAILS EXEMPLAR DATA - SITE DETAILS EXEMPLAR DATA.csv
       flowState: &ref_0
         backend: git
         repo: apps-whiskey
     width: 189
-    height: 250
+    height: 298
     selected: true
     positionAbsolute:
       x: 710.0477909631156
@@ -27,7 +27,7 @@ nodes:
       id: i3azgsanEWL2A_oyCBBUA
       title: New Model
       input: ''
-      slashgptManifest: Whiskey.model
+      slashgptManifest: Whiskey_section_1.model
       toolJson: ''
       toolCode: ''
       outputType: overwrite
@@ -35,7 +35,7 @@ nodes:
       useUserQuery: false
       flowState: *ref_0
     width: 206
-    height: 466
+    height: 490
     selected: false
     dragging: false
     positionAbsolute:
