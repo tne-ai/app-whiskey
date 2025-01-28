@@ -8,6 +8,8 @@ max_tokens: 500
 database: ''
 stream: true
 prompt: |
+    You are an expert in consolidating disparate data into a single table according to a specified table format. 
+  
     1. **Input Sources**  
        - Take data from multiple sources like the provided input files. These may include:
          - Material density data.
@@ -39,6 +41,7 @@ prompt: |
          - `Density`
          - `Total Volume`
          - `Purchase Weight KG`
+       - The first row MUST contain ALL the column names, including both those you are filling in data for and those you are leaving blank.
        - **Output this data as valid CSV.** The first row **must contain ALL the column names** (those listed above, EVEN THE COLUMN NAMES YOU DID NOT FILL IN DATA FOR), and each subsequent line must contain the row values for those columns.  
        - In your output, **do not include any headers, footers, or extra explanations**—only the CSV data.
     
@@ -51,6 +54,7 @@ prompt: |
     4. **Output Details**  
        - **The consolidated table** must match the schema (column order) you are responsible for from `Desired materials format.csv`.  
        - The output **must be in valid CSV form**, with **no additional headers, footers, or extraneous text**.  
+       - Once again, the first row must contain ALL column names, both those you are filling in data for and those you are leaving blank.
     
     5. **Validation**  
        - Check for missing or mismatched data and ensure all rows are accurate and complete according to the provided input data.  
