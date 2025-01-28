@@ -8,6 +8,8 @@ max_tokens: 500
 database: ''
 stream: true
 prompt: |
+    You are an expert in material quantity calculations and dimensional analysis.
+
     1. **Input Sources**  
        - The desired table format in the file `Desired materials format.csv`
        - A CSV, adhering to the proper table format, with most columns filled. `Total Volume` and `Purchase Weight KG` will NOT be filled out, and are your job to fill out.
@@ -16,7 +18,7 @@ prompt: |
     2. **Output Requirements**  
        - **Fill in ONLY** the `Total Volume` and `Purchase Weight KG` columns in the CSV. **Do not overwrite** any existing data in other columns.
        - **Total Volume** should be calculated in **m^3**. If you need to convert from other units (e.g., cm, mm) based on the item name or context, do so carefully. If you are only given dimensions in **m^2**, add a reasonable third dimension given your knowledge of the line item and note assumptions you make in the 'Assumptions' column.
-       - **Purchase Weight KG** should be calculated as `(Density) x (Total Volume)`.  
+       - **Purchase Weight KG** should be calculated as the product of density and total volume `(Density) x (Total Volume)`. Include units (kg) in the data you fill in.
          - Ensure you use consistent units. Assume `Density` is in kg/m³.
     
     3. **Transformation Rules**  
