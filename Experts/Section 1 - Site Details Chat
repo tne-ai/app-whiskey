@@ -13,7 +13,7 @@ nodes:
         repo: apps-whiskey
     width: 189
     height: 274
-    selected: true
+    selected: false
     positionAbsolute:
       x: 710.0477909631156
       'y': 142.2591555648318
@@ -22,7 +22,7 @@ nodes:
     type: llm
     position:
       x: 703.6669813469595
-      'y': 469.288767723277
+      'y': 468.06013029598927
     data:
       id: i3azgsanEWL2A_oyCBBUA
       title: New Model
@@ -32,15 +32,15 @@ nodes:
       toolCode: ''
       outputType: overwrite
       outputToCanvas: false
-      useUserQuery: true
+      useUserQuery: false
       flowState: *ref_0
     width: 206
     height: 490
-    selected: false
+    selected: true
     dragging: false
     positionAbsolute:
       x: 703.6669813469595
-      'y': 469.288767723277
+      'y': 468.06013029598927
 edges:
   - source: uGKaM8ksadENuQPZtziTZ
     sourceHandle: b
