@@ -8,6 +8,8 @@ max_tokens: 500
 database: ''
 stream: true
 prompt: |
+    You are an expert in consolidating disparate data into a single table according to a specified table format. 
+
     1. **Input Sources**  
        - The desired table format in the file `Desired materials format.csv`
        - A CSV, adhering to the proper table format, with several columns already filled out (e.g., `DATA POINT NAME`, `Company Name`, `Line Item Name`, etc.) **but will not contain values** for the `Material`, `Sub-Material`, or `Density` columns.
@@ -19,7 +21,7 @@ prompt: |
        - **If you make any assumptions**, append them (i.e., add them) to the **existing** content of the `Assumptions` column. 
     3. **Transformation Rules**  
        - **Map the item name** (found in the “Line Item Name” or other relevant fields) and any other relevant info to the closest matching `Material` and `Sub-Material` entries from the densities CSV.
-       - Once you’ve identified the correct `Material` and `Sub-Material`, fill in the `Density` using the value from the densities CSV.
+       - Once you’ve identified the correct `Material` and `Sub-Material`, fill in the `Density` using the value from the densities CSV. Include units, and assume the densities from the "densities CSV" are in kg/m^3.
        - If multiple matches are possible (e.g., if the line item name is ambiguous), **select the most likely match** and note your choice as an assumption in the `Assumptions` column.
        - If there is no match or insufficient detail, write `"Insufficient data"`.
        - **Do not create fictional data.** If the required information is not explicitly provided or cannot be inferred from the item name, mark it as `"Not provided"` or `"Insufficient data"`.
