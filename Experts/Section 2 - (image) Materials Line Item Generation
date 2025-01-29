@@ -1,0 +1,47 @@
+nodes:
+  - id: SYnQ0ibLTo4WEZCtKnnDu
+    type: llm
+    position:
+      x: 549
+      'y': 274.5
+    data:
+      id: SYnQ0ibLTo4WEZCtKnnDu
+      title: New Model
+      input: ''
+      slashgptManifest: Section2_image_input.model
+      toolJson: ''
+      toolCode: ''
+      outputType: overwrite
+      outputToCanvas: false
+      useUserQuery: false
+      flowState: &ref_0
+        backend: git
+        repo: apps-whiskey
+    width: 212
+    height: 490
+    selected: false
+    dragging: false
+  - id: XZI4zLqYAY-M1qCtK4p3S
+    type: file
+    position:
+      x: 517.9989478761737
+      'y': -12.079551753201384
+    data:
+      id: XZI4zLqYAY-M1qCtK4p3S
+      title: Data
+      fileName: Image input materials.pdf
+      flowState: *ref_0
+    width: 212
+    height: 250
+    selected: true
+    positionAbsolute:
+      x: 517.9989478761737
+      'y': -12.079551753201384
+    dragging: false
+edges:
+  - source: XZI4zLqYAY-M1qCtK4p3S
+    sourceHandle: b
+    target: SYnQ0ibLTo4WEZCtKnnDu
+    targetHandle: t
+    id: uT1va_
+description: null
