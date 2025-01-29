@@ -1,23 +1,4 @@
 nodes:
-  - id: gn18Jsp-3Payfw-Th47Sw
-    type: file
-    position:
-      x: 513.2550623965894
-      'y': 278.9608687091542
-    data:
-      id: gn18Jsp-3Payfw-Th47Sw
-      title: MATS INPUT
-      fileName: Clean materials input.csv
-      flowState:
-        backend: git
-        repo: apps-whiskey
-    width: 212
-    height: 250
-    selected: false
-    positionAbsolute:
-      x: 513.2550623965894
-      'y': 278.9608687091542
-    dragging: false
   - id: pF06Kjo21yCPoyaXxbqoq
     type: file
     position:
@@ -235,7 +216,80 @@ nodes:
       x: 1629.8541627186412
       'y': 643.4021060496049
     dragging: false
+  - id: nkKGohuegtPzJXQ3QeDf3
+    type: llm
+    position:
+      x: 512.7495345176943
+      'y': 51.57791540458255
+    data:
+      id: nkKGohuegtPzJXQ3QeDf3
+      title: New Model
+      input: ''
+      slashgptManifest: Section2_messy_input.model
+      toolJson: ''
+      toolCode: ''
+      outputType: overwrite
+      outputToCanvas: false
+      useUserQuery: false
+      flowState: &ref_2
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Section 2 - (messy) Materials Line Item Generation
+          path: Experts/Section 2 - (messy) Materials Line Item Generation
+          sha: 42cd8beca261b5f41f10eed11c0ec07c11d09d30
+          size: 8127
+          url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation?ref=main
+          html_url: >-
+            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation
+          git_url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/42cd8beca261b5f41f10eed11c0ec07c11d09d30
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/42cd8beca261b5f41f10eed11c0ec07c11d09d30
+            html: >-
+              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation
+    width: 212
+    height: 490
+    selected: false
+    positionAbsolute:
+      x: 512.7495345176943
+      'y': 51.57791540458255
+    dragging: false
+  - id: KdgHQZwyMl2RgOckVIYzS
+    type: file
+    position:
+      x: 521.1184488912901
+      'y': -227.9438246735078
+    data:
+      id: KdgHQZwyMl2RgOckVIYzS
+      title: Data
+      fileName: Messy materials input.csv
+      flowState: *ref_2
+    width: 212
+    height: 250
+    selected: true
+    positionAbsolute:
+      x: 521.1184488912901
+      'y': -227.9438246735078
+    dragging: false
 edges:
+  - source: KdgHQZwyMl2RgOckVIYzS
+    sourceHandle: b
+    target: nkKGohuegtPzJXQ3QeDf3
+    targetHandle: t
+    id: 9bjRpT
+  - source: nkKGohuegtPzJXQ3QeDf3
+    sourceHandle: b
+    target: j6ehTSahSz7QIPg8lBnD-
+    targetHandle: t
+    id: Wf97Tx
   - source: N_tCVt0oykWOQf071avLK
     sourceHandle: b
     target: vPizhdfWgj5QJDwkcuzNH
@@ -271,9 +325,4 @@ edges:
     target: j6ehTSahSz7QIPg8lBnD-
     targetHandle: t
     id: GUrg73
-  - source: gn18Jsp-3Payfw-Th47Sw
-    sourceHandle: b
-    target: j6ehTSahSz7QIPg8lBnD-
-    targetHandle: t
-    id: Zxkxlr
 description: null
