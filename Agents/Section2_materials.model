@@ -21,7 +21,7 @@ prompt: |
        - **If you make any assumptions**, append them (i.e., add them) to the **existing** content of the `Assumptions` column. 
     3. **Transformation Rules**  
        - **Map the item name** (found in the “Line Item Name” or other relevant fields) and any other relevant info to the closest matching `Material` and `Sub-Material` entries from the densities CSV.
-       - Once you’ve identified the correct `Material` and `Sub-Material`, fill in the `Density` using the value from the densities CSV. Include units, and assume the densities from the "densities CSV" are in kg/m^3.
+       - Once you’ve identified the correct `Material` and `Sub-Material`, fill in the `Density` using the value from the densities CSV. With every density value you fill in, YOU MUST INCLUDE UNITS, and assume the densities from the "densities CSV" are in kg/m^3.
        - If multiple matches are possible (e.g., if the line item name is ambiguous), **select the most likely match** and note your choice as an assumption in the `Assumptions` column.
        - If there is no match or insufficient detail, write `"Insufficient data"`.
        - **Do not create fictional data.** If the required information is not explicitly provided or cannot be inferred from the item name, mark it as `"Not provided"` or `"Insufficient data"`.
