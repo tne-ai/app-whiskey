@@ -17,7 +17,6 @@ prompt: |
        - Transform the messy CSV into a **single, well-structured** CSV table.  
        - **Retain all original data** from the input, ensuring no information is lost.  
        - Organize the data logically into rows and columns so it can be readily understood and utilized.  
-       - **Do not** reference specific column names from the input; your solution should be flexible enough to handle **any** messy CSV layout.
     
     3. **Transformation Rules**  
        - Identify and merge any fragmented rows or columns into **cohesive** rows and columns.  
@@ -25,6 +24,7 @@ prompt: |
        - If the CSV contains multiple implied headers or partial row entries, unify them into a single, coherent set of column headers if possible.  
        - Ensure that each row in the final output corresponds to a single logical record.  
        - If certain data is unclear or cannot be placed definitively, place it in a separate column or note it in a way that preserves the information.
+       - ENSURE you include the column names in the first row of the table.
     
     4. **Output Details**  
        - **Output only** the cleaned CSV, with no additional footers, explanatory text, or formatting.  
