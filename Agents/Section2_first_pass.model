@@ -38,16 +38,16 @@ prompt: |
        - **Do not include** any data or placeholder values for the columns:
          - `Material`
          - `Sub-Material`
-         - `Density`
-         - `Total Volume`
+         - `Density (kg/m^3)`
+         - `Total Volume (m^3)`
          - `Purchase Weight KG`
-       - The first row MUST contain ALL the column names, including both those you are filling in data for and those you are leaving blank.
+       - The first row MUST contain ALL the column names, including both those you are filling in data for and those you are leaving blank. These are all the column names: DATA POINT NAME,Company Name,Site Name,Arrival Date,Stage,Line Item Name,Material,Sub-Material,Density (kg/m^3),Trade Provider,Trade Provider Address,Purchase Cost NZD,"Order Quantity (m3, lm, m, kg, m2)",Total Volume (m^3),Purchase Weight KG,% Excess,Created by Name,Created by Email,Site Address,Assumptions
        - **Output this data as valid CSV.** The first row **must contain ALL the column names** (those listed above, EVEN THE COLUMN NAMES YOU DID NOT FILL IN DATA FOR), and each subsequent line must contain the row values for those columns.  
        - In your output, **do not include any headers, footers, or extra explanations**—only the CSV data.
     
     3. **Transformation Rules**  
        - Align columns from the input sources with the target output **only** for the columns you are responsible for populating. Leave the other cells blank.  
-       - **Do not create fictional data.** If information is not provided in the sources, note this in the cell (for example, “Not provided” or “Insufficient data”).  
+       - **Do not create fictional data.** If information is not provided in the sources, note this in the cell using “Insufficient data”. DO NOT LEAVE THE CELL BLANK - write “Insufficient data”.
        - If you make any assumptions, **place them in the ‘Assumptions’ column** for the corresponding line item.  
        - **Check your math and think step-by-step** for any necessary numeric data in the columns you are responsible for (e.g., `Purchase Cost NZD`, `Order Quantity`, `% Excess`, etc.).
     
