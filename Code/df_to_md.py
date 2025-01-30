@@ -1,8 +1,19 @@
+import pandas as pd 
+
 from tne.TNE import TNE
 from tabulate import tabulate
 
-UID = "113131128239301637682"
-
-
-if __name__ == "__main__":
-    result = tabulate(PROCESS_INPUT, headers="keys", tablefmt="pipe", showindex=False)
+if type(PROCESS_INPUT) is pd.DataFrame:
+    if PROCESS_INPUT.empty:
+        result = "<EMPTY DATAFRAME>"
+    else:
+        result = tabulate(PROCESS_INPUT, 
+                          headers="keys", 
+                          tablefmt="pipe", 
+                          showindex=False)
+elif type(PROCESS_INPUT) is str:
+    result = PROCESS_INPUT
+elif type (PROCESS_INPUT) is list:
+    result = str(PROCESS_INPUT)
+else:
+    result = "<ERROR>" 
