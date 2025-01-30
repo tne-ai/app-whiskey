@@ -26,7 +26,9 @@ nodes:
     data:
       id: IqcrGHKfKk5If5w90ms6E
       title: Generate Code
-      prompt: ''
+      prompt: >-
+        When calling session.get_object(), use the filename "SITE DETAILS
+        EXEMPLAR DATA from Sheets.csv"
       outputType: overwrite
       outputToCanvas: false
       useUserQuery: false
@@ -34,7 +36,7 @@ nodes:
       engineName: openai-gpt
       modelName: gpt-4o-2024-11-20
     width: 214
-    height: 466
+    height: 538
     selected: false
     positionAbsolute:
       x: 744.1171186596835
