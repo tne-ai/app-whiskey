@@ -43,11 +43,11 @@ nodes:
   - id: msXV8u9-PWuzcgtZ9pxSh
     type: llm
     position:
-      x: 1201.0666708279025
+      x: 1524.4610299063677
       'y': 596.3479321045086
     data:
       id: msXV8u9-PWuzcgtZ9pxSh
-      title: New Model
+      title: Chat
       input: ''
       slashgptManifest: Whiskey_section_1.model
       toolJson: ''
@@ -60,15 +60,62 @@ nodes:
     height: 490
     selected: true
     positionAbsolute:
-      x: 1201.0666708279025
+      x: 1524.4610299063677
       'y': 596.3479321045086
     dragging: false
+  - id: esEYHmbMj8EB5OBvknub_
+    type: python_code
+    position:
+      x: 1106.5039078785414
+      'y': 670.1205919430563
+    data:
+      id: esEYHmbMj8EB5OBvknub_
+      title: Chat Markdown
+      module: df_to_md.py
+      outputType: overwrite
+      outputToCanvas: false
+      flowState:
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Section 1 - Codegen
+          path: Experts/Section 1 - Codegen
+          sha: 96c1fe07e46f05197590e30a4692bd3a1bb76fd2
+          size: 1756
+          url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%201%20-%20Codegen?ref=main
+          html_url: >-
+            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%201%20-%20Codegen
+          git_url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/96c1fe07e46f05197590e30a4692bd3a1bb76fd2
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%201%20-%20Codegen
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%201%20-%20Codegen?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/96c1fe07e46f05197590e30a4692bd3a1bb76fd2
+            html: >-
+              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%201%20-%20Codegen
+    width: 212
+    height: 348
+    selected: false
+    dragging: false
+    positionAbsolute:
+      x: 1106.5039078785414
+      'y': 670.1205919430563
 edges:
-  - source: IqcrGHKfKk5If5w90ms6E
+  - source: esEYHmbMj8EB5OBvknub_
     sourceHandle: r
     target: msXV8u9-PWuzcgtZ9pxSh
     targetHandle: l
-    id: 4PbOkU
+    id: rTZNHZ
+  - source: IqcrGHKfKk5If5w90ms6E
+    sourceHandle: r
+    target: esEYHmbMj8EB5OBvknub_
+    targetHandle: l
+    id: xMsVbz
   - source: ZNnvQRzOHvweCCSGccRdW
     sourceHandle: b
     target: IqcrGHKfKk5If5w90ms6E
