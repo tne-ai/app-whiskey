@@ -56,11 +56,11 @@ nodes:
       toolCode: ''
       outputType: overwrite
       outputToCanvas: false
-      useUserQuery: false
+      useUserQuery: true
       flowState: *ref_0
     width: 212
     height: 490
-    selected: true
+    selected: false
     positionAbsolute:
       x: 1524.4610299063677
       'y': 596.3479321045086
@@ -75,7 +75,7 @@ nodes:
       title: Chat Markdown
       module: df_to_md.py
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       flowState:
         backend: git
         repo: apps-whiskey
@@ -102,7 +102,7 @@ nodes:
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%201%20-%20Codegen
     width: 212
     height: 348
-    selected: false
+    selected: true
     dragging: false
     positionAbsolute:
       x: 1106.5039078785414
