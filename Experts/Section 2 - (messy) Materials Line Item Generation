@@ -257,7 +257,7 @@ nodes:
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation
     width: 212
     height: 490
-    selected: true
+    selected: false
     positionAbsolute:
       x: 512.7495345176943
       'y': 51.57791540458255
@@ -296,6 +296,11 @@ nodes:
       'y': 1218.941949886616
     dragging: false
 edges:
+  - source: 4q0WHKmrDJspqOB0vgnpn
+    sourceHandle: b
+    target: j6ehTSahSz7QIPg8lBnD-
+    targetHandle: t
+    id: hZJknv
   - source: vPizhdfWgj5QJDwkcuzNH
     sourceHandle: b
     target: '-CFud6SAQegg9P4TTvEer'
