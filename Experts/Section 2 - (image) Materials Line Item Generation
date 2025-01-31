@@ -69,7 +69,7 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       useUserQuery: false
       flowState: *ref_0
     width: 212
@@ -92,7 +92,7 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       useUserQuery: false
       flowState: &ref_1
         backend: git
@@ -216,101 +216,145 @@ nodes:
       x: 1629.8541627186412
       'y': 643.4021060496049
     dragging: false
-  - id: nkKGohuegtPzJXQ3QeDf3
+  - id: Uoi6zDkMlzjpRQ2zusLpx
+    type: out
+    position:
+      x: 1564.9424550429767
+      'y': 1269.4990626065542
+    data:
+      id: Uoi6zDkMlzjpRQ2zusLpx
+      title: Save File
+      outputName: image_input_line_items.txt
+    width: 212
+    height: 214
+    selected: false
+    positionAbsolute:
+      x: 1564.9424550429767
+      'y': 1269.4990626065542
+    dragging: false
+  - id: LBODznkDaxgC3MXBIz-jM
     type: llm
     position:
-      x: 512.7495345176943
-      'y': 51.57791540458255
+      x: 518.9424550429767
+      'y': 59.49906260655416
     data:
-      id: nkKGohuegtPzJXQ3QeDf3
+      id: LBODznkDaxgC3MXBIz-jM
       title: New Model
       input: ''
-      slashgptManifest: Section2_messy_input.model
+      slashgptManifest: Section2_image_input.model
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       useUserQuery: false
       flowState: &ref_2
         backend: git
         repo: apps-whiskey
         content:
-          name: Section 2 - (messy) Materials Line Item Generation
-          path: Experts/Section 2 - (messy) Materials Line Item Generation
-          sha: 42cd8beca261b5f41f10eed11c0ec07c11d09d30
-          size: 8127
+          name: Section 2 - (image) Materials Line Item Generation
+          path: Experts/Section 2 - (image) Materials Line Item Generation
+          sha: 6ce2ec62f33b39669439134cc0cc89f5ea6da84c
+          size: 10661
           url: >-
-            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation?ref=main
+            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
           html_url: >-
-            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation
+            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
           git_url: >-
-            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/42cd8beca261b5f41f10eed11c0ec07c11d09d30
+            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/6ce2ec62f33b39669439134cc0cc89f5ea6da84c
           download_url: >-
-            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation
+            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
           type: file
           _links:
             self: >-
-              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation?ref=main
+              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
             git: >-
-              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/42cd8beca261b5f41f10eed11c0ec07c11d09d30
+              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/6ce2ec62f33b39669439134cc0cc89f5ea6da84c
             html: >-
-              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation
+              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
     width: 212
     height: 490
-    selected: false
-    positionAbsolute:
-      x: 512.7495345176943
-      'y': 51.57791540458255
-    dragging: false
-  - id: KdgHQZwyMl2RgOckVIYzS
-    type: file
-    position:
-      x: 521.1184488912901
-      'y': -227.9438246735078
-    data:
-      id: KdgHQZwyMl2RgOckVIYzS
-      title: Data
-      fileName: Messy materials input.csv
-      flowState: *ref_2
-    width: 212
-    height: 250
-    selected: false
-    positionAbsolute:
-      x: 521.1184488912901
-      'y': -227.9438246735078
-    dragging: false
-  - id: '-CFud6SAQegg9P4TTvEer'
-    type: out
-    position:
-      x: 1643.3734562598395
-      'y': 1218.941949886616
-    data:
-      id: '-CFud6SAQegg9P4TTvEer'
-      title: Save File
-      outputName: messy_input_line_items.txt
-    width: 212
-    height: 214
     selected: true
     positionAbsolute:
-      x: 1643.3734562598395
-      'y': 1218.941949886616
+      x: 518.9424550429767
+      'y': 59.49906260655416
+    dragging: false
+  - id: '-nWjz792GQYzrAgVZ2RUn'
+    type: file
+    position:
+      x: 806.9424550429767
+      'y': -356.50093739344584
+    data:
+      id: '-nWjz792GQYzrAgVZ2RUn'
+      title: Data
+      fileName: image input 3.jpg
+      flowState: *ref_2
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 806.9424550429767
+      'y': -356.50093739344584
+    dragging: false
+  - id: 9wRFS_EClNAaSpXZ07mIJ
+    type: file
+    position:
+      x: 562.9424550429767
+      'y': -338.50093739344584
+    data:
+      id: 9wRFS_EClNAaSpXZ07mIJ
+      title: Data
+      fileName: image input 2.jpg
+      flowState: *ref_2
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 562.9424550429767
+      'y': -338.50093739344584
+    dragging: false
+  - id: 9Wu2WmRh-l5PXwdhcDugP
+    type: file
+    position:
+      x: 324.9424550429767
+      'y': -359.30093739344585
+    data:
+      id: 9Wu2WmRh-l5PXwdhcDugP
+      title: Data
+      fileName: image input 1.jpg
+      flowState: *ref_2
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 324.9424550429767
+      'y': -359.30093739344585
     dragging: false
 edges:
-  - source: vPizhdfWgj5QJDwkcuzNH
+  - source: '-nWjz792GQYzrAgVZ2RUn'
     sourceHandle: b
-    target: '-CFud6SAQegg9P4TTvEer'
+    target: LBODznkDaxgC3MXBIz-jM
     targetHandle: t
-    id: QwN9TS
-  - source: KdgHQZwyMl2RgOckVIYzS
+    id: jhKb0U
+  - source: 9wRFS_EClNAaSpXZ07mIJ
     sourceHandle: b
-    target: nkKGohuegtPzJXQ3QeDf3
+    target: LBODznkDaxgC3MXBIz-jM
     targetHandle: t
-    id: 9bjRpT
-  - source: nkKGohuegtPzJXQ3QeDf3
+    id: RvGzZG
+  - source: 9Wu2WmRh-l5PXwdhcDugP
+    sourceHandle: b
+    target: LBODznkDaxgC3MXBIz-jM
+    targetHandle: t
+    id: Cm-J51
+  - source: LBODznkDaxgC3MXBIz-jM
     sourceHandle: b
     target: j6ehTSahSz7QIPg8lBnD-
     targetHandle: t
-    id: Wf97Tx
+    id: 8aQ4wI
+  - source: vPizhdfWgj5QJDwkcuzNH
+    sourceHandle: b
+    target: Uoi6zDkMlzjpRQ2zusLpx
+    targetHandle: t
+    id: MCz5Wp
   - source: N_tCVt0oykWOQf071avLK
     sourceHandle: b
     target: vPizhdfWgj5QJDwkcuzNH
