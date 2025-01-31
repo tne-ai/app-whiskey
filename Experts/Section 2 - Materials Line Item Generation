@@ -88,7 +88,7 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       useUserQuery: false
       flowState: *ref_0
     width: 212
@@ -111,7 +111,7 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       useUserQuery: false
       flowState: &ref_1
         backend: git
@@ -225,12 +225,12 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       useUserQuery: false
       flowState: *ref_1
     width: 212
     height: 490
-    selected: false
+    selected: true
     positionAbsolute:
       x: 1629.8541627186412
       'y': 643.4021060496049
@@ -246,7 +246,7 @@ nodes:
       outputName: clean_input_line_items.csv
     width: 212
     height: 214
-    selected: true
+    selected: false
     positionAbsolute:
       x: 1632.510277704775
       'y': 1211.5094475849223
