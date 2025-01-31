@@ -11,7 +11,7 @@ nodes:
       flowState: &ref_0
         backend: git
         repo: apps-whiskey
-    width: 212
+    width: 189
     height: 274
     selected: false
     positionAbsolute:
@@ -35,9 +35,9 @@ nodes:
       apiKey: OPENAI_API_KEY
       engineName: openai-gpt
       modelName: gpt-4o-2024-11-20
-    width: 214
+    width: 206
     height: 538
-    selected: true
+    selected: false
     positionAbsolute:
       x: 744.1171186596835
       'y': 610.4853787802217
@@ -58,7 +58,7 @@ nodes:
       outputToCanvas: false
       useUserQuery: true
       flowState: *ref_0
-    width: 212
+    width: 206
     height: 490
     selected: false
     positionAbsolute:
@@ -75,7 +75,7 @@ nodes:
       title: Chat Markdown
       module: df_to_md.py
       outputType: overwrite
-      outputToCanvas: true
+      outputToCanvas: false
       flowState:
         backend: git
         repo: apps-whiskey
@@ -100,9 +100,9 @@ nodes:
               https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/96c1fe07e46f05197590e30a4692bd3a1bb76fd2
             html: >-
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%201%20-%20Codegen
-    width: 212
+    width: 206
     height: 348
-    selected: false
+    selected: true
     dragging: false
     positionAbsolute:
       x: 1106.5039078785414
