@@ -3,7 +3,7 @@ nodes:
     type: llm
     position:
       x: 549
-      'y': 274.5
+      'y': 367.85929037470186
     data:
       id: SYnQ0ibLTo4WEZCtKnnDu
       title: New Model
@@ -21,6 +21,9 @@ nodes:
     height: 490
     selected: false
     dragging: false
+    positionAbsolute:
+      x: 549
+      'y': 367.85929037470186
   - id: XZI4zLqYAY-M1qCtK4p3S
     type: file
     position:
@@ -29,16 +32,83 @@ nodes:
     data:
       id: XZI4zLqYAY-M1qCtK4p3S
       title: Data
-      fileName: Image input materials.pdf
+      fileName: image input 1.jpg
       flowState: *ref_0
     width: 212
-    height: 250
-    selected: true
+    height: 266
+    selected: false
     positionAbsolute:
       x: 517.9989478761737
       'y': -12.079551753201384
     dragging: false
+  - id: NzP3ANEfSickn3TwG61-_
+    type: file
+    position:
+      x: 1026.9405289930994
+      'y': -0.1444151996173062
+    data:
+      id: NzP3ANEfSickn3TwG61-_
+      title: Data
+      fileName: image input 3.jpg
+      flowState: &ref_1
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Section 2 - (image) Materials Line Item Generation
+          path: Experts/Section 2 - (image) Materials Line Item Generation
+          sha: 129e40be3f3435549ae48c210c6e567b361db5c0
+          size: 1031
+          url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
+          html_url: >-
+            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
+          git_url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/129e40be3f3435549ae48c210c6e567b361db5c0
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/129e40be3f3435549ae48c210c6e567b361db5c0
+            html: >-
+              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 1026.9405289930994
+      'y': -0.1444151996173062
+    dragging: false
+  - id: SHkR9gj-ns-BDlNlaMRGh
+    type: file
+    position:
+      x: 772.536462722037
+      'y': -4.81237971835241
+    data:
+      id: SHkR9gj-ns-BDlNlaMRGh
+      title: Data
+      fileName: image input 2.jpg
+      flowState: *ref_1
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 772.536462722037
+      'y': -4.81237971835241
+    dragging: false
 edges:
+  - source: NzP3ANEfSickn3TwG61-_
+    sourceHandle: b
+    target: SYnQ0ibLTo4WEZCtKnnDu
+    targetHandle: t
+    id: WXuVSs
+  - source: SHkR9gj-ns-BDlNlaMRGh
+    sourceHandle: b
+    target: SYnQ0ibLTo4WEZCtKnnDu
+    targetHandle: t
+    id: C9KF45
   - source: XZI4zLqYAY-M1qCtK4p3S
     sourceHandle: b
     target: SYnQ0ibLTo4WEZCtKnnDu
