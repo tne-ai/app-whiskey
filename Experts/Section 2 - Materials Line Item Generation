@@ -90,7 +90,30 @@ nodes:
       outputType: overwrite
       outputToCanvas: true
       useUserQuery: false
-      flowState: *ref_0
+      flowState:
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Section 2 - Materials Line Item Generation
+          path: Experts/Section 2 - Materials Line Item Generation
+          sha: f993c2dedc525fb407031de5b8a5ba0875acdd13
+          size: 1175
+          url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation?ref=main
+          html_url: >-
+            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation
+          git_url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/f993c2dedc525fb407031de5b8a5ba0875acdd13
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/f993c2dedc525fb407031de5b8a5ba0875acdd13
+            html: >-
+              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation
     width: 212
     height: 490
     selected: false
@@ -113,7 +136,7 @@ nodes:
       outputType: overwrite
       outputToCanvas: true
       useUserQuery: false
-      flowState: &ref_1
+      flowState:
         backend: git
         repo: apps-whiskey
         content:
@@ -139,7 +162,7 @@ nodes:
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation
     width: 212
     height: 490
-    selected: false
+    selected: true
     positionAbsolute:
       x: 1189.3839929759285
       'y': 645.3339927590027
@@ -153,7 +176,30 @@ nodes:
       id: NZuRXbEmfjYLcaM3NTyxv
       title: Data
       fileName: Clean densities.csv
-      flowState: *ref_1
+      flowState: &ref_1
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Section 2 - Materials Line Item Generation
+          path: Experts/Section 2 - Materials Line Item Generation
+          sha: be0711a17e0694bc149dcaa9dabbaaf6def29d6f
+          size: 4470
+          url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation?ref=main
+          html_url: >-
+            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation
+          git_url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/be0711a17e0694bc149dcaa9dabbaaf6def29d6f
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/be0711a17e0694bc149dcaa9dabbaaf6def29d6f
+            html: >-
+              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation
     width: 212
     height: 226
     selected: false
@@ -230,7 +276,7 @@ nodes:
       flowState: *ref_1
     width: 212
     height: 490
-    selected: true
+    selected: false
     positionAbsolute:
       x: 1629.8541627186412
       'y': 643.4021060496049
