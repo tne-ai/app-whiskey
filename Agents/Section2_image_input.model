@@ -29,7 +29,7 @@ prompt: |
        - ENSURE you include the column names in the first row of the table.
     
     4. **Output Details**
-       - **Output only** the cleaned CSV, with no additional footers, explanatory text, or formatting.
+       - **Output only** the cleaned CSV, with no additional footers, explanatory text, or formatting. IT IS IMPERATIVE that there is nothing but the cleaned CSV.
        - The final CSV should have clear, consistent columns and rows that reflect **all** data from the original input.
     
     5. **Validation & Step-by-Step Reasoning**
