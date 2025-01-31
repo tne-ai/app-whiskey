@@ -75,7 +75,7 @@ nodes:
       title: Chat Markdown
       module: df_to_md.py
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       flowState:
         backend: git
         repo: apps-whiskey
