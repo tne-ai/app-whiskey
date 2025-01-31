@@ -229,7 +229,7 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       useUserQuery: false
       flowState: &ref_2
         backend: git
@@ -257,7 +257,7 @@ nodes:
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation
     width: 212
     height: 490
-    selected: false
+    selected: true
     positionAbsolute:
       x: 512.7495345176943
       'y': 51.57791540458255
@@ -290,7 +290,7 @@ nodes:
       outputName: messy_input_line_items.txt
     width: 212
     height: 214
-    selected: true
+    selected: false
     positionAbsolute:
       x: 1643.3734562598395
       'y': 1218.941949886616
