@@ -235,7 +235,28 @@ nodes:
       x: 1629.8541627186412
       'y': 643.4021060496049
     dragging: false
+  - id: iyc-sZcYCP2ioBk3fzBZQ
+    type: out
+    position:
+      x: 1632.510277704775
+      'y': 1211.5094475849223
+    data:
+      id: iyc-sZcYCP2ioBk3fzBZQ
+      title: Save File
+      outputName: clean_input_line_items.csv
+    width: 212
+    height: 214
+    selected: true
+    positionAbsolute:
+      x: 1632.510277704775
+      'y': 1211.5094475849223
+    dragging: false
 edges:
+  - source: vPizhdfWgj5QJDwkcuzNH
+    sourceHandle: b
+    target: iyc-sZcYCP2ioBk3fzBZQ
+    targetHandle: t
+    id: 403R8_
   - source: N_tCVt0oykWOQf071avLK
     sourceHandle: b
     target: vPizhdfWgj5QJDwkcuzNH
