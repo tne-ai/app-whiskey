@@ -1,20 +1,4 @@
 nodes:
-  - id: 0bH1RJXE4gG8h8rdb6f3G
-    type: file
-    position:
-      x: 548.5
-      'y': 274.5
-    data:
-      id: 0bH1RJXE4gG8h8rdb6f3G
-      title: Data
-      fileName: >-
-        B. WasteX Material Loading (Morgan Stage 2) (1) - Calculation
-        Document.csv
-      flowState: &ref_0
-        backend: git
-        repo: apps-whiskey
-    width: 193
-    height: 322
   - id: 75fsNYGRV1W6FrfX12pFK
     type: file
     position:
@@ -24,64 +8,15 @@ nodes:
       id: 75fsNYGRV1W6FrfX12pFK
       title: Data
       fileName: section2_structure.md
-      flowState: *ref_0
-    width: 193
-    height: 250
-    selected: true
+      flowState: &ref_0
+        backend: git
+        repo: apps-whiskey
+    width: 212
+    height: 226
+    selected: false
     positionAbsolute:
       x: 1512.380951439661
       'y': 284.8196851447365
-    dragging: false
-  - id: d6i32t-7HixIm0gvpPbJk
-    type: file
-    position:
-      x: 1265.0285489650673
-      'y': 282.8565708393826
-    data:
-      id: d6i32t-7HixIm0gvpPbJk
-      title: Data
-      fileName: B. WasteX Material Loading (Morgan Stage 2) (1) - Upload Document.csv
-      flowState: *ref_0
-    width: 193
-    height: 298
-    selected: false
-    positionAbsolute:
-      x: 1265.0285489650673
-      'y': 282.8565708393826
-    dragging: false
-  - id: fiqRmq-TL7tz0lkXAx7NY
-    type: file
-    position:
-      x: 1035.3441752386593
-      'y': 280.89345653402864
-    data:
-      id: fiqRmq-TL7tz0lkXAx7NY
-      title: Data
-      fileName: B. WasteX Material Loading (Morgan Stage 2) (1) - Ordered Items.csv
-      flowState: *ref_0
-    width: 193
-    height: 298
-    selected: false
-    positionAbsolute:
-      x: 1035.3441752386593
-      'y': 280.89345653402864
-    dragging: false
-  - id: WXkbMJ9uoyyzQhKHeV8i9
-    type: file
-    position:
-      x: 789.8715744229264
-      'y': 283.35441887638467
-    data:
-      id: WXkbMJ9uoyyzQhKHeV8i9
-      title: Data
-      fileName: B. WasteX Material Loading (Morgan Stage 2) (1) - Densities.csv
-      flowState: *ref_0
-    width: 193
-    height: 298
-    selected: false
-    positionAbsolute:
-      x: 789.8715744229264
-      'y': 283.35441887638467
     dragging: false
   - id: G9oJ01Jw8V6YfmATmkR4-
     type: llm
@@ -99,37 +34,106 @@ nodes:
       outputToCanvas: false
       useUserQuery: false
       flowState: *ref_0
-    width: 206
+    width: 212
     height: 490
     selected: false
     dragging: false
     positionAbsolute:
       x: 959.8414488553648
       'y': 674.812378258049
+  - id: PZyzNsbyTRbKYupbxXLLv
+    type: file
+    position:
+      x: 1259.2619880837178
+      'y': 278.6561891290245
+    data:
+      id: PZyzNsbyTRbKYupbxXLLv
+      title: Data
+      fileName: Desired materials format.csv
+      flowState: &ref_1
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Section 2 - Materials Chat
+          path: Experts/Section 2 - Materials Chat
+          sha: 0284c4e6eeb3602d25334cceb37ab303d3c78508
+          size: 3232
+          url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20Materials%20Chat?ref=main
+          html_url: >-
+            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Chat
+          git_url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/0284c4e6eeb3602d25334cceb37ab303d3c78508
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20Materials%20Chat
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20Materials%20Chat?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/0284c4e6eeb3602d25334cceb37ab303d3c78508
+            html: >-
+              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Chat
+    width: 212
+    height: 250
+    selected: false
+    positionAbsolute:
+      x: 1259.2619880837178
+      'y': 278.6561891290245
+    dragging: false
+  - id: 6oEucxYg5f17m1h-UvY_j
+    type: file
+    position:
+      x: 1025.2619880837178
+      'y': 280.6561891290245
+    data:
+      id: 6oEucxYg5f17m1h-UvY_j
+      title: Data
+      fileName: clean_input_line_items.txt
+      flowState: *ref_1
+    width: 212
+    height: 250
+    selected: false
+    positionAbsolute:
+      x: 1025.2619880837178
+      'y': 280.6561891290245
+    dragging: false
+  - id: WArB3-BH0DxkSAccEAdZk
+    type: file
+    position:
+      x: 783.2619880837178
+      'y': 270.6561891290245
+    data:
+      id: WArB3-BH0DxkSAccEAdZk
+      title: Data
+      fileName: Clean densities.csv
+      flowState: *ref_1
+    width: 212
+    height: 226
+    selected: true
+    positionAbsolute:
+      x: 783.2619880837178
+      'y': 270.6561891290245
+    dragging: false
 edges:
+  - source: WArB3-BH0DxkSAccEAdZk
+    sourceHandle: b
+    target: G9oJ01Jw8V6YfmATmkR4-
+    targetHandle: t
+    id: ZHm8mP
+  - source: 6oEucxYg5f17m1h-UvY_j
+    sourceHandle: b
+    target: G9oJ01Jw8V6YfmATmkR4-
+    targetHandle: t
+    id: Pu9cYT
+  - source: PZyzNsbyTRbKYupbxXLLv
+    sourceHandle: b
+    target: G9oJ01Jw8V6YfmATmkR4-
+    targetHandle: t
+    id: WO9a6A
   - source: 75fsNYGRV1W6FrfX12pFK
     sourceHandle: b
     target: G9oJ01Jw8V6YfmATmkR4-
     targetHandle: t
     id: vlnZA9
-  - source: d6i32t-7HixIm0gvpPbJk
-    sourceHandle: b
-    target: G9oJ01Jw8V6YfmATmkR4-
-    targetHandle: t
-    id: czy2wN
-  - source: fiqRmq-TL7tz0lkXAx7NY
-    sourceHandle: b
-    target: G9oJ01Jw8V6YfmATmkR4-
-    targetHandle: t
-    id: B2b5mr
-  - source: WXkbMJ9uoyyzQhKHeV8i9
-    sourceHandle: b
-    target: G9oJ01Jw8V6YfmATmkR4-
-    targetHandle: t
-    id: 9nmg0f
-  - source: 0bH1RJXE4gG8h8rdb6f3G
-    sourceHandle: b
-    target: G9oJ01Jw8V6YfmATmkR4-
-    targetHandle: t
-    id: QUAiB8
 description: null
