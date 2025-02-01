@@ -1,0 +1,50 @@
+nodes:
+  - id: 2gRaWKC4WOJBNVO2JYRtq
+    type: llm
+    position:
+      x: 798.3944478415218
+      'y': 507.2670949230528
+    data:
+      id: 2gRaWKC4WOJBNVO2JYRtq
+      title: Rich's Deepseek R1 Test
+      input: ''
+      slashgptManifest: section1.deepseekr1.rich.model
+      toolJson: ''
+      toolCode: ''
+      outputType: overwrite
+      outputToCanvas: false
+      useUserQuery: false
+      flowState: &ref_0
+        backend: git
+        repo: app-whiskey
+    width: 238
+    height: 490
+    selected: false
+    dragging: false
+    positionAbsolute:
+      x: 798.3944478415218
+      'y': 507.2670949230528
+  - id: YsNqXVGVjhqNcPyvYQ6FH
+    type: file
+    position:
+      x: 472.5643795317726
+      'y': 490.00141392573033
+    data:
+      id: YsNqXVGVjhqNcPyvYQ6FH
+      title: Data
+      fileName: SITE DETAILS EXEMPLAR DATA from Sheets no QR Code.csv
+      flowState: *ref_0
+    width: 238
+    height: 274
+    selected: true
+    positionAbsolute:
+      x: 472.5643795317726
+      'y': 490.00141392573033
+    dragging: false
+edges:
+  - source: YsNqXVGVjhqNcPyvYQ6FH
+    sourceHandle: b
+    target: 2gRaWKC4WOJBNVO2JYRtq
+    targetHandle: l
+    id: YD3ifp
+description: null
