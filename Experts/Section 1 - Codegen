@@ -37,7 +37,7 @@ nodes:
       modelName: gpt-4o-2024-11-20
     width: 206
     height: 538
-    selected: true
+    selected: false
     positionAbsolute:
       x: 744.1171186596835
       'y': 610.4853787802217
@@ -75,7 +75,7 @@ nodes:
       title: Chat Markdown
       module: df_to_md.py
       outputType: overwrite
-      outputToCanvas: true
+      outputToCanvas: false
       flowState:
         backend: git
         repo: apps-whiskey
@@ -102,7 +102,7 @@ nodes:
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%201%20-%20Codegen
     width: 206
     height: 348
-    selected: false
+    selected: true
     dragging: false
     positionAbsolute:
       x: 1106.5039078785414
