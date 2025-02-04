@@ -142,7 +142,7 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: false
+      outputToCanvas: true
       useUserQuery: false
       flowState: &ref_1
         backend: git
@@ -170,7 +170,7 @@ nodes:
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
     width: 212
     height: 490
-    selected: false
+    selected: true
     positionAbsolute:
       x: 518.9424550429767
       'y': 59.49906260655416
@@ -322,7 +322,7 @@ nodes:
       outputName: image_input_line_items.txt (2)
     width: 212
     height: 214
-    selected: true
+    selected: false
     positionAbsolute:
       x: 1250.9424550429767
       'y': 1263.099062606554
