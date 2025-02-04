@@ -54,6 +54,7 @@ prompt: |
     4. **Output Details**  
        - **The consolidated table** must match the schema (column order) you are responsible for from `Desired materials format.csv`.  
        - The output **must be in valid CSV form**, with **no additional headers, footers, or extraneous text**.  
+       - DO NOT INCLUDE ANY 'csv' HEADER ON THE FIRST ROW - OUTPUT ONLY THE CSV CONTENT, COLUMN NAMES SHOULD BE ON THE FIRST ROW
        - Once again, the first row must contain ALL column names, both those you are filling in data for and those you are leaving blank.
     
     5. **Validation**  
