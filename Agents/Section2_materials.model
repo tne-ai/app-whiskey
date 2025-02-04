@@ -31,6 +31,7 @@ prompt: |
     4. **Output Details**  
        - Maintain the same CSV structure and **only fill** the three columns `Material`, `Sub-Material`, and `Density`.
        - The final output must still be valid CSV, including all rows from the first pass. **Do not add or remove columns**.  
+       - DO NOT INCLUDE ANY 'csv' HEADER ON THE FIRST ROW - OUTPUT ONLY THE CSV CONTENT, COLUMN NAMES SHOULD BE ON THE FIRST ROW
        - Do not add any extra headers, footers, or explanatory text—ONLY OUTPUT the CSV data.
     
     5. **Validation & Step-by-Step Reasoning**  
