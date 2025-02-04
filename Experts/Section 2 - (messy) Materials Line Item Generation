@@ -1,14 +1,20 @@
 nodes:
-  - id: pF06Kjo21yCPoyaXxbqoq
-    type: file
+  - id: j6ehTSahSz7QIPg8lBnD-
+    type: llm
     position:
-      x: 753.9608487978612
-      'y': 284.3429320276165
+      x: 669.8883793550262
+      'y': 624.2198625063908
     data:
-      id: pF06Kjo21yCPoyaXxbqoq
-      title: Data
-      fileName: Sample_Project_Details.csv
-      flowState: &ref_0
+      id: j6ehTSahSz7QIPg8lBnD-
+      title: New Model
+      input: ''
+      slashgptManifest: Section2_first_pass.model
+      toolJson: ''
+      toolCode: ''
+      outputType: overwrite
+      outputToCanvas: false
+      useUserQuery: false
+      flowState:
         backend: git
         repo: apps-whiskey
         content:
@@ -33,46 +39,6 @@ nodes:
             html: >-
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation
     width: 212
-    height: 250
-    selected: false
-    positionAbsolute:
-      x: 753.9608487978612
-      'y': 284.3429320276165
-    dragging: false
-  - id: wAD9UwqywOiY1FePFe-Xa
-    type: file
-    position:
-      x: 271.5726384786234
-      'y': 299.44299772176504
-    data:
-      id: wAD9UwqywOiY1FePFe-Xa
-      title: Data
-      fileName: Sample_Project_Stages.csv
-      flowState: *ref_0
-    width: 212
-    height: 250
-    selected: false
-    positionAbsolute:
-      x: 271.5726384786234
-      'y': 299.44299772176504
-    dragging: false
-  - id: j6ehTSahSz7QIPg8lBnD-
-    type: llm
-    position:
-      x: 669.8883793550262
-      'y': 624.2198625063908
-    data:
-      id: j6ehTSahSz7QIPg8lBnD-
-      title: New Model
-      input: ''
-      slashgptManifest: Section2_first_pass.model
-      toolJson: ''
-      toolCode: ''
-      outputType: overwrite
-      outputToCanvas: false
-      useUserQuery: false
-      flowState: *ref_0
-    width: 212
     height: 490
     selected: false
     positionAbsolute:
@@ -94,7 +60,7 @@ nodes:
       outputType: overwrite
       outputToCanvas: false
       useUserQuery: false
-      flowState: &ref_1
+      flowState: &ref_0
         backend: git
         repo: apps-whiskey
         content:
@@ -134,7 +100,7 @@ nodes:
       id: NZuRXbEmfjYLcaM3NTyxv
       title: Data
       fileName: Clean densities.csv
-      flowState: *ref_1
+      flowState: *ref_0
     width: 212
     height: 226
     selected: false
@@ -151,7 +117,7 @@ nodes:
       id: 6Dmp0fkcsbQTWfbhkO1zJ
       title: Data
       fileName: Desired materials format.csv
-      flowState: *ref_1
+      flowState: *ref_0
     width: 212
     height: 250
     selected: false
@@ -162,19 +128,19 @@ nodes:
   - id: 4q0WHKmrDJspqOB0vgnpn
     type: file
     position:
-      x: 974.9445682327658
-      'y': 282.13929139220454
+      x: 830.9445682327658
+      'y': 254.13929139220454
     data:
       id: 4q0WHKmrDJspqOB0vgnpn
       title: Data
       fileName: Desired materials format.csv
-      flowState: *ref_1
+      flowState: *ref_0
     width: 212
     height: 250
     selected: false
     positionAbsolute:
-      x: 974.9445682327658
-      'y': 282.13929139220454
+      x: 830.9445682327658
+      'y': 254.13929139220454
     dragging: false
   - id: N_tCVt0oykWOQf071avLK
     type: file
@@ -185,7 +151,7 @@ nodes:
       id: N_tCVt0oykWOQf071avLK
       title: Data
       fileName: Desired materials format.csv
-      flowState: *ref_1
+      flowState: *ref_0
     width: 212
     height: 250
     selected: false
@@ -208,7 +174,7 @@ nodes:
       outputType: overwrite
       outputToCanvas: false
       useUserQuery: false
-      flowState: *ref_1
+      flowState: *ref_0
     width: 212
     height: 490
     selected: false
@@ -229,9 +195,9 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: true
+      outputToCanvas: false
       useUserQuery: false
-      flowState: &ref_2
+      flowState: &ref_1
         backend: git
         repo: apps-whiskey
         content:
@@ -257,7 +223,7 @@ nodes:
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(messy)%20Materials%20Line%20Item%20Generation
     width: 212
     height: 490
-    selected: false
+    selected: true
     positionAbsolute:
       x: 512.7495345176943
       'y': 51.57791540458255
@@ -271,7 +237,7 @@ nodes:
       id: KdgHQZwyMl2RgOckVIYzS
       title: Data
       fileName: Messy materials input.csv
-      flowState: *ref_2
+      flowState: *ref_1
     width: 212
     height: 250
     selected: false
@@ -287,7 +253,7 @@ nodes:
     data:
       id: '-CFud6SAQegg9P4TTvEer'
       title: Save File
-      outputName: messy_input_line_items.txt
+      outputName: messy_input_line_items.txt (final)
     width: 212
     height: 214
     selected: false
@@ -295,7 +261,49 @@ nodes:
       x: 1643.3734562598395
       'y': 1218.941949886616
     dragging: false
+  - id: xDC025Qz2e135LNqmwKDv
+    type: out
+    position:
+      x: 1218.9424550429767
+      'y': 1309.4990626065542
+    data:
+      id: xDC025Qz2e135LNqmwKDv
+      title: Save File
+      outputName: messy_input_line_items.txt (2)
+    width: 212
+    height: 214
+    selected: false
+    positionAbsolute:
+      x: 1218.9424550429767
+      'y': 1309.4990626065542
+    dragging: false
+  - id: Rs1qqWF35GrBrL9smbxrg
+    type: out
+    position:
+      x: 672.9424550429767
+      'y': 1201.4990626065542
+    data:
+      id: Rs1qqWF35GrBrL9smbxrg
+      title: Save File
+      outputName: messy_input_line_items.txt (1)
+    width: 212
+    height: 214
+    selected: false
+    positionAbsolute:
+      x: 672.9424550429767
+      'y': 1201.4990626065542
+    dragging: false
 edges:
+  - source: j6ehTSahSz7QIPg8lBnD-
+    sourceHandle: b
+    target: Rs1qqWF35GrBrL9smbxrg
+    targetHandle: t
+    id: xkDaxS
+  - source: YctfIQiPTVC5his1uW_EH
+    sourceHandle: b
+    target: xDC025Qz2e135LNqmwKDv
+    targetHandle: t
+    id: eon-mD
   - source: 4q0WHKmrDJspqOB0vgnpn
     sourceHandle: b
     target: j6ehTSahSz7QIPg8lBnD-
@@ -341,14 +349,4 @@ edges:
     target: YctfIQiPTVC5his1uW_EH
     targetHandle: t
     id: IEXHHB
-  - source: wAD9UwqywOiY1FePFe-Xa
-    sourceHandle: b
-    target: j6ehTSahSz7QIPg8lBnD-
-    targetHandle: t
-    id: h0JEt_
-  - source: pF06Kjo21yCPoyaXxbqoq
-    sourceHandle: b
-    target: j6ehTSahSz7QIPg8lBnD-
-    targetHandle: t
-    id: GUrg73
 description: null
