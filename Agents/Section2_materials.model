@@ -1,4 +1,4 @@
-title: Section2_first_pass.model
+title: Section2_materials.model
 model:
   engine_name: openai-gpt
   model_name: gpt-4o
