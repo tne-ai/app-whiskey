@@ -129,22 +129,16 @@ nodes:
       x: 1564.9424550429767
       'y': 1269.4990626065542
     dragging: false
-  - id: LBODznkDaxgC3MXBIz-jM
-    type: llm
+  - id: 9Wu2WmRh-l5PXwdhcDugP
+    type: file
     position:
-      x: 518.9424550429767
-      'y': 59.49906260655416
+      x: 464.9424550429767
+      'y': 220.69906260655415
     data:
-      id: LBODznkDaxgC3MXBIz-jM
-      title: New Model
-      input: ''
-      slashgptManifest: Section2_image_input.model
-      toolJson: ''
-      toolCode: ''
-      outputType: overwrite
-      outputToCanvas: true
-      useUserQuery: false
-      flowState: &ref_1
+      id: 9Wu2WmRh-l5PXwdhcDugP
+      title: Data
+      fileName: csv_image_input.csv
+      flowState:
         backend: git
         repo: apps-whiskey
         content:
@@ -169,62 +163,11 @@ nodes:
             html: >-
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
     width: 212
-    height: 490
+    height: 266
     selected: true
     positionAbsolute:
-      x: 518.9424550429767
-      'y': 59.49906260655416
-    dragging: false
-  - id: '-nWjz792GQYzrAgVZ2RUn'
-    type: file
-    position:
-      x: 806.9424550429767
-      'y': -356.50093739344584
-    data:
-      id: '-nWjz792GQYzrAgVZ2RUn'
-      title: Data
-      fileName: image input 3.jpg
-      flowState: *ref_1
-    width: 212
-    height: 266
-    selected: false
-    positionAbsolute:
-      x: 806.9424550429767
-      'y': -356.50093739344584
-    dragging: false
-  - id: 9wRFS_EClNAaSpXZ07mIJ
-    type: file
-    position:
-      x: 562.9424550429767
-      'y': -338.50093739344584
-    data:
-      id: 9wRFS_EClNAaSpXZ07mIJ
-      title: Data
-      fileName: image input 2.jpg
-      flowState: *ref_1
-    width: 212
-    height: 266
-    selected: false
-    positionAbsolute:
-      x: 562.9424550429767
-      'y': -338.50093739344584
-    dragging: false
-  - id: 9Wu2WmRh-l5PXwdhcDugP
-    type: file
-    position:
-      x: 324.9424550429767
-      'y': -359.30093739344585
-    data:
-      id: 9Wu2WmRh-l5PXwdhcDugP
-      title: Data
-      fileName: image input 1.jpg
-      flowState: *ref_1
-    width: 212
-    height: 266
-    selected: false
-    positionAbsolute:
-      x: 324.9424550429767
-      'y': -359.30093739344585
+      x: 464.9424550429767
+      'y': 220.69906260655415
     dragging: false
   - id: 7l2seZYHrDIjhwcOlQLVc
     type: llm
@@ -241,7 +184,7 @@ nodes:
       outputType: overwrite
       outputToCanvas: false
       useUserQuery: false
-      flowState: &ref_2
+      flowState: &ref_1
         backend: git
         repo: apps-whiskey
         content:
@@ -287,7 +230,7 @@ nodes:
       outputType: overwrite
       outputToCanvas: false
       useUserQuery: false
-      flowState: *ref_2
+      flowState: *ref_1
     width: 212
     height: 490
     selected: false
@@ -328,6 +271,11 @@ nodes:
       'y': 1263.099062606554
     dragging: false
 edges:
+  - source: 9Wu2WmRh-l5PXwdhcDugP
+    sourceHandle: b
+    target: cg2u-frGigSWV4ME0pe0z
+    targetHandle: t
+    id: nodFFk
   - source: 7l2seZYHrDIjhwcOlQLVc
     sourceHandle: b
     target: om1HK0BAkQU8vH3JF--Kr
@@ -363,26 +311,6 @@ edges:
     target: cg2u-frGigSWV4ME0pe0z
     targetHandle: t
     id: p6714d
-  - source: LBODznkDaxgC3MXBIz-jM
-    sourceHandle: b
-    target: cg2u-frGigSWV4ME0pe0z
-    targetHandle: t
-    id: 8TcGBp
-  - source: '-nWjz792GQYzrAgVZ2RUn'
-    sourceHandle: b
-    target: LBODznkDaxgC3MXBIz-jM
-    targetHandle: t
-    id: jhKb0U
-  - source: 9wRFS_EClNAaSpXZ07mIJ
-    sourceHandle: b
-    target: LBODznkDaxgC3MXBIz-jM
-    targetHandle: t
-    id: RvGzZG
-  - source: 9Wu2WmRh-l5PXwdhcDugP
-    sourceHandle: b
-    target: LBODznkDaxgC3MXBIz-jM
-    targetHandle: t
-    id: Cm-J51
   - source: vPizhdfWgj5QJDwkcuzNH
     sourceHandle: b
     target: Uoi6zDkMlzjpRQ2zusLpx
