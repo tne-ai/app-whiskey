@@ -253,7 +253,7 @@ nodes:
     data:
       id: '-CFud6SAQegg9P4TTvEer'
       title: Save File
-      outputName: messy_input_line_items.txt (final)
+      outputName: messy_input_line_items (final)
     width: 212
     height: 214
     selected: false
@@ -269,7 +269,7 @@ nodes:
     data:
       id: xDC025Qz2e135LNqmwKDv
       title: Save File
-      outputName: messy_input_line_items.txt (2)
+      outputName: messy_input_line_items (2)
     width: 212
     height: 214
     selected: false
@@ -285,7 +285,7 @@ nodes:
     data:
       id: Rs1qqWF35GrBrL9smbxrg
       title: Save File
-      outputName: messy_input_line_items.txt (1)
+      outputName: messy_input_line_items (1)
     width: 212
     height: 214
     selected: false
