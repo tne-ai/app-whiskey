@@ -30,6 +30,7 @@ prompt: |
     
     4. **Output Details**
        - **Output only** the cleaned CSV, with no additional footers, explanatory text, or formatting. IT IS IMPERATIVE that there is nothing but the cleaned CSV.
+       - DO NOT INCLUDE ANY 'csv' HEADER ON THE FIRST ROW - OUTPUT ONLY THE CSV CONTENT, COLUMN NAMES SHOULD BE ON THE FIRST ROW
        - The final CSV should have clear, consistent columns and rows that reflect **all** data from the original input.
     
     5. **Validation & Step-by-Step Reasoning**
