@@ -44,6 +44,7 @@ prompt: |
     
     5. **Output Details**  
        - The final CSV must **retain all columns** from previous steps, and **only** add values to `Total Volume` and `Purchase Weight KG`.  
+       - DO NOT INCLUDE ANY 'csv' HEADER ON THE FIRST ROW - OUTPUT ONLY THE CSV CONTENT, COLUMN NAMES SHOULD BE ON THE FIRST ROW
        - **No additional headers, footers, or explanatory text**—just output the updated CSV data.
     
     6. **Validation & Step-by-Step Reasoning**  
