@@ -13,7 +13,7 @@ nodes:
         repo: apps-whiskey
     width: 189
     height: 274
-    selected: true
+    selected: false
     positionAbsolute:
       x: 746
       'y': 238.25
@@ -27,8 +27,8 @@ nodes:
       id: IqcrGHKfKk5If5w90ms6E
       title: Generate Code
       prompt: >-
-        When calling session.get_object(), use the filename "SITE DETAILS
-        EXEMPLAR DATA from Sheets.csv"
+        When calling session.get_object(), use the filename "UPDATED WITH KEY -
+        SITE DETAILS EXEMPLAR DATA.csv"
       outputType: overwrite
       outputToCanvas: false
       useUserQuery: false
@@ -36,7 +36,7 @@ nodes:
       engineName: openai-gpt
       modelName: gpt-4o-2024-11-20
     width: 206
-    height: 538
+    height: 562
     selected: false
     positionAbsolute:
       x: 744.1171186596835
