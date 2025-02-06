@@ -26,6 +26,7 @@ prompt: |
        - Once you’ve identified the correct `Material` and `Sub-Material`, fill in the `Density` using the value from the densities CSV. With every density value you fill in, YOU MUST INCLUDE UNITS, and assume the densities from the "densities CSV" are in kg/m^3.
        - If multiple matches are possible (e.g., if the line item name is ambiguous), **select the most likely match** and note your choice as an assumption in the `Assumptions` column.
        - If there is no match or insufficient detail, write `"Insufficient data"`.
+       - When copying values that have embedded commas, ENSURE you wrap the value with quotation marks in your CSV output
        - **Do not create fictional data.** If the required information is not explicitly provided or cannot be inferred from the item name, mark it as `"Not provided"` or `"Insufficient data"`.
     
     4. **Output Details**  
