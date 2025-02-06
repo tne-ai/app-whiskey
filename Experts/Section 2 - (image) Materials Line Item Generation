@@ -129,46 +129,6 @@ nodes:
       x: 1564.9424550429767
       'y': 1269.4990626065542
     dragging: false
-  - id: 9Wu2WmRh-l5PXwdhcDugP
-    type: file
-    position:
-      x: 464.9424550429767
-      'y': 220.69906260655415
-    data:
-      id: 9Wu2WmRh-l5PXwdhcDugP
-      title: Data
-      fileName: csv_image_input.csv
-      flowState:
-        backend: git
-        repo: apps-whiskey
-        content:
-          name: Section 2 - (image) Materials Line Item Generation
-          path: Experts/Section 2 - (image) Materials Line Item Generation
-          sha: 6ce2ec62f33b39669439134cc0cc89f5ea6da84c
-          size: 10661
-          url: >-
-            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
-          html_url: >-
-            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
-          git_url: >-
-            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/6ce2ec62f33b39669439134cc0cc89f5ea6da84c
-          download_url: >-
-            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
-          type: file
-          _links:
-            self: >-
-              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
-            git: >-
-              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/6ce2ec62f33b39669439134cc0cc89f5ea6da84c
-            html: >-
-              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
-    width: 212
-    height: 266
-    selected: true
-    positionAbsolute:
-      x: 464.9424550429767
-      'y': 220.69906260655415
-    dragging: false
   - id: 7l2seZYHrDIjhwcOlQLVc
     type: llm
     position:
@@ -270,12 +230,124 @@ nodes:
       x: 1250.9424550429767
       'y': 1263.099062606554
     dragging: false
+  - id: sG4zJrJBJEbWAN2bjhWUn
+    type: llm
+    position:
+      x: 545.6273633251533
+      'y': 54.81917699937935
+    data:
+      id: sG4zJrJBJEbWAN2bjhWUn
+      title: New Model
+      input: ''
+      slashgptManifest: Section2_image_input.model
+      toolJson: ''
+      toolCode: ''
+      outputType: overwrite
+      outputToCanvas: false
+      useUserQuery: false
+      flowState: &ref_2
+        backend: git
+        repo: apps-whiskey
+        content:
+          name: Section 2 - (image) Materials Line Item Generation
+          path: Experts/Section 2 - (image) Materials Line Item Generation
+          sha: be0fb50474b571898bee3c7fa8202cb88dc46464
+          size: 10148
+          url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
+          html_url: >-
+            https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
+          git_url: >-
+            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/be0fb50474b571898bee3c7fa8202cb88dc46464
+          download_url: >-
+            https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
+          type: file
+          _links:
+            self: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
+            git: >-
+              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/be0fb50474b571898bee3c7fa8202cb88dc46464
+            html: >-
+              https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
+    width: 212
+    height: 490
+    selected: false
+    dragging: false
+    positionAbsolute:
+      x: 545.6273633251533
+      'y': 54.81917699937935
+  - id: M5c7f633Udj2JkYSFLBJH
+    type: file
+    position:
+      x: 547.6273633251533
+      'y': -342.78082300062067
+    data:
+      id: M5c7f633Udj2JkYSFLBJH
+      title: Data
+      fileName: image input 2.jpg
+      flowState: *ref_2
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 547.6273633251533
+      'y': -342.78082300062067
+    dragging: false
+  - id: aLq0MuzRj1SWRFIz0zzVO
+    type: file
+    position:
+      x: 299.6273633251533
+      'y': -405.1808230006206
+    data:
+      id: aLq0MuzRj1SWRFIz0zzVO
+      title: Data
+      fileName: image input 1.jpg
+      flowState: *ref_2
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 299.6273633251533
+      'y': -405.1808230006206
+    dragging: false
+  - id: 2QcPG3HdeiX-aEv2-CpBs
+    type: file
+    position:
+      x: 821.6273633251533
+      'y': -329.18082300062065
+    data:
+      id: 2QcPG3HdeiX-aEv2-CpBs
+      title: Data
+      fileName: image input 3.jpg
+      flowState: *ref_2
+    width: 212
+    height: 266
+    selected: true
+    positionAbsolute:
+      x: 821.6273633251533
+      'y': -329.18082300062065
+    dragging: false
 edges:
-  - source: 9Wu2WmRh-l5PXwdhcDugP
+  - source: 2QcPG3HdeiX-aEv2-CpBs
+    sourceHandle: b
+    target: sG4zJrJBJEbWAN2bjhWUn
+    targetHandle: t
+    id: 469gjl
+  - source: M5c7f633Udj2JkYSFLBJH
+    sourceHandle: b
+    target: sG4zJrJBJEbWAN2bjhWUn
+    targetHandle: t
+    id: AvvRs-
+  - source: aLq0MuzRj1SWRFIz0zzVO
+    sourceHandle: b
+    target: sG4zJrJBJEbWAN2bjhWUn
+    targetHandle: t
+    id: xIHmqk
+  - source: sG4zJrJBJEbWAN2bjhWUn
     sourceHandle: b
     target: cg2u-frGigSWV4ME0pe0z
     targetHandle: t
-    id: nodFFk
+    id: Aheotm
   - source: 7l2seZYHrDIjhwcOlQLVc
     sourceHandle: b
     target: om1HK0BAkQU8vH3JF--Kr
