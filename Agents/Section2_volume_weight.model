@@ -46,6 +46,7 @@ prompt: |
        - The final CSV must **retain all columns** from previous steps, and **only** add values to `Total Volume` and `Purchase Weight KG`.  
        - DO NOT INCLUDE ANY 'csv' HEADER ON THE FIRST ROW - OUTPUT ONLY THE CSV CONTENT, COLUMN NAMES SHOULD BE ON THE FIRST ROW
        - **No additional headers, footers, or explanatory text**—just output the updated CSV data.
+       - It is imperative that your output is well formatted; ensure each line item in your output has the proper number of fields
     
     6. **Validation & Step-by-Step Reasoning**  
        - **Think step by step** when calculating each item’s total volume (in m³) and purchase weight.  
