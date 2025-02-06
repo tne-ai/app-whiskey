@@ -18,7 +18,7 @@ prompt: |
      - Extract the table data from the input **image or PDF** and convert it into a **single, well-structured** CSV file.
      - **Retain all original data**, ensuring no information is lost.
      - Organize the extracted data logically into rows and columns so it can be readily understood and utilized.
-     - ONLY OUTPUT THE CSV - do not include anything else
+     - ONLY OUTPUT THE CSV as a markdown table - do not include anything else
 
   3. **Transformation Rules**
      - Identify and reconstruct fragmented table structures into **cohesive rows and columns**.
