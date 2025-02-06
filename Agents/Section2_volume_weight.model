@@ -41,6 +41,7 @@ prompt: |
        - If **no explicit dimensions** are available, use your **own knowledge** of typical product dimensions and note it as an assumption. If there is not enough info, write “Insufficient Data” in the cell.  
        - **Append** any new assumptions to the existing content in the `Assumptions` column. Do not overwrite.  
        - **Do not create fictional data** without clearly noting it as an assumption in the `Assumptions` column.
+       - When copying values that have embedded commas, ENSURE you wrap the value with quotation marks in your CSV output
     
     5. **Output Details**  
        - The final CSV must **retain all columns** from previous steps, and **only** add values to `Total Volume` and `Purchase Weight KG`.  
