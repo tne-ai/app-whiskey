@@ -34,7 +34,7 @@ prompt: |
        - The final output must still be valid CSV, including all rows from the first pass. **Do not add or remove columns**.  
        - DO NOT INCLUDE ANY 'csv' HEADER ON THE FIRST ROW - OUTPUT ONLY THE CSV CONTENT, COLUMN NAMES SHOULD BE ON THE FIRST ROW
        - Do not add any extra headers, footers, or explanatory text—ONLY OUTPUT the CSV data.
-       - It is imperative that your output is well formatted; ENSURE EACH LINE IN YOUR OUTPUT HAS THE SAME NUMBER OF FIELDS. WHETHER THEY ARE POPULATED OR NOT DOES NOT MATTER; EACH LINE IN YOUR CSV OUTPUT MUST HAVE THE SAME NUMBER OF FIELDS
+       - It is imperative that your output is well formatted; ENSURE each line item in your outputted csv has 20 fields (the number of columns)
     
     5. **Validation & Step-by-Step Reasoning**  
        - **Think step by step** to ensure you match each item to the correct `Material` and `Sub-Material`.
