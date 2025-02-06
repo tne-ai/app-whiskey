@@ -121,9 +121,9 @@ nodes:
     data:
       id: Uoi6zDkMlzjpRQ2zusLpx
       title: Save File
-      outputName: image_input_line_items.txt (final)
+      outputName: demo_image3
     width: 212
-    height: 214
+    height: 190
     selected: false
     positionAbsolute:
       x: 1564.9424550429767
@@ -206,9 +206,9 @@ nodes:
     data:
       id: pzypG7sN2BzDtdJBB2t3p
       title: Save File
-      outputName: image_input_line_items.txt (1)
+      outputName: demo_image1
     width: 212
-    height: 214
+    height: 190
     selected: false
     positionAbsolute:
       x: 698.9424550429767
@@ -222,9 +222,9 @@ nodes:
     data:
       id: om1HK0BAkQU8vH3JF--Kr
       title: Save File
-      outputName: image_input_line_items.txt (2)
+      outputName: demo_image2
     width: 212
-    height: 214
+    height: 190
     selected: false
     positionAbsolute:
       x: 1250.9424550429767
@@ -322,7 +322,7 @@ nodes:
       flowState: *ref_2
     width: 212
     height: 266
-    selected: true
+    selected: false
     positionAbsolute:
       x: 821.6273633251533
       'y': -329.18082300062065
