@@ -88,7 +88,7 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: true
+      outputToCanvas: false
       useUserQuery: false
       flowState:
         backend: git
@@ -134,7 +134,7 @@ nodes:
       toolJson: ''
       toolCode: ''
       outputType: overwrite
-      outputToCanvas: true
+      outputToCanvas: false
       useUserQuery: false
       flowState:
         backend: git
@@ -162,7 +162,7 @@ nodes:
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20Materials%20Line%20Item%20Generation
     width: 212
     height: 490
-    selected: true
+    selected: false
     positionAbsolute:
       x: 1189.3839929759285
       'y': 645.3339927590027
@@ -289,15 +289,57 @@ nodes:
     data:
       id: iyc-sZcYCP2ioBk3fzBZQ
       title: Save File
-      outputName: clean_input_line_items.txt
+      outputName: demo_clean3
     width: 212
-    height: 214
+    height: 190
     selected: false
     positionAbsolute:
       x: 1632.510277704775
       'y': 1211.5094475849223
     dragging: false
+  - id: k0yk1XGNBHxwm6heGY52i
+    type: out
+    position:
+      x: 1196.9814988232306
+      'y': 1266.0412835811535
+    data:
+      id: k0yk1XGNBHxwm6heGY52i
+      title: Save File
+      outputName: demo_clean2
+    width: 212
+    height: 190
+    selected: false
+    positionAbsolute:
+      x: 1196.9814988232306
+      'y': 1266.0412835811535
+    dragging: false
+  - id: 7WAdf4l8MFZgw-Gz3pE8A
+    type: out
+    position:
+      x: 662.9814988232306
+      'y': 1208.0412835811535
+    data:
+      id: 7WAdf4l8MFZgw-Gz3pE8A
+      title: Save File
+      outputName: demo_clean1
+    width: 212
+    height: 190
+    selected: false
+    positionAbsolute:
+      x: 662.9814988232306
+      'y': 1208.0412835811535
+    dragging: false
 edges:
+  - source: j6ehTSahSz7QIPg8lBnD-
+    sourceHandle: b
+    target: 7WAdf4l8MFZgw-Gz3pE8A
+    targetHandle: t
+    id: LNWhpz
+  - source: YctfIQiPTVC5his1uW_EH
+    sourceHandle: b
+    target: k0yk1XGNBHxwm6heGY52i
+    targetHandle: t
+    id: RKQ1Vs
   - source: 4q0WHKmrDJspqOB0vgnpn
     sourceHandle: b
     target: j6ehTSahSz7QIPg8lBnD-
