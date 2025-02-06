@@ -57,7 +57,7 @@ prompt: |
        - The output **must be in valid CSV form**, with **no additional headers, footers, or extraneous text**.  
        - DO NOT INCLUDE ANY 'csv' HEADER ON THE FIRST ROW - OUTPUT ONLY THE CSV CONTENT, COLUMN NAMES SHOULD BE ON THE FIRST ROW
        - Once again, the first row must contain ALL column names, both those you are filling in data for and those you are leaving blank.
-       - It is imperative that your output is well formatted; ENSURE EACH LINE IN YOUR OUTPUT HAS THE SAME NUMBER OF FIELDS. WHETHER THEY ARE POPULATED OR NOT DOES NOT MATTER; EACH LINE IN YOUR CSV OUTPUT MUST HAVE THE SAME NUMBER OF FIELDS
+       - It is imperative that your output is well formatted; ENSURE each line item in your outputted csv has 20 fields (the number of columns)
     
     5. **Validation**  
        - Check for missing or mismatched data and ensure all rows are accurate and complete according to the provided input data.  
