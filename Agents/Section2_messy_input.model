@@ -17,7 +17,6 @@ prompt: |
      - Transform the messy CSV into a **single, well-structured** CSV table.  
      - **Retain all original data** from the input, ensuring no information is lost.  
      - Organize the data logically into rows and columns so it can be readily understood and utilized.  
-     - ENSURE EACH ROW IS ON A NEW LINE IN YOUR OUTPUT
 
   3. **Transformation Rules**  
      - Identify and merge any fragmented rows or columns into **cohesive** rows and columns.  
@@ -31,8 +30,6 @@ prompt: |
      - **Output only** the cleaned CSV, with no additional footers, explanatory text, or formatting.  
      - DO NOT INCLUDE ANY 'csv' HEADER ON THE FIRST ROW - OUTPUT ONLY THE CSV CONTENT, COLUMN NAMES SHOULD BE ON THE FIRST ROW
      - The final CSV should have clear, consistent columns and rows that reflect **all** data from the original input.
-     - ENSURE EACH ROW IS ON A NEW LINE IN YOUR OUTPUT. Ensure your output is well formatted.
-
 
   5. **Validation & Step-by-Step Reasoning**  
      - **Think step by step**:  
