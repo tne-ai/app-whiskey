@@ -1,0 +1,94 @@
+nodes:
+  - id: Tlyqsi5V0NItCou9GyZRO
+    type: llm
+    position:
+      x: 460.20396843744993
+      'y': 427.53145865035236
+    data:
+      id: Tlyqsi5V0NItCou9GyZRO
+      title: New Model
+      input: ''
+      slashgptManifest: Section2_image_input.model
+      toolJson: ''
+      toolCode: ''
+      outputType: overwrite
+      outputToCanvas: false
+      useUserQuery: false
+      flowState: &ref_0
+        backend: git
+        repo: apps-whiskey
+    width: 212
+    height: 490
+    selected: false
+    dragging: false
+    positionAbsolute:
+      x: 460.20396843744993
+      'y': 427.53145865035236
+  - id: feyYUMt7RTChGeG06aXr0
+    type: file
+    position:
+      x: 210.58230036891212
+      'y': 40.50206630375365
+    data:
+      id: feyYUMt7RTChGeG06aXr0
+      title: Data
+      fileName: image input 1.jpg
+      flowState: *ref_0
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 210.58230036891212
+      'y': 40.50206630375365
+    dragging: false
+  - id: YeUXuDUwI_W0rFatj4Tzg
+    type: file
+    position:
+      x: 459.96689965096766
+      'y': 10.273630027140797
+    data:
+      id: YeUXuDUwI_W0rFatj4Tzg
+      title: Data
+      fileName: image input 2.jpg
+      flowState: *ref_0
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 459.96689965096766
+      'y': 10.273630027140797
+    dragging: false
+  - id: oYPM3jkynab04F5yiIJCy
+    type: file
+    position:
+      x: 696.1265580620052
+      'y': 36.723511769177044
+    data:
+      id: oYPM3jkynab04F5yiIJCy
+      title: Data
+      fileName: image input 3.jpg
+      flowState: *ref_0
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 696.1265580620052
+      'y': 36.723511769177044
+    dragging: false
+edges:
+  - source: oYPM3jkynab04F5yiIJCy
+    sourceHandle: b
+    target: Tlyqsi5V0NItCou9GyZRO
+    targetHandle: t
+    id: uxKUDE
+  - source: YeUXuDUwI_W0rFatj4Tzg
+    sourceHandle: b
+    target: Tlyqsi5V0NItCou9GyZRO
+    targetHandle: t
+    id: rFkod-
+  - source: feyYUMt7RTChGeG06aXr0
+    sourceHandle: b
+    target: Tlyqsi5V0NItCou9GyZRO
+    targetHandle: t
+    id: 1pn7mo
+description: null
