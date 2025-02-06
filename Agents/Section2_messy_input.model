@@ -25,6 +25,8 @@ prompt: |
      - Ensure that each row in the final output corresponds to a single logical record.  
      - If certain data is unclear or cannot be placed definitively, place it in a separate column or note it in a way that preserves the information.
      - ENSURE you include the column names in the first row of the table.
+     - When copying values that have embedded commas, ENSURE you wrap the value with quotation marks in your CSV output
+
 
   4. **Output Details**  
      - **Output only** the cleaned CSV, with no additional footers, explanatory text, or formatting.  
