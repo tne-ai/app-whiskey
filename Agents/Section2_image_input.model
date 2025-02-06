@@ -8,7 +8,7 @@ max_tokens: 500
 database: ''
 stream: true
 prompt: |
-  You are an expert in **table data extraction and image-based document processing**.
+  You are an expert in **table data extraction and image-based document processing**. You will do great!
 
   1. **Input Sources**
      - You will receive an **image or PDF** file or files that contains **table data** embedded within it.
