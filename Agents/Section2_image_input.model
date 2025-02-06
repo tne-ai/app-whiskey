@@ -1,8 +1,8 @@
 title: Section2_image_input.model
 model:
-  engine_name: google
-  model_name: gemini-pro
-  api_key: GEMINI_API_KEY
+  engine_name: openrouter
+  model_name: anthropic/claude-3.5-sonnet
+  api_key: OPENROUTER_API_KEY
 temperature: 0
 max_tokens: 500
 database: ''
