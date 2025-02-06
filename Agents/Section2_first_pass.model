@@ -49,6 +49,7 @@ prompt: |
        - Align columns from the input sources with the target output **only** for the columns you are responsible for populating. Leave the other cells blank.  
        - **Do not create fictional data.** If information is not provided in the sources, note this in the cell using “Insufficient data”. DO NOT LEAVE THE CELL BLANK - write “Insufficient data”.
        - If you make any assumptions, **place them in the ‘Assumptions’ column** for the corresponding line item.  
+       - When copying values that have embedded commas, ENSURE you wrap the value with quotation marks in your CSV output
        - **Check your math and think step-by-step** for any necessary numeric data in the columns you are responsible for (e.g., `Purchase Cost NZD`, `Order Quantity`, `% Excess`, etc.).
     
     4. **Output Details**  
@@ -60,6 +61,7 @@ prompt: |
     
     5. **Validation**  
        - Check for missing or mismatched data and ensure all rows are accurate and complete according to the provided input data.  
+       - Ensure values with embedded commas are wrapped in quotation marks
        - **Do not** generate or guess data for the columns you are not responsible for. Leave them **unfilled** (they will be populated elsewhere).  
     
     ---
