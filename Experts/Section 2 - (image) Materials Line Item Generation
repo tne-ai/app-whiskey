@@ -230,29 +230,35 @@ nodes:
       x: 1250.9424550429767
       'y': 1263.099062606554
     dragging: false
-  - id: aLq0MuzRj1SWRFIz0zzVO
-    type: file
+  - id: rLGwLNR69PnblbJOJuT5o
+    type: llm
     position:
-      x: 529.6273633251533
-      'y': 278.8191769993794
+      x: 496.9698174662417
+      'y': 32.15911980296687
     data:
-      id: aLq0MuzRj1SWRFIz0zzVO
-      title: Data
-      fileName: demo_image_input.csv
-      flowState:
+      id: rLGwLNR69PnblbJOJuT5o
+      title: New Model
+      input: ''
+      slashgptManifest: Section2_image_input.model
+      toolJson: ''
+      toolCode: ''
+      outputType: overwrite
+      outputToCanvas: false
+      useUserQuery: false
+      flowState: &ref_2
         backend: git
         repo: apps-whiskey
         content:
           name: Section 2 - (image) Materials Line Item Generation
           path: Experts/Section 2 - (image) Materials Line Item Generation
-          sha: be0fb50474b571898bee3c7fa8202cb88dc46464
-          size: 10148
+          sha: 7b9b1a71e18336e58965cf36449c0e5aeb0b0fe2
+          size: 11773
           url: >-
             https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
           html_url: >-
             https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
           git_url: >-
-            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/be0fb50474b571898bee3c7fa8202cb88dc46464
+            https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/7b9b1a71e18336e58965cf36449c0e5aeb0b0fe2
           download_url: >-
             https://raw.githubusercontent.com/tne-ai/app-whiskey/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
           type: file
@@ -260,22 +266,88 @@ nodes:
             self: >-
               https://api.github.com/repos/tne-ai/app-whiskey/contents/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation?ref=main
             git: >-
-              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/be0fb50474b571898bee3c7fa8202cb88dc46464
+              https://api.github.com/repos/tne-ai/app-whiskey/git/blobs/7b9b1a71e18336e58965cf36449c0e5aeb0b0fe2
             html: >-
               https://github.com/tne-ai/app-whiskey/blob/main/Experts/Section%202%20-%20(image)%20Materials%20Line%20Item%20Generation
+    width: 212
+    height: 490
+    selected: false
+    positionAbsolute:
+      x: 496.9698174662417
+      'y': 32.15911980296687
+    dragging: false
+  - id: UoCi6s1tGFJ1c86zr6Szw
+    type: file
+    position:
+      x: 248.9698174662417
+      'y': -309.84088019703336
+    data:
+      id: UoCi6s1tGFJ1c86zr6Szw
+      title: Data
+      fileName: image input 1.jpg
+      flowState: *ref_2
+    width: 212
+    height: 266
+    selected: true
+    positionAbsolute:
+      x: 248.9698174662417
+      'y': -309.84088019703336
+    dragging: false
+  - id: IQCqnErVs8x2hqHwG8DgI
+    type: file
+    position:
+      x: 726.9698174662417
+      'y': -313.84088019703313
+    data:
+      id: IQCqnErVs8x2hqHwG8DgI
+      title: Data
+      fileName: image input 3.jpg
+      flowState: *ref_2
     width: 212
     height: 266
     selected: false
     positionAbsolute:
-      x: 529.6273633251533
-      'y': 278.8191769993794
+      x: 726.9698174662417
+      'y': -313.84088019703313
+    dragging: false
+  - id: c2cWW7d7UCX242isXAtXy
+    type: file
+    position:
+      x: 490.9698174662417
+      'y': -313.84088019703313
+    data:
+      id: c2cWW7d7UCX242isXAtXy
+      title: Data
+      fileName: image input 2.jpg
+      flowState: *ref_2
+    width: 212
+    height: 266
+    selected: false
+    positionAbsolute:
+      x: 490.9698174662417
+      'y': -313.84088019703313
     dragging: false
 edges:
-  - source: aLq0MuzRj1SWRFIz0zzVO
+  - source: IQCqnErVs8x2hqHwG8DgI
+    sourceHandle: b
+    target: rLGwLNR69PnblbJOJuT5o
+    targetHandle: t
+    id: Kfe13g
+  - source: c2cWW7d7UCX242isXAtXy
+    sourceHandle: b
+    target: rLGwLNR69PnblbJOJuT5o
+    targetHandle: t
+    id: AsffVP
+  - source: UoCi6s1tGFJ1c86zr6Szw
+    sourceHandle: b
+    target: rLGwLNR69PnblbJOJuT5o
+    targetHandle: t
+    id: d5O0X8
+  - source: rLGwLNR69PnblbJOJuT5o
     sourceHandle: b
     target: cg2u-frGigSWV4ME0pe0z
     targetHandle: t
-    id: gxxGm6
+    id: zrOJlt
   - source: 7l2seZYHrDIjhwcOlQLVc
     sourceHandle: b
     target: om1HK0BAkQU8vH3JF--Kr
