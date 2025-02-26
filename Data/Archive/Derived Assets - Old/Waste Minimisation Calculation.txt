@@ -1,0 +1,44 @@
+Waste Minimisation (Calculation and Payment of Waste Disposal Levy) Regulations 2009
+
+Schedule 1
+Conversion factors for volume-to-weight calculations
+r 14(4)
+
+Schedule 1: replaced, on 1 July 2024, by regulation 7 of the Waste Minimisation (Calculation and Payment of Waste Disposal Levy) Amendment Regulations 2023 (SL 2023/261).
+
+Type of waste or diverted material		Description of waste or diverted material		Conversion factor
+Mixed general material—loose		
+Small loads (0.5 cubic metres or less) of uncompacted general waste or material, including bags of domestic and commercial refuse or waste
+or
+Material for diversion that is similar in density to loose and uncompacted material, such as recyclable containers, cans, and plastic bottles. Includes loads received from a residential customer that is mainly household waste but includes some garden material
+0.13 tonnes (130 kg)/cubic metre
+Uncompacted garden material		
+Grass, leaves, foliage, branches, and other general bulky green waste. Does not include soil or logs, or mulched materials. Material is delivered loose and not from a collection service or otherwise compacted
+0.15 tonnes (150 kg)/cubic metre
+Mixed general material—bulk, uncompacted		
+Larger loads (more than 0.5 cubic metres) of any uncompacted waste
+or
+Material for diversion from residential, commercial, and industrial sources
+Includes loads of construction and demolition waste of building products and materials that is dominated by packaging or light-weight insulation
+0.20 tonnes (200 kg)/cubic metre
+Compacted putrescible material		
+Compacted or mulched grass, leaves, foliage, branches, and food waste included in a food and garden waste collection. Does not include soil or logs. For example, materials collected through a kerbside service in a compactor vehicle
+0.26 tonnes (260 kg)/cubic metre
+Mixed general material—compacted		
+Waste or material for diversion carried in a compacted state (including in kerbside collection compactors, stationary compactors, and mechanical handling if this includes compaction) and compacted bulk waste
+or
+Material from refuse transfer stations in a compacted state
+or
+Waste or material for diversion that is similar in density to compacted waste, such as whole glass bottles and loose light-gauge scrap metal
+0.32 tonnes (320 kg)/cubic metre
+Mixed construction and demolition material		
+Mixed loads of construction and demolition waste. Includes a mixture of timber, glass, metals, plastics, plasterboard, or fibre cement products, fibreglass or insulation materials, masonry, bricks and small (incidental) amounts of concrete, soil, or rock. If the load is predominantly concrete, soil, or rock, this should be categorised under “Soil, sludges, and similar excavated material” or “Concrete, rock, or other high-density materials”
+Not applicable to loads of construction and demolition material that are dominated by lighter materials such as insulation, packaging, or plastics (“Mixed general material—bulk, uncompacted” applies)
+1.20 tonnes (1,200 kg)/cubic metre
+Soil, sludges, and similar excavated material		
+Material predominantly made up of soil and excavated material including sand, silt, clay, and topsoil. May include stumps or logs and asphalt
+Materials predominantly made up of slags, sludges (including biosolids), ash, foundry sand, pomace (fruit pulp), and abattoir waste
+1.50 tonnes (1,500 kg)/cubic metre
+Concrete, rock, or other high-density materials		
+Waste or material composed of high-density materials and predominantly made up of concrete, rock, and rubble
+2.00 tonnes (2,000 kg)/cubic metre

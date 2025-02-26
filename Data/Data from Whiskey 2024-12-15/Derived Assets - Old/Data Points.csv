@@ -1,0 +1,30 @@
+DETAILS,,DATA,,,DATA,
+Company Info,,Forecasting,,,Real-time Tracking,
+Company Name,,Diversion Target,%,,Current Diversion,%
+Company Address,,,,,,
+Company Contact,,Material Input - Date,Date,,Removal Date,Date
+Contact Phone,,Material Input - Stage,Text,,Stage,Test
+Contact Email,,Material Input - Material,List,,Material ,List
+,,Material Input - Sub-Material,List,,Sub-Material,List
+Site Info,,"Material Input - Provider 
+(if applicable)",Text,,Weight,#
+Site Name,,Material Input - Cost / Value,$,,Approximate Waste Value,$
+Site Type,,Material Input - Input Weight / Quantity,#,,Removal Cost,$
+Site Address,,"Material Input - Waste % 
+(for deconstruction 100%)",#,,Method of Removal,List
+Project Description,,,,,Waste Collector,List
+Start Date,,Forecast Output - Estimated Date,Date,,Location,Text
+Finish Date,,Forecast Output - Stage,Text,,,
+Estimated Cost,,Forecast Output - Material,List,,Waste Generation Rates (kg/m2),#
+Floor Size (SQM) TOTAL,,Forecast Output - Sub-Material,List,,Cost Analysis Summary,$
+Site Stages,,Forecast Output - Estimated Waste Weight,#,,"Approximate CO2 Quantities
+(Landfill, Cleanfill, Recycle, Reuse)",#
+"Waste Person 
+if different from contact",,Forecast Output - Estimated Waste Value,#,,,
+Phone,,Forecast Output - Method of Removal,List,,,
+Email,,Forecast Output - Estimated Destination,Text,,,
+,,,,,,
+extras if applicable,,,,,,
+# of Units,,,,,,
+# of Bedrooms,,,,,,
+# of Stories,,,,,,
