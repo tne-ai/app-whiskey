@@ -1,1 +1,3 @@
-Studio repo for whiskey application
+# Whiskey Application
+
+Issues are going on
