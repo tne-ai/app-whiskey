@@ -44,6 +44,6 @@
 		"@streamparser/json": "^0.0.22",
 		"flowbite-svelte": "^0.47.4",
     "graphai": "^0.6.14",
-		"pdfjs-dist": "^2.16.105"
+		"pdfjs-dist": "^4.2.67"
 	}
 }
