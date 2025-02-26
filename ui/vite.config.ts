@@ -8,6 +8,6 @@ export default defineConfig({
 		exclude: ['fix-tprotocol-service-worker']
 	},
 	preview: {
-		allowedHosts: ['pulse.dev.tne.ai', 'pulse.tne.ai']
+		allowedHosts: ['whiskey.dev.tne.ai', 'whiskey.tne.ai']
 	}
 });
