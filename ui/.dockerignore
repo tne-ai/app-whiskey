@@ -1,0 +1,10 @@
+*
+!src
+!static
+!package.json
+!packages
+!vite.config.ts
+!svelte.config.js
+!tsconfig.json
+!.env
+!.svelte-kit
