@@ -7,6 +7,413 @@ export const ReportGenerator = {
     fileContent: {
       value: ""
     },
+    extractionSchema: {
+      value: {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "extraction_schema",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "source_document": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "invoice",
+                      "csv",
+                      "schedule",
+                      "delivery_note"
+                    ]
+                  },
+                  "provider": {"type": "string"},
+                  "document_id": {"type": "string"},
+                  "date": {
+                    "type": "string"
+                  },
+                  "extraction_confidence": {
+                    "type": "object",
+                    "properties": {
+                      "score": {"type": "number"},
+                      "notes": {"type": "string"}
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "score",
+                      "notes"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "type",
+                  "provider",
+                  "document_id",
+                  "date",
+                  "extraction_confidence"
+                ]
+              },
+              "ordered_items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "item_name": {"type": "string"},
+                    "material_classification": {
+                      "type": "object",
+                      "properties": {
+                        "material": { "type": "string" },
+                        "sub_material": { "type": "string" },
+                        "confidence": {
+                          "type": "object",
+                          "properties": {
+                            "score": {"type": "number"},
+                            "reasoning": {"type": "string"},
+                            "assumptions": {
+                              "type": "array",
+                              "items": {"type": "string"}
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "score",
+                            "reasoning",
+                            "assumptions"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "material",
+                        "sub_material",
+                        "confidence"
+                      ]
+                    },
+                    "dimensions": {
+                      "type": "object",
+                      "properties": {
+                        "length_mm": {"type": "number"},
+                        "width_mm": {"type": "number"},
+                        "height_mm": {"type": "number"},
+                        "diameter_mm": {"type": "number"},
+                        "raw_dimension_text": {"type": "string"},
+                        "gauge": {"type": "string"},
+                        "thread_specification": {"type": "string"},
+                        "confidence": {
+                          "type": "object",
+                          "properties": {
+                            "score": {"type": "number"},
+                            "assumptions": {
+                              "type": "array",
+                              "items": {"type": "string"}
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "score",
+                            "assumptions"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "length_mm",
+                        "width_mm",
+                        "height_mm",
+                        "diameter_mm",
+                        "raw_dimension_text",
+                        "gauge",
+                        "thread_specification",
+                        "confidence"
+                      ]
+                    },
+                    "quantity_specification": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "volume",
+                            "count",
+                            "mass",
+                            "dimensional"
+                          ]
+                        },
+                        "volume": {
+                          "type": "object",
+                          "properties": {
+                            "value": {"type": "number"},
+                            "unit": {"type": "string"},
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "value",
+                            "unit",
+                          ]
+                        },
+                        "count": {
+                          "type": "object",
+                          "properties": {
+                            "value": {"type": "number"},
+                            "unit_type": {"type": "string"},
+                            "pieces_per_pack": {"type": "number"}
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "value",
+                            "unit_type",
+                            "pieces_per_pack"
+                          ]
+                        },
+                        "mass": {
+                          "type": "object",
+                          "properties": {
+                            "value": {"type": "number"},
+                            "unit": {"type": "string"},
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "value",
+                            "unit",
+                          ]
+                        },
+                        "piece_mass": {
+                          "type": "object",
+                          "properties": {
+                            "value": {"type": "number"},
+                            "unit": {"type": "string"}
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "value",
+                            "unit"
+                          ]
+                        },
+                        "confidence": {
+                          "type": "object",
+                          "properties": {
+                            "score": {"type": "number"},
+                            "assumptions": {
+                              "type": "array",
+                              "items": {"type": "string"}
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "score",
+                            "assumptions"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "type",
+                        "volume",
+                        "count",
+                        "mass",
+                        "piece_mass",
+                        "confidence"
+                      ]
+                    },
+                    "mass_calculation": {
+                      "type": "object",
+                      "properties": {
+                        "method": {
+                          "type": "string",
+                          "enum": [
+                            "direct_mass_measurement",
+                            "count_and_piece_mass",
+                            "volume_and_density",
+                            "dimensional_and_density"
+                          ]
+                        },
+                        "total_material_weight": {"type": "number"},
+                        "confidence": {
+                          "type": "object",
+                          "properties": {
+                            "score": {"type": "number"},
+                            "reasoning": {"type": "string"},
+                            "assumptions": {
+                              "type": "array",
+                              "items": {"type": "string"}
+                            },
+                            "conversion_steps": {
+                              "type": "array",
+                              "items": {"type": "string"}
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "score",
+                            "reasoning",
+                            "assumptions",
+                            "conversion_steps"
+                          ]
+                        },
+                        "requires_review": {"type": "boolean"}
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "method",
+                        "total_material_weight",
+                        "confidence",
+                        "requires_review"
+                      ]
+                    },
+                    "cubic_m3": {"type": "number"},
+                    "unit_quantities": {"type": "number"},
+                    "unit_measure": {"type": "string"},
+                    "price_per_unit": {"type": "number"},
+                    "purchase_cost_total": {"type": "number"},
+                    "delivery_date": {
+                      "type": "string"
+                    },
+                    "trade_provider": {"type": "string"},
+                    "excess_percentage": {"type": "number"},
+                    "density": {"type": "number"},
+                    "weight_per_unit": {"type": "number"},
+                    "waste_weight": {"type": "number"},
+                    "waste_value": {"type": "number"},
+                    "waste_management": {
+                      "type": "object",
+                      "properties": {
+                        "includes": {"type": "boolean"},
+                        "excludes": {"type": "boolean"},
+                        "waste_plan": {"type": "boolean"},
+                        "landfill": {"type": "boolean"},
+                        "cleanfill": {"type": "boolean"},
+                        "recycle": {"type": "boolean"},
+                        "reuse": {"type": "boolean"},
+                        "estimated_destination": {"type": "string"}
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "includes",
+                        "excludes",
+                        "waste_plan",
+                        "landfill",
+                        "cleanfill",
+                        "recycle",
+                        "reuse",
+                        "estimated_destination"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "item_name",
+                    "material_classification",
+                    "dimensions",
+                    "quantity_specification",
+                    "mass_calculation",
+                    "cubic_m3",
+                    "unit_quantities",
+                    "unit_measure",
+                    "price_per_unit",
+                    "purchase_cost_total",
+                    "delivery_date",
+                    "trade_provider",
+                    "excess_percentage",
+                    "density",
+                    "weight_per_unit",
+                    "waste_weight",
+                    "waste_value",
+                    "waste_management"
+                  ]
+                }
+              },
+              "logistics": {
+                "type": "object",
+                "properties": {
+                  "vehicle_registration": {"type": "string"},
+                  "delivery_address": {"type": "string"},
+                  "carrier": {"type": "string"},
+                  "vehicle_type": {"type": "string"},
+                  "distance_km": {"type": "number"},
+                  "vehicle_load_type": {
+                    "type": "string",
+                    "enum": [
+                      "full_load",
+                      "partial_load",
+                      "unknown"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "vehicle_registration",
+                  "delivery_address",
+                  "carrier",
+                  "vehicle_type",
+                  "distance_km",
+                  "vehicle_load_type"
+                ]
+              },
+              "project_context": {
+                "type": "object",
+                "properties": {
+                  "project_id": {"type": "number"},
+                  "stage": {"type": "string"},
+                  "site_location": {"type": "string"}
+                },
+                "additionalProperties": false,
+                "required": [
+                  "project_id",
+                  "stage",
+                  "site_location"
+                ]
+              },
+              "extraction_metadata": {
+                "type": "object",
+                "properties": {
+                  "processing_timestamp": {
+                    "type": "string"
+                  },
+                  "extraction_version": {"type": "string"},
+                  "raw_text_available": {"type": "boolean"},
+                  "source_file_type": {"type": "string"},
+                  "source_file_hash": {"type": "string"},
+                  "overall_confidence": {
+                    "type": "object",
+                    "properties": {
+                      "score": {"type": "number"},
+                      "review_flags": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "score",
+                      "review_flags"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "processing_timestamp",
+                  "extraction_version",
+                  "raw_text_available",
+                  "source_file_type",
+                  "source_file_hash",
+                  "overall_confidence"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "source_document",
+              "ordered_items",
+              "logistics",
+              "project_context",
+              "extraction_metadata"
+            ]
+          },
+          "strict": true
+        }
+      }
+    },
     extractionPrompt: {
       value: "You are an expert construction materials analyst. Your task is to analyze construction material orders and extract standardized information about material type and quantity. The final goal is to accurately determine the type and mass of the material contained in each ordered item. If only a volume is calculable from the given data, the mass will be calculated in a later process.\n" +
           "\n" +
@@ -74,197 +481,11 @@ export const ReportGenerator = {
           "Missing required fields: -0.3\n" +
           "Flag for review if below 0.6\n" +
           "Output each line item as a JSON object matching the schema, including these confidence scores for material classification and mass calculation. Track your path to mass calculation using the mass_calculation_method field and include your reasoning in calculation_notes.\n" +
+          "For each quantity that `requires_review`, you must copy the reasoning into `review_flags` in the `extraction_metadata`.\n" +
           "\n" +
           "Materials and Submaterials:\n" +
           "\n" +
-          "It's important to identify the material of a line item using only the pairings of material and sub-material shown in the schema.\n" +
-          "\n" +
-          "Schema:\n" +
-          "{\n" +
-          "  \"source_document\": {\n" +
-          "    \"type\": {\n" +
-          "      \"enum\": [\"invoice\", \"csv\", \"schedule\", \"delivery_note\"]\n" +
-          "    },\n" +
-          "    \"provider\": \"string\",\n" +
-          "    \"document_id\": \"string\",\n" +
-          "    \"date\": \"date\",\n" +
-          "    \"extraction_confidence\": {\n" +
-          "      \"score\": \"number\",\n" +
-          "      \"notes\": \"string\"\n" +
-          "    }\n" +
-          "  },\n" +
-          "  \"ordered_items\": [{\n" +
-          "    \"item_name\": \"string\",\n" +
-          "    \"material_classification\": {\n" +
-          "      \"material\": {\n" +
-          "        \"type\": \"string\",\n" +
-          "        \"enum\": [\n" +
-          "          \"Timber\",\n" +
-          "          \"Plastics\",\n" +
-          "          \"Plasterboard\",\n" +
-          "          \"Other Waste\",\n" +
-          "          \"Metals\",\n" +
-          "          \"Glass\",\n" +
-          "          \"Carpet\",\n" +
-          "          \"Concrete or Masonry\"\n" +
-          "        ]\n" +
-          "      },\n" +
-          "      \"sub_material\": {\n" +
-          "        \"type\": \"string\",\n" +
-          "        \"enum\": [\n" +
-          "          \"MDF\",\n" +
-          "          \"Timber\",\n" +
-          "          \"Treated\",\n" +
-          "          \"Untreated\",\n" +
-          "          \"Weatherboard\",\n" +
-          "          \"Polystyrene\",\n" +
-          "          \"Plastic - Hard\",\n" +
-          "          \"Shrink Wrap (Pallets)\",\n" +
-          "          \"Building Wrap\",\n" +
-          "          \"HDPE\",\n" +
-          "          \"Polyethene\",\n" +
-          "          \"LDPE\",\n" +
-          "          \"Plasterboard\",\n" +
-          "          \"Linoleum\",\n" +
-          "          \"Cardboard\",\n" +
-          "          \"Non-Ferrous\",\n" +
-          "          \"Steel\",\n" +
-          "          \"Metals (mixed) e.g. metal joinery, fittings\",\n" +
-          "          \"Copper (pure)\",\n" +
-          "          \"Cable (copper)\",\n" +
-          "          \"Brass\",\n" +
-          "          \"Aluminium\",\n" +
-          "          \"Glass\",\n" +
-          "          \"Broadloom Carpet\",\n" +
-          "          \"Carpet Tiles\",\n" +
-          "          \"Underlay\",\n" +
-          "          \"Tiles\",\n" +
-          "          \"Fibre Cement (Cladding)\",\n" +
-          "          \"Concrete-based\",\n" +
-          "          \"Clay-based\",\n" +
-          "          \"Ceramic\",\n" +
-          "          \"Rubble\",\n" +
-          "          \"Concrete\"\n" +
-          "        ]\n" +
-          "      },\n" +
-          "      \"confidence\": {\n" +
-          "        \"score\": \"number\",\n" +
-          "        \"reasoning\": \"string\",\n" +
-          "        \"assumptions\": [\"string\"]\n" +
-          "      }\n" +
-          "    },\n" +
-          "    \"dimensions\": {\n" +
-          "      \"length_mm\": \"number\",\n" +
-          "      \"width_mm\": \"number\",\n" +
-          "      \"height_mm\": \"number\",\n" +
-          "      \"diameter_mm\": \"number\",\n" +
-          "      \"is_linear\": \"boolean\",\n" +
-          "      \"raw_dimension_text\": \"string\",\n" +
-          "      \"gauge\": \"string\",\n" +
-          "      \"thread_specification\": \"string\",\n" +
-          "      \"confidence\": {\n" +
-          "        \"score\": \"number\",\n" +
-          "        \"assumptions\": [\"string\"]\n" +
-          "      }\n" +
-          "    },\n" +
-          "    \"quantity_specification\": {\n" +
-          "      \"type\": {\n" +
-          "        \"enum\": [\"volume\", \"count\", \"mass\", \"dimensional\"]\n" +
-          "      },\n" +
-          "      \"volume\": {\n" +
-          "        \"value\": \"number\",\n" +
-          "        \"unit\": \"string\",\n" +
-          "        \"calculation_method\": \"string\"\n" +
-          "      },\n" +
-          "      \"count\": {\n" +
-          "        \"value\": \"number\",\n" +
-          "        \"unit_type\": \"string\",\n" +
-          "        \"pieces_per_pack\": \"number\"\n" +
-          "      },\n" +
-          "      \"mass\": {\n" +
-          "        \"value\": \"number\",\n" +
-          "        \"unit\": \"string\",\n" +
-          "        \"is_package_mass\": \"boolean\"\n" +
-          "      },\n" +
-          "      \"piece_mass\": {\n" +
-          "        \"value\": \"number\",\n" +
-          "        \"unit\": \"string\"\n" +
-          "      },\n" +
-          "      \"confidence\": {\n" +
-          "        \"score\": \"number\",\n" +
-          "        \"assumptions\": [\"string\"]\n" +
-          "      }\n" +
-          "    },\n" +
-          "    \"mass_calculation\": {\n" +
-          "      \"method\": {\n" +
-          "        \"enum\": [\n" +
-          "          \"direct_mass_measurement\",\n" +
-          "          \"count_and_piece_mass\",\n" +
-          "          \"volume_and_density\",\n" +
-          "          \"dimensional_and_density\"\n" +
-          "        ]\n" +
-          "      },\n" +
-          "      \"total_material_weight\": \"number\",\n" +
-          "      \"confidence\": {\n" +
-          "        \"score\": \"number\",\n" +
-          "        \"reasoning\": \"string\",\n" +
-          "        \"assumptions\": [\"string\"],\n" +
-          "        \"conversion_steps\": [\"string\"]\n" +
-          "      },\n" +
-          "      \"requires_review\": \"boolean\"\n" +
-          "    },\n" +
-          "    \"cubic_m3\": \"number\",\n" +
-          "    \"unit_quantities\": \"number\",\n" +
-          "    \"unit_measure\": \"string\",\n" +
-          "    \"price_per_unit\": \"number\",\n" +
-          "    \"purchase_cost_total\": \"number\",\n" +
-          "    \"delivery_date\": \"date\",\n" +
-          "    \"trade_provider\": \"string\",\n" +
-          "    \"excess_percentage\": \"number\",\n" +
-          "    \"density\": \"number\",\n" +
-          "    \"weight_per_unit\": \"number\",\n" +
-          "    \"waste_weight\": \"number\",\n" +
-          "    \"waste_value\": \"number\",\n" +
-          "    \"waste_management\": {\n" +
-          "      \"includes\": \"boolean\",\n" +
-          "      \"excludes\": \"boolean\",\n" +
-          "      \"waste_plan\": \"boolean\",\n" +
-          "      \"landfill\": \"boolean\",\n" +
-          "      \"cleanfill\": \"boolean\",\n" +
-          "      \"recycle\": \"boolean\",\n" +
-          "      \"reuse\": \"boolean\",\n" +
-          "      \"estimated_destination\": \"string\"\n" +
-          "    }\n" +
-          "  }],\n" +
-          "  \"logistics\": {\n" +
-          "    \"vehicle_registration\": \"string\",\n" +
-          "    \"delivery_address\": \"string\",\n" +
-          "    \"carrier\": \"string\",\n" +
-          "    \"vehicle_type\": \"string\",\n" +
-          "    \"distance_km\": \"number\",\n" +
-          "    \"vehicle_load_type\": {\n" +
-          "      \"enum\": [\"full_load\", \"partial_load\", \"unknown\"]\n" +
-          "    }\n" +
-          "  },\n" +
-          "  \"project_context\": {\n" +
-          "    \"project_id\": \"number\",\n" +
-          "    \"stage\": \"string\",\n" +
-          "    \"site_location\": \"string\"\n" +
-          "  },\n" +
-          "  \"extraction_metadata\": {\n" +
-          "    \"processing_timestamp\": \"date\",\n" +
-          "    \"extraction_version\": \"string\",\n" +
-          "    \"raw_text_available\": \"boolean\",\n" +
-          "    \"source_file_type\": \"string\",\n" +
-          "    \"source_file_hash\": \"string\",\n" +
-          "    \"overall_confidence\": {\n" +
-          "      \"score\": \"number\",\n" +
-          "      \"review_flags\": [\"string\"]\n" +
-          "    }\n" +
-          "  }\n" +
-          "}\n" +
-          "\n" +
-          "Very important: Respond with ONLY JSON conforming to the schema. Do not include any backticks, code fences, comments, etc. Only respond with conforming JSON."
+          "It's important to identify the material of a line item using only the pairings of material and sub-material shown in the schema.\n"
     },
     runImageExtraction: {
       agent: "compareAgent",
@@ -314,7 +535,8 @@ export const ReportGenerator = {
       agent: "openAIAgent",
       inputs: {
         prompt: ":extractImage.text",
-        system: ":extractionPrompt"
+        system: ":extractionPrompt",
+        response_format: ":extractionSchema"
       },
       params: {
         model: "gpt-4o-mini"
@@ -326,7 +548,8 @@ export const ReportGenerator = {
       unless: ":runImageExtraction",
       inputs: {
         prompt: ":fileContent",
-        system: ":extractionPrompt"
+        system: ":extractionPrompt",
+        response_format: ":extractionSchema"
       },
       params: {
         model: "gpt-4o-mini"
