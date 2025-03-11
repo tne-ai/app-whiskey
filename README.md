@@ -37,16 +37,19 @@ In order to configure with the system it needs to have MODEL\_:
 
 ### INSTRUCTIONS FOR WHISKEY DEMO USING OWUI PIPE FUNCTION
 
+These are instructions on how to get the custom OWUI pipe setup (the throw away code built for whiskey demo).
+NOTE: BACKEND FUNCTIONALITY ONLY WORKS IF YOU RUN IT THROUGH THIS SVELTE FRONTEND - doesn't work running it through OWUI frontend.
 1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import Functions
-2. Import the function at `open-webui/function-wastex_extraction...`
+2. Import the function at `app-whiskey/WebUI/function-wastex_extraction-export-1741657569760.json`
 3. Click on the newly imported function, go to line 388, and fill in google api
    key (using the env wasn't working for some reason and this is throw away code
    anyways... :)
 4. Click on Workspace -> Models -> Import Models
-5. Import the model at `open-webui/wastex-document---json...`
+5. Import the model at `app-whiskey/WebUI/wastex-document---json-1741657611445.json`
 6. Ensure that the newly imported `wastex_extraction` model is chosen under
    'Base Model'
-7. You can test using the files in `whiskey_demo_docs`
+
+The four documents being used for the demo can be found at `app-whiskey/Data/test.v1/`. They include a clean csv, messy csv, pdf, and image.
 
 ### Restore the model into a fresh open-webui instance
 
