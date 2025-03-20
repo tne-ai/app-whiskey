@@ -3,9 +3,9 @@
 This is for the v0 demonstration and has the latest data files. The old Agents
 from V1 are kept here for reference.
 
-The current issues are in https://github.com/tne-ai/app-whiskey
+The current issues are in [app-whiskey](https://github.com/tne-ai/app-whiskey)
 
-# TNE.ai V2 Frontend Installation first
+## TNE.ai V2 Frontend Installation first
 
 This is the NaturalUI Template for V2 of the TNE.ai system. It uses Whiskey as
 the demo set, but you can easily change text boxes and so forth. You connect
@@ -16,20 +16,15 @@ instance
 
 Make sure that you have `brew install node`
 
-```sh
-make install
-# both work
-npm install
-```
+`sh make install # both work npm install`
 
 ### App configuration
 
 In order to configure with the system it needs to have MODEL\_:
 
 - Copy .env.example to .env
-- If you use 1Password, then you should make sure to create
-  WEBUI_SECRET_KEY in 1Password and use the 1Password integration to get it out
-  of the database
+- If you use 1Password, then you should make sure to create WEBUI_SECRET_KEY in
+  1Password and use the 1Password integration to get it out of the database
 - Alternatively Add your local open-webui API key to .env or you can set this
   dynamically so which `make run.docker`, `make run.dev`, and `make run` handle
   `MODEL_API_URL=http://localhost:3000/api/chat/completions` and changes the port
@@ -37,19 +32,26 @@ In order to configure with the system it needs to have MODEL\_:
 
 ### INSTRUCTIONS FOR WHISKEY DEMO USING OWUI PIPE FUNCTION
 
-These are instructions on how to get the custom OWUI pipe setup (the throw away code built for whiskey demo).
-NOTE: BACKEND FUNCTIONALITY ONLY WORKS IF YOU RUN IT THROUGH THIS SVELTE FRONTEND - doesn't work running it through OWUI frontend.
-1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import Functions
-2. Import the function at `app-whiskey/WebUI/function-wastex_extraction-export-1741657569760.json`
+These are instructions on how to get the custom OWUI pipe setup (the throw away
+code built for whiskey demo). NOTE: BACKEND FUNCTIONALITY ONLY WORKS IF YOU RUN
+IT THROUGH THIS SVELTE FRONTEND - doesn't work running it through OWUI frontend.
+
+1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import
+   Functions
+2. Import the function at
+   `app-whiskey/WebUI/function-wastex_extraction-export-1741657569760.json`
 3. Click on the newly imported function, go to line 388, and fill in google api
    key (using the env wasn't working for some reason and this is throw away code
    anyways... :)
 4. Click on Workspace -> Models -> Import Models
-5. Import the model at `app-whiskey/WebUI/wastex-document---json-1741657611445.json`
+5. Import the model at
+   `app-whiskey/WebUI/wastex-document---json-1741657611445.json`
 6. Ensure that the newly imported `wastex_extraction` model is chosen under
    'Base Model'
 
-The four documents being used for the demo can be found at `app-whiskey/Data/test.v1/`. They include a clean csv, messy csv, pdf, and image.
+The four documents being used for the demo can be found at
+`app-whiskey/Data/test.v1/`. They include a clean csv, messy csv, pdf, and
+image.
 
 ### Restore the model into a fresh open-webui instance
 
@@ -94,11 +96,9 @@ Now you need a MODEL_API_KEY from your OpenWebui user:
 
 In order to run this, you an use the standard installer `make naturalui`
 
-```sh
-npm run dev -- --open # to run against dockerized open-webui make
+````sh npm run dev -- --open # to run against dockerized open-webui make
 run.docker # to run against vanilla open-webui make run # to run against our
-development system make run.dev
-```
+development system make run.dev ```
 
 ## Demonstration Script
 
@@ -121,3 +121,4 @@ app also displays raw and parsed variations of the model response payload.
 ## Potential issues
 
 If you get a 404
+````
