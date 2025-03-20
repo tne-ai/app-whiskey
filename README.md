@@ -16,35 +16,46 @@ The current repositories are:
 
 Here is the demonstration script:
 
-1. login to [Open Web](https://open-webui.dev.tne.ai) with `admin@tne.ai` and the
-   password is in describe
+1. login to [Open Web](https://open-webui.dev.tne.ai) with `admin@tne.ai` and
+   the password is in describe
 1. Make sure that you can run Wastex -> JSON Documents from Workspace at the
    upper right. This confirms that the model is working. You will need access to
-   Claude/Sonnet-3 for this to work via. These are the sanity checks that the
-1.
+   Claude/Sonnet-3 for this to work via. These are the sanity checks that the 1.
+
+## Current Status of the Cloud Demo and Local Demo
+
+Here is what is working now
+
+1. Image recognition works
+1. Clean CSV times out
+1. Dirty CSV times out
+1. PDF Time out
+
+We will assess the local demo when it is working
+
+1. Image recognition works
+1. Clean CSV
+1. Dirty CSV
+1. PDT
 
 ## Installation and running locally
 
-This is the NaturalUI Template for V2 of the TNE.ai system. It uses Whiskey as
-the demo set, but you can easily change text boxes and so forth. You connect
-this to the running Development V2 system by hitting the right port of a running OpenWebUI
-instance. This assumes you have Development V2 installed using the Eli demo script and the
-monorepo at ./src. See
-[README.md](https://github.com/tne-ai/src/blob/main/README.md)
+Here are the installation instructions
 
 ```sh
+# bootstrap the Studio V2
+mkdir -p ~/ws/git
+git clone git@github.com:tne-ai/src
+git submodule update --init --remote --recursive bin lib
+
 # start the backend
 cd ~/ws/git/src
 make ai.dev
 open localhost:5174
-
-# start the web frontend
-cd ~/ws/git/src/app/tne-app-content/whiskey-app
-brew install node
-npm install
-npm run dev
-# you need to configure your supabase database
-open localhost:5173
+# start the web frontend cd ~/ws/git/src/app/tne-app-content/whiskey-app brew
+install node npm install npm run dev
+# you need to configure your supabase
+database open localhost:5173
 ```
 
 ## Local Common Problems
@@ -70,8 +81,8 @@ Here is a list of common Problems
 
 Note that you can use the optional Google Drive interface but it is not
 recommended you should just import from your desktop. But if you want this,
-Click on the newly imported function, go to line 388, and fill in google api
-key (using the env wasn't working for some reason and this is throw away code
+Click on the newly imported function, go to line 388, and fill in google api key
+(using the env wasn't working for some reason and this is throw away code
 anyways... :)
 
 Note Model importing does not currently work as of March 17, so you need to hand
@@ -79,9 +90,8 @@ install the model
 
 ## Where is the Test data?
 
-The four documents being used for the demo can be found at
-`app-whiskey/Data. They include a clean csv, messy csv, pdf, and
-image.
+The four documents being used for the demo can be found at `app-whiskey/Data.
+They include a clean csv, messy csv, pdf, and image.
 
 ## Creating the Model in an existing OpenWebui system
 
@@ -97,3 +107,7 @@ image.
 1. This is lots of context so make sure in the Advanced Parameters to set
    Context Length to 200K or 204800, Max Tokens to Predict to 8192 and Tokens to
    Keep on Context refresh to 16384
+
+```
+
+```
