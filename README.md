@@ -1,74 +1,86 @@
-# Whiskey Application
+# Whiskey Application V1 for Local and Cloud Installation
 
-This is for the v0 demonstration and has the latest data files. The old Agents
-from V1 are kept here for reference.
+This is for the v1 demonstration and has the latest data files. This is the old
+v0 version this does not document that
 
-The current issues are in [app-whiskey](https://github.com/tne-ai/app-whiskey)
+The current repositories are:
 
-## TNE.ai V2 Frontend Installation first
+1. [app-whiskey](https://github.com/tne-ai/app-whiskey). This has the V1 data
+   and demonstration backing files. It also has the prompt information and
+   things that needed to be loaded into OpenWebUI.
+1. [whiskey-app](https://github.com/tne-app-content/tree/main/blob/whiskey-app).
+   This is the front-end svelte user interface. It has the user interface
+   scaffolding and let's you upload four different document types
+
+## The Cloud demonstration
+
+Here is the demonstration script:
+
+1. login to [Open Web](https://open-webui.dev.tne.ai) with `admin@tne.ai` and the
+   password is in describe
+1. Make sure that you can run Wastex -> JSON Documents from Workspace at the
+   upper right. This confirms that the model is working. You will need access to
+   Claude/Sonnet-3 for this to work via. These are the sanity checks that the
+1.
+
+## Installation and running locally
 
 This is the NaturalUI Template for V2 of the TNE.ai system. It uses Whiskey as
 the demo set, but you can easily change text boxes and so forth. You connect
 this to the running V2 system by hitting the right port of a running OpenWebUI
-instance
+instance. This assumes you have V2 installed using the Eli demo script and the
+monorepo at ./src. See
+[README.md](https://github.com/tne-ai/src/blob/main/README.md)
 
-## Installation
+```sh
+# start the backend
+cd ~/ws/git/src
+make ai.dev
+open localhost:5174
 
-Make sure that you have `brew install node`
+# start the web frontend
+cd ~/ws/git/src/app/tne-app-content/whiskey-app
+brew install node
+npm install
+npm run dev
+# you need to configure your supabase database
+open localhost:5173
+```
 
-`sh make install # both work npm install`
+## Local Common Problems
 
-### App configuration
+Here is a list of common Problems
 
-In order to configure with the system it needs to have MODEL\_:
+1. The Web frontend doesn't work? Make sure you have done a git pull in
+   tne-app-content
+1. The Backend doesn't work? Go to the local installation and you should see the
+   Workspace > Model > Wastex Document -> JSON, start a new chat and just say
+   hello world, it should return a JSON object. If it says "model not found", make
+   sure that Claude Sonnet 3.5 is enabled. Go to New Chat and look for that name.
 
-- Copy .env.example to .env
-- If you use 1Password, then you should make sure to create WEBUI_SECRET_KEY in
-  1Password and use the 1Password integration to get it out of the database
-- Alternatively Add your local open-webui API key to .env or you can set this
-  dynamically so which `make run.docker`, `make run.dev`, and `make run` handle
-  `MODEL_API_URL=http://localhost:3000/api/chat/completions` and changes the port
-  numbers
-
-### INSTRUCTIONS FOR WHISKEY DEMO USING OWUI PIPE FUNCTION
-
-These are instructions on how to get the custom OWUI pipe setup (the throw away
-code built for whiskey demo). NOTE: BACKEND FUNCTIONALITY ONLY WORKS IF YOU RUN
-IT THROUGH THIS SVELTE FRONTEND - doesn't work running it through OWUI frontend.
+## Installation of Custome Function into OPen WebUI
 
 1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import
    Functions
 2. Import the function at
    `app-whiskey/WebUI/function-wastex_extraction-export-1741657569760.json`
-3. Click on the newly imported function, go to line 388, and fill in google api
-   key (using the env wasn't working for some reason and this is throw away code
-   anyways... :)
-4. Click on Workspace -> Models -> Import Models
-5. Import the model at
-   `app-whiskey/WebUI/wastex-document---json-1741657611445.json`
-6. Ensure that the newly imported `wastex_extraction` model is chosen under
-   'Base Model'
+
+Note that you can use the optional Google Drive interface but it is not
+recommended you should just import from your desktop. But if you want this,
+Click on the newly imported function, go to line 388, and fill in google api
+key (using the env wasn't working for some reason and this is throw away code
+anyways... :)
+
+Note Model importing does not currently work as of March 17, so you need to hand
+install the model
+
+## Where is the Test data?
 
 The four documents being used for the demo can be found at
-`app-whiskey/Data/test.v1/`. They include a clean csv, messy csv, pdf, and
+`app-whiskey/Data. They include a clean csv, messy csv, pdf, and
 image.
 
-### Restore the model into a fresh open-webui instance
-
-The app calls open webui locally and has a specific model name. It post against
-open-webui at 3000 if you are using docker, for the development version it needs
-to post again 5174.
-
-- Restore demo_docs/models-export-1740216815231.json into an open-webui
-  installation. This should be in Settings > Admin Settings > Database > Import
-  Config from JSON File. Alternatively this is already in the Google Drive in
-  ./app/open-webui-data/demo builds, so you can copy that webui.db to get it.
-- The app calls a model in the Open-Webui database so make sure there is a model
-  called `wastex-document---json`.
-
-### Creating the Model in an existing OpenWebui system
-
-Instead of a complete restore, you can just add the model needed as follows:
+## Creating the Model in an existing OpenWebui system
 
 1. In OpenWebui, on the left side, click on Workspace > Model and choose + to
    add a new model
@@ -82,43 +94,3 @@ Instead of a complete restore, you can just add the model needed as follows:
 1. This is lots of context so make sure in the Advanced Parameters to set
    Context Length to 200K or 204800, Max Tokens to Predict to 8192 and Tokens to
    Keep on Context refresh to 16384
-
-## Get an API Key from OpenWebui user
-
-Now you need a MODEL_API_KEY from your OpenWebui user:
-
-1. Login to OpenWebui
-1. Go to Settings > Account > API Keys and create one
-1. Put this into 1Password. If you are using the Demo OpenUI this is already set
-   in 1Password in Dev Ops to use in `OPen WebUI Local API Key`
-
-## Running
-
-In order to run this, you an use the standard installer `make naturalui`
-
-````sh npm run dev -- --open # to run against dockerized open-webui make
-run.docker # to run against vanilla open-webui make run # to run against our
-development system make run.dev ```
-
-## Demonstration Script
-
-The user selects a source file from the client using a drag and drop/file picker
-interface.
-
-Use the file `test.v1/delivery document sample.csv` is a sample delivery
-document for extraction.
-
-A preview of the file content is shown in the file picker.
-
-When the user clicks "Upload File", the app sends the file content to a model.
-The model analyzes the passed content (including OCR if necessary) and extracts
-data from it. The model returns a JSON object containing metadata about the
-document and its ingestion, data about the document, and data about the
-materials described in the document. The app parses the returned JSON object and
-displays it in two tables, one for the document and one for the materials. The
-app also displays raw and parsed variations of the model response payload.
-
-## Potential issues
-
-If you get a 404
-````
