@@ -27,8 +27,8 @@ Here is the demonstration script:
 
 This is the NaturalUI Template for V2 of the TNE.ai system. It uses Whiskey as
 the demo set, but you can easily change text boxes and so forth. You connect
-this to the running V2 system by hitting the right port of a running OpenWebUI
-instance. This assumes you have V2 installed using the Eli demo script and the
+this to the running Development V2 system by hitting the right port of a running OpenWebUI
+instance. This assumes you have Development V2 installed using the Eli demo script and the
 monorepo at ./src. See
 [README.md](https://github.com/tne-ai/src/blob/main/README.md)
 
@@ -57,8 +57,11 @@ Here is a list of common Problems
    Workspace > Model > Wastex Document -> JSON, start a new chat and just say
    hello world, it should return a JSON object. If it says "model not found", make
    sure that Claude Sonnet 3.5 is enabled. Go to New Chat and look for that name.
+1. The google key is required and should be the
 
-## Installation of Custome Function into OPen WebUI
+## Building the Cloud
+
+## Installation of Custom Function into OPen WebUI
 
 1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import
    Functions
