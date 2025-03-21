@@ -53,7 +53,7 @@ cd ~/ws/git/src
 make ai.dev
 open localhost:5174
 
-# Configure the database
+# Configure the supabase database
 Add these assignments to your .env file.
 Find the parameters in the vault TNE.ai/shared, item Whiskey database
 

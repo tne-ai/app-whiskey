@@ -1,0 +1,84 @@
+name: Build and deploy Persuasion Web UI
+
+on:
+  push:
+    branches:
+      - main
+      - "releases/**"
+    paths:
+      - "whiskey-app/**"
+      - ".github/workflows/build_whiskey_app.yaml"
+  pull_request:
+    branches:
+      - main
+      - "releases/**"
+    paths:
+      - "whiskey-app/**"
+      - ".github/workflows/build_whiskey_app.yaml"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    environment: development # TODO(rakuto): Determine from branch name
+    env:
+      WORKDIR: whiskey-app
+      SERVICE: app
+      REPOSITORY: whiskey
+      AWS_REGION: us-west-2
+      MODEL_API_URL: http://open-webui/api/chat/completions
+    defaults:
+      run:
+        working-directory: ${{ env.WORKDIR }}
+    steps:
+      - name: Git clone the repository and submodules
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Clone submodules
+        run: |
+          git submodule update --init --recursive --remote
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ vars.AWS_OIDC_FEDERATE_ROLE }}
+          role-session-name: ${{ vars.AWS_OIDC_SESSION_NAME }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Create an .env file
+        run: |
+          echo -n ${{ secrets.WHISKEY_ENV_FILE }} | base64 -d > .env
+      - name: Get short Git hash and timestamp
+        id: vars
+        run: |
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+          echo "::set-output name=timestamp::$(date '+%s')"
+          echo "::set-output name=branch::$(echo ${{ github.ref_name }} | sed -e 's/\//-/g')"
+      - name: Set Docker image tag
+        run: echo "IMAGE_TAG=${{ env.SERVICE }}-${{ steps.vars.outputs.branch }}-${{ steps.vars.outputs.sha_short }}-${{ steps.vars.outputs.timestamp }}" >> $GITHUB_ENV
+      - name: Create .env file
+        working-directory: ${{ env.WORKDIR }}
+        run: |
+          echo "MODEL_API_URL=${{ env.MODEL_API_URL }}" >> .env
+          echo "MODEL_API_KEY=${{ secrets.MODEL_API_KEY }}" >> .env
+          echo "VITE_DB_HOST=aws-0-us-west-1.pooler.supabase.com" >> .env
+          echo "VITE_DB_NAME=postgres" >> .env
+          echo "VITE_DB_USER=${{ secrets.SUPABASE_DB_USER }}"  >> .env
+          echo "VITE_DB_PASSWORD=${{ secrets.SUPABASE_DB_PASSWORD }}"  >> .env
+          echo "VITE_DB_PORT=6543" >> .env
+          echo "VITE_DB_SSL=false" >> .env
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        with:
+          context: ${{ env.WORKDIR }}
+          push: ${{ github.event.pull_request.merged == true || github.event_name == 'push' }}
+          tags: ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.SERVICE }}-latest , ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
+          cache-from: type=registry,ref=${{ env.registry }}/${{ env.REPOSITORY }}:${{ env.SERVICE }}-latest
+          cache-to: type=inline
