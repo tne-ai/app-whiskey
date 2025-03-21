@@ -1,0 +1,34 @@
+density_id,material,sub_material,density_kg_m3
+56,Timber,MDF,700
+57,Timber,Timber,500
+58,Timber,Treated,420
+59,Timber,Untreated,500
+60,Timber,Weatherboard,480
+61,Plastics,Polystyrene,32
+62,Plastics,Plastic - Hard,1380
+63,Plastics,Shrink Wrap (Pallets),920
+64,Plastics,Building Wrap,930
+65,Plastics,HDPE,950
+66,Plastics,Polyethene,918
+67,Plastics,LDPE,925
+68,Plasterboard,Plasterboard,800
+69,Other Waste,Linoleum,550
+70,Other Waste,Cardboard,690
+71,Metals,Non-Ferrous,1750
+72,Metals,Steel,7850
+73,Metals,"Metals (mixed) e.g. metal joinery, fittings",7700
+74,Metals,Copper (pure),8960
+75,Metals,Cable (copper),8960
+76,Metals,Brass,8730
+77,Metals,Aluminium,2700
+78,Glass,Glass,2500
+79,Carpet,Broadloom Carpet,90
+80,Carpet,Carpet Tiles,450
+81,Carpet,Underlay,100
+82,Concrete or Masonry,Tiles,2410
+83,Concrete or Masonry,Fibre Cement (Cladding),1650
+84,Concrete or Masonry,Concrete-based,2400
+85,Concrete or Masonry,Clay-based,1810
+86,Concrete or Masonry,Ceramic,4000
+87,Concrete or Masonry,Rubble,1675
+88,Concrete or Masonry,Concrete,2400
