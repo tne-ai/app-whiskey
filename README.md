@@ -46,15 +46,17 @@ there is no .tool-versions or asdf pinning.
 Make sure that in .FrontEnd, the following are configured
 
 Add these assignments to your .env file. These are in the TNE.ai 1Password
-account in the DevOps vault if you want to set manually:
+account in the DevOps vault if you want to set manually, but make sure these are
+set:
 
 ```sh
-VITE_DB_HOST=
-VITE_DB_NAME=
-VITE_DB_USER=
-VITE_DB_PASSWORD=
-VITE_DB_PORT=
-VITE_DB_SSL=
+printenv VITE_DB_HOST
+printenv VITE_DB_NAME
+printenv VITE_DB_USER
+printenv VITE_DB_PASSWORD
+printenv VITE_DB_PORT
+printenv VITE_DB_SSL
+printenv VITE_PORT
 ```
 
 ## Installation and running locally
@@ -64,11 +66,14 @@ Here are the installation instructions
 ```sh
 # bootstrap the Studio V2
 mkdir -p ~/ws/git
+cd ~/ws/git/src
 git clone git@github.com:tne-ai/src
 git submodule update --init --remote --recursive bin lib
 
-# run the front end and open webui ouir development release
+# come back to this directory
+cd -
 make install
+# starts open-webui backend and the whiskey frontend ui
 make run
 # to open browser windows
 make open
@@ -118,6 +123,14 @@ They include a clean csv, messy csv, pdf, and image.
 
 
 
-```
+## Where are the logs?
 
-```
+The logs are in two places, whereever your webui.db is you will find an
+audit.log and these also go to the standard output where you started open-webui
+and then the browser will show you the errors in the front end in the
+Javascript console.
+
+## SSL Certification Verification problems
+
+We have an [issue](https://github.com/open-webui/open-webui/discussions/3702)
+with native pipx running

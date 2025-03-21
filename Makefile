@@ -2,6 +2,7 @@
 #
 # Release tag
 TAG=0.9
+APP ?= $(shell basename $(CURDIR))
 
 # adjust this for where ./src/lib is and add your own
 INCLUDE_DIRS ?= $(WS_DIR)/git/src/lib
@@ -17,21 +18,31 @@ install:
 .PHONY: run
 run: backend frontend
 
-## kill: kill all processes
-.PHONY: kill
+## whiskey.kill: kill app-whiskey frontend
+.PHONY: whiskey.kill
+whiskey.kill:
+	pfkill -fl app-whiskey
+
+## kill: all ai processes
+.PHONY: whiskey.kill ai.kill
 kill:
 	cd $(WS_DIR)/git/src && make ai.kill
 
 ## open: open the front and backend host windows
 .PHONY: open
 open:
-	open http://localhost:5173
 	open http://localhost:5174
+	open http://localhost:6574
 
 ## frontend: Run the Frontend
 .PHONY: frontend
 frontend:
 	cd FrontEnd && direnv exec . npm run dev &
+
+## frontend.kill: kill the Frontend assumes the app name is the current directory
+.PHONY: frontend.kill
+frontend.kill:
+	pkill -f $(APP)
 
 ## backend: Run OpenWebui
 .PHONY: backend
