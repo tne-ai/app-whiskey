@@ -1,6 +1,13 @@
 import { json, error } from '@sveltejs/kit';
-import { MODEL_API_KEY, MODEL_API_URL } from '$env/static/private';
+import { MODEL_API_KEY, MODEL_API_URL, USE_GRAPHAI, GRAPHAI_ENDPOINT } from '$env/static/private';
 import type { PdfPageImage } from '$lib/utils/pdfUtils';
+
+import { GraphAI } from 'graphai';
+import * as agents from '@graphai/vanilla';
+import { openAIAgent } from '@graphai/openai_agent';
+import { httpAgentFilter } from '@graphai/agent_filters';
+
+import * as graphDataSet from '$lib/agents';
 
 // Constants for timeouts
 const TIMEOUT_DURATION = 600000; // 10 minutes in milliseconds
@@ -11,6 +18,7 @@ interface PdfImagesData {
   originalName: string;
 }
 
+const GRAPH_NAME = 'ReportGenerator';
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const ALLOWED_TYPES = new Set([
   'image/png',
@@ -103,70 +111,129 @@ export async function POST({ request, fetch }) {
     }
 
     // Process with model
-    console.log('5. Preparing to send to model at:', MODEL_API_URL);
-    
     let modelResponse;
     try {
-      // Create AbortController with a longer timeout
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_DURATION);
-      
-      const fetchOptions = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${MODEL_API_KEY}`
-        },
-        body: JSON.stringify({
-          model: 'wastex-document---json',
-          messages: [
-            {
-              role: 'system',
-              content: 'Extract the data from the delivery document and return it in a JSON format as specified above.'
-            },
-            {
-              role: 'user',
-              content: isPdfImages ? 
-                // For PDF images, create an array of image_url objects
-                pdfImagesData?.images.map(img => ({
-                  type: 'image_url',
-                  image_url: {
-                    // url: `data:image/jpeg;base64,${img.imageData}`
-                    url: img.imageData
-                  }
-                })) :
-                // For other files, use regular content
-                modelContent,
-              ...((!isPdfImages && file?.type !== 'text/csv') && {
-                file: {
-                  name: file?.name,
-                  mime_type: file?.type,
-                  data: modelContent
-                }
-              }),
-              ...(isPdfImages && {
-                file: {
-                  name: pdfImagesData?.originalName,
-                  mime_type: 'application/pdf',
-                  data: modelContent
-                }
-              })
-            }
-          ],
-          max_tokens: 2000
-        }),
-        signal: controller.signal,
-        // Add Undici specific timeout configurations
-        headersTimeout: TIMEOUT_DURATION,
-        bodyTimeout: TIMEOUT_DURATION,
-        keepalive: true
-      } as const;
-      
-      modelResponse = await fetch(MODEL_API_URL, fetchOptions);
-      
-      // Clear the timeout if the request completes
-      clearTimeout(timeoutId);
-      
+       if (USE_GRAPHAI) {
+           console.log('5. Preparing to send to model at:', GRAPHAI_ENDPOINT);
+
+           // GraphAI configuration
+           const config = {
+               openAIAgent: {
+                 stream: false
+               },
+           };
+           const serverAgents: string[] = ['openAIAgent'];  // Run LLM nodes on server
+           const agentFilters = [
+               {
+                 name: 'httpAgentFilter',
+                 agent: httpAgentFilter,
+                 filterParams: {
+                    server: {
+                          baseUrl: GRAPHAI_ENDPOINT
+                    }
+                 },
+                 agentIds: serverAgents
+               }
+           ];
+
+           // Load the graph and instantiate GraphAI
+           const graphData = graphDataSet[GRAPH_NAME];
+           const graphai = new GraphAI(
+               graphData,
+               {
+                    ...agents,
+                    openAIAgent,
+               },
+               { agentFilters, config }
+           );
+
+           // Create an array out of the file contents for compatibility with mapAgent
+           let fileType: string | undefined;
+           let fileContent: string[];
+           if (!isPdfImages) {
+             fileContent = [modelContent];
+             fileType = file?.type;
+           } else {
+             fileContent = modelContent.map(image => image.imageData);
+             fileType = "application/pdf";
+           }
+
+           // Inject the file data into the GraphAI workflow
+           graphai.injectValue('fileContent', fileContent);
+           graphai.injectValue('fileType', fileType);
+           modelResponse = await graphai.run();
+
+           // No image input
+           let modelData;
+           if (modelResponse.csvReport) {
+               modelData = modelResponse.csvReport?.text;
+           } else {
+               modelData = modelResponse.imageReport?.text;
+           }
+           // Image input
+           return json({ modelAnalysis: modelData });
+       } else {
+         // Create AbortController with a longer timeout
+         console.log('5. Preparing to send to model at:', MODEL_API_URL);
+         const controller = new AbortController();
+         const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_DURATION);
+
+         const fetchOptions = {
+           method: 'POST',
+           headers: {
+             'Content-Type': 'application/json',
+             'Authorization': `Bearer ${MODEL_API_KEY}`
+           },
+           body: JSON.stringify({
+             model: 'wastex-document---json',
+             messages: [
+               {
+                 role: 'system',
+                 content: 'Extract the data from the delivery document and return it in a JSON format as specified above.'
+               },
+               {
+                 role: 'user',
+                 content: isPdfImages ?
+                     // For PDF images, create an array of image_url objects
+                     pdfImagesData?.images.map(img => ({
+                       type: 'image_url',
+                       image_url: {
+                         // url: `data:image/jpeg;base64,${img.imageData}`
+                         url: img.imageData
+                       }
+                     })) :
+                     // For other files, use regular content
+                     modelContent,
+                 ...((!isPdfImages && file?.type !== 'text/csv') && {
+                   file: {
+                     name: file?.name,
+                     mime_type: file?.type,
+                     data: modelContent
+                   }
+                 }),
+                 ...(isPdfImages && {
+                   file: {
+                     name: pdfImagesData?.originalName,
+                     mime_type: 'application/pdf',
+                     data: modelContent
+                   }
+                 })
+               }
+             ],
+             max_tokens: 2000
+           }),
+           signal: controller.signal,
+           // Add Undici specific timeout configurations
+           headersTimeout: TIMEOUT_DURATION,
+           bodyTimeout: TIMEOUT_DURATION,
+           keepalive: true
+         } as const;
+
+         modelResponse = await fetch(MODEL_API_URL, fetchOptions);
+
+         // Clear the timeout if the request completes
+         clearTimeout(timeoutId);
+       }
       console.log('6. Received model response:', {
         status: modelResponse.status,
         ok: modelResponse.ok

@@ -38,6 +38,11 @@
     "vite": "^6.0.0"
   },
   "dependencies": {
+    "@graphai/agent_filters": "^0.2.1",
+    "@graphai/llm_agents": "^0.2.7",
+    "@graphai/service_agents": "^0.2.0",
+    "@graphai/vanilla": "^0.2.6",
+    "@tne/tne-agent-v2": "file:./packages/tne-tne-agent-v2-0.0.1.j.tgz",
     "chart.js": "^4.4.8",
     "flowbite": "^3.1.2",
     "flowbite-svelte": "^0.48.4",
