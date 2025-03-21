@@ -36,7 +36,7 @@ We will assess the local demo when it is working
 1. Image recognition works
 1. Clean CSV
 1. Dirty CSV
-1. PDT
+1. PDF
 
 ## Installation and running locally
 
@@ -52,10 +52,23 @@ git submodule update --init --remote --recursive bin lib
 cd ~/ws/git/src
 make ai.dev
 open localhost:5174
+
+# Configure the database
+Add these assignments to your .env file.
+Find the parameters in the vault TNE.ai/shared, item Whiskey database
+
+VITE_DB_HOST=
+VITE_DB_NAME=
+VITE_DB_USER=
+VITE_DB_PASSWORD=
+VITE_DB_PORT=
+VITE_DB_SSL=
+
 # start the web frontend cd ~/ws/git/src/app/tne-app-content/whiskey-app brew
 install node npm install npm run dev
-# you need to configure your supabase
-database open localhost:5173
+
+
+open localhost:5173
 ```
 
 ## Local Common Problems
