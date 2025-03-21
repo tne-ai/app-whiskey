@@ -1,16 +1,11 @@
 # Whiskey Application V1 for Local and Cloud Installation
 
-This is for the v1 demonstration and has the latest data files. This is the old
-v0 version this does not document that
+This is for the v1 demonstration and has the latest data files. This does not
+document the old v0 whiskey demonstration of just uploading.
 
-The current repositories are:
-
-1. [app-whiskey](https://github.com/tne-ai/app-whiskey). This has the V1 data
-   and demonstration backing files. It also has the prompt information and
-   things that needed to be loaded into OpenWebUI.
-1. [whiskey-app](https://github.com/tne-app-content/tree/main/blob/whiskey-app).
-   This is the front-end svelte user interface. It has the user interface
-   scaffolding and let's you upload four different document types
+This repositories are [app-whiskey](https://github.com/tne-ai/app-whiskey). This
+has the V1 data and demonstration backing files. It also has the prompt
+information and things that needed to be loaded into OpenWebUI.
 
 ## The Cloud demonstration
 
@@ -38,6 +33,30 @@ We will assess the local demo when it is working
 1. Dirty CSV
 1. PDF
 
+## Configure the Supabase for the FrontEnd needs direnv and 1Password
+
+Make sure that you have asdf and direnv loaed to get the right variables. The
+credentials and configuration are stored in 1Password and are access through
+.envrc. Make sure to brew install direnv to make this work. You can also
+manually source ./FrontEnd/.envrc if you want
+
+The repository currently only requires Node to run and runs on Node 22 or 23, so
+there is no .tool-versions or asdf pinning.
+
+Make sure that in .FrontEnd, the following are configured
+
+Add these assignments to your .env file. These are in the TNE.ai 1Password
+account in the DevOps vault if you want to set manually:
+
+```sh
+VITE_DB_HOST=
+VITE_DB_NAME=
+VITE_DB_USER=
+VITE_DB_PASSWORD=
+VITE_DB_PORT=
+VITE_DB_SSL=
+```
+
 ## Installation and running locally
 
 Here are the installation instructions
@@ -48,27 +67,13 @@ mkdir -p ~/ws/git
 git clone git@github.com:tne-ai/src
 git submodule update --init --remote --recursive bin lib
 
-# start the backend
-cd ~/ws/git/src
-make ai.dev
-open localhost:5174
-
-# Configure the supabase database
-Add these assignments to your .env file.
-Find the parameters in the vault TNE.ai/shared, item Whiskey database
-
-VITE_DB_HOST=
-VITE_DB_NAME=
-VITE_DB_USER=
-VITE_DB_PASSWORD=
-VITE_DB_PORT=
-VITE_DB_SSL=
-
-# start the web frontend cd ~/ws/git/src/app/tne-app-content/whiskey-app brew
-install node npm install npm run dev
-
-
-open localhost:5173
+# run the front end and open webui ouir development release
+make install
+make run
+# to open browser windows
+make open
+# to start all over
+make kill
 ```
 
 ## Local Common Problems

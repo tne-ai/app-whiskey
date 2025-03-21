@@ -8,6 +8,35 @@ INCLUDE_DIRS ?= $(WS_DIR)/git/src/lib
 # adjust for your org
 ORG ?= tne
 
+## install: Install App-Whiskey
+.PHONY: install
+install:
+	cd FrontEnd && npm install
+
+## run: Run app-whiskey (start backend first)
+.PHONY: run
+run: backend frontend
+
+## kill: kill all processes
+.PHONY: kill
+kill:
+	cd $(WS_DIR)/git/src && make ai.kill
+
+## open: open the front and backend host windows
+.PHONY: open
+open:
+	open http://localhost:5173
+	open http://localhost:5174
+
+## frontend: Run the Frontend
+.PHONY: frontend
+frontend:
+	cd FrontEnd && direnv exec . npm run dev &
+
+## backend: Run OpenWebui
+.PHONY: backend
+backend:
+	cd $(WS_DIR)/git/src && make ai.dev
 
 ## Local Make commands
 ## ---
