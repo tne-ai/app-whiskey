@@ -91,19 +91,18 @@ Here is a list of common Problems
 ## Importing the custom function into Open Webui
 
 1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import Functions
-2. Import the function at `open-webui/function-wastex_extraction...`
+2. Import the function at `OpenWebUI/function-wastex_extraction-export-1742661446105.json`
 3. Click on the Valve icon next to the function in Admin Settings > Function >
    wastex_extraction > Gear icon ⚙️. and fill in the google api
    key
-4. Click on the newly imported function, go to line 388, and fill in google api
-   key (using the env wasn't working for some reason and this is throw away code
-   anyways... :).
 5. Click on Workspace -> Models -> Import Models
-6. Import the model at `open-webui/wastex-document---json...` if this import
-   doesn't work, then you can create it manually by goiung to Workspace > Models
-   > - sign
-7. Ensure that the newly imported `wastex_extraction` model is chosen under
+6. Import the model at `OpenWebUI/wastex-document---json-1741657611445.json` if this import
+   doesn't work, then you can create it manually by goiung to Workspace > Models > Plus sign
+7. Choose the newly imported `wastex_extraction` as the base model, system prompt doesnt matter, open advanced params
+8. Set `context_length=200000`, `max_tokens=16384`, `num_keep=16384`
+9. Ensure that the newly imported `wastex_extraction` model is chosen under
    'Base Model'
+10. Go to icon in top right -> Admin Panel -> Settings, Click on Connections in the left sidebar, and ensure the `https://api.openai.com/v1` connection is on and API key is set
 
 ## Building the Cloud
 
