@@ -93,21 +93,32 @@ Here is a list of common Problems
    sure that Claude Sonnet 3.5 is enabled. Go to New Chat and look for that name.
 1. The google key is required and should be the
 
-## Importing the custom function into Open Webui
+## Importing the custom function into Open Webui and set Google Gemini Key
+
+Note that the model import is currently broken, so you have to manually recreate
+the function and the model:
 
 1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import Functions
-2. Import the function at `OpenWebUI/function-wastex_extraction-export-1742661446105.json`
-3. Click on the Valve icon next to the function in Admin Settings > Function >
+1. Import the function at `OpenWebUI/function-wastex_extraction-export-1742661446105.json`
+1. Click on the Valve icon next to the function in Admin Settings > Function >
    wastex_extraction > Gear icon ⚙️. and fill in the google api
    key. MODEL ID IS MEANINGLESS, just leave it blank
-5. Click on Workspace -> Models -> Import Models
-6. Import the model at `OpenWebUI/wastex-document---json-1741657611445.json` if this import
-   doesn't work, then you can create it manually by going to Workspace > Models > Plus sign
-7. Choose the newly imported `wastex_extraction` as the base model, system prompt doesnt matter, open advanced params
-8. Set `context_length=200000`, `max_tokens=16384`, `num_keep=16384`
-9. Ensure that the newly imported `wastex_extraction` model is chosen under
-   'Base Model'
-10. Go to icon in top right -> Admin Panel -> Settings, Click on Connections in the left sidebar, and ensure the `https://api.openai.com/v1` connection is on and API key is set
+
+## Currently Broken: Automatic Model Import
+
+1. Click on Workspace -> Models -> Import Models (This is currently broken)
+   Import the model at `OpenWebUI/wastex-document---json-1741657611445.json`
+
+## Manual import of Function and Model and Enable OpenAI
+
+1. can create it manually by going to
+   Workspace > Models > Plus sign and copy and pasting the model parameters in
+1. Choose the newly imported `wastex_extraction` as the base model, system
+   prompt doesnt matter, open advanced params
+1. Set `context_length=204000`, `max_tokens=16384`, `num_keep=16384`
+1. Go to icon in top right -> Admin Panel -> Settings, Click on Connections in
+   the left sidebar, and ensure the `https://api.openai.com/v1` connection is on
+   and API key is set and test this by running a model "gpt-4o" from the chat.
 
 ## Building the Cloud
 
@@ -120,8 +131,6 @@ install the model
 
 The four documents being used for the demo can be found at `app-whiskey/Data.
 They include a clean csv, messy csv, pdf, and image.
-
-
 
 ## Where are the logs?
 
