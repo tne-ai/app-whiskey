@@ -12,7 +12,7 @@ ORG ?= tne
 ## install: Install App-Whiskey
 .PHONY: install
 install:
-	cd FrontEnd && npm install
+	cd FrontEnd && direnv exec . npm install
 
 ## run: Run app-whiskey (start backend first)
 .PHONY: run
