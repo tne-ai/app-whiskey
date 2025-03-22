@@ -94,10 +94,10 @@ Here is a list of common Problems
 2. Import the function at `OpenWebUI/function-wastex_extraction-export-1742661446105.json`
 3. Click on the Valve icon next to the function in Admin Settings > Function >
    wastex_extraction > Gear icon ⚙️. and fill in the google api
-   key
+   key. MODEL ID IS MEANINGLESS, just leave it blank
 5. Click on Workspace -> Models -> Import Models
 6. Import the model at `OpenWebUI/wastex-document---json-1741657611445.json` if this import
-   doesn't work, then you can create it manually by goiung to Workspace > Models > Plus sign
+   doesn't work, then you can create it manually by going to Workspace > Models > Plus sign
 7. Choose the newly imported `wastex_extraction` as the base model, system prompt doesnt matter, open advanced params
 8. Set `context_length=200000`, `max_tokens=16384`, `num_keep=16384`
 9. Ensure that the newly imported `wastex_extraction` model is chosen under
