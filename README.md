@@ -88,20 +88,26 @@ Here is a list of common Problems
    sure that Claude Sonnet 3.5 is enabled. Go to New Chat and look for that name.
 1. The google key is required and should be the
 
+## Importing the custom function into Open Webui
+
+1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import Functions
+2. Import the function at `open-webui/function-wastex_extraction...`
+3. Click on the Valve icon next to the function in Admin Settings > Function >
+   wastex_extraction > Gear icon ⚙️. and fill in the google api
+   key
+4. Click on the newly imported function, go to line 388, and fill in google api
+   key (using the env wasn't working for some reason and this is throw away code
+   anyways... :).
+5. Click on Workspace -> Models -> Import Models
+6. Import the model at `open-webui/wastex-document---json...` if this import
+   doesn't work, then you can create it manually by goiung to Workspace > Models
+   > - sign
+7. Ensure that the newly imported `wastex_extraction` model is chosen under
+   'Base Model'
+
 ## Building the Cloud
 
-## Installation of Custom Function into OPen WebUI
-
-1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import
-   Functions
-2. Import the function at
-   `app-whiskey/WebUI/function-wastex_extraction-export-1741657569760.json`
-
-Note that you can use the optional Google Drive interface but it is not
-recommended you should just import from your desktop. But if you want this,
-Click on the newly imported function, go to line 388, and fill in google api key
-(using the env wasn't working for some reason and this is throw away code
-anyways... :)
+Same instructions as above
 
 Note Model importing does not currently work as of March 17, so you need to hand
 install the model
@@ -111,20 +117,7 @@ install the model
 The four documents being used for the demo can be found at `app-whiskey/Data.
 They include a clean csv, messy csv, pdf, and image.
 
-## Creating the Model in an existing OpenWebui system
 
-1. In OpenWebui, on the left side, click on Workspace > Model and choose + to
-   add a new model
-1. The Model Name is `Wastex Document -> JSON`
-1. Check that this create the model id `wastex-document---json` and it must be
-   exactly that string for the user interface to find the model.
-1. The Base Model is `anthropic/claude-3.5-sonnet` so make sure that you have
-   the Anthropic function loaded
-1. The System prompt you can copy from wastex-document---json.txt in the Demo
-   Docs file
-1. This is lots of context so make sure in the Advanced Parameters to set
-   Context Length to 200K or 204800, Max Tokens to Predict to 8192 and Tokens to
-   Keep on Context refresh to 16384
 
 ```
 
