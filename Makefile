@@ -1,4 +1,4 @@
-# Makefile for richtong/lib
+# Makefile for any $(APP)
 #
 # Release tag
 TAG=0.9
@@ -9,45 +9,48 @@ INCLUDE_DIRS ?= $(WS_DIR)/git/src/lib
 # adjust for your org
 ORG ?= tne
 
-## install: Install App-Whiskey
+## install: Install $(APP)
 .PHONY: install
 install:
-	cd FrontEnd && direnv exec . npm install
+	cd FrontEnd && npm install
 
-## run: Run app-whiskey (start backend first)
+## run: Run $(APP) (start backend first)
 .PHONY: run
-run: backend frontend
+run: backend frontend open
 
-## whiskey.kill: kill app-whiskey frontend
-.PHONY: whiskey.kill
-whiskey.kill:
-	pfkill -fl app-whiskey
-
-## kill: all ai processes
-.PHONY: whiskey.kill ai.kill
-kill:
-	cd $(WS_DIR)/git/src && make ai.kill
+## kill: kill app-whiskey frontend
+.PHONY: kill
+kill: backend.kill frontend.kill
+	pfkill -fl "$(APP)"
 
 ## open: open the front and backend host windows
 .PHONY: open
 open:
 	open http://localhost:5174
-	open http://localhost:6574
+	open http://localhost:6573
+	open http://localhost:8888
+	open http://localhost:9998
 
 ## frontend: Run the Frontend
+# usage: $(call start_server,port of service, app, arguments...)
 .PHONY: frontend
 frontend:
-	cd FrontEnd && direnv exec . npm run dev &
+	$(call start_server,6573,cd FrontEnd && npm run dev)
 
 ## frontend.kill: kill the Frontend assumes the app name is the current directory
 .PHONY: frontend.kill
 frontend.kill:
 	pkill -f $(APP)
 
-## backend: Run OpenWebui
+## backend: Run OpenWebui and Jupyter to run code
 .PHONY: backend
 backend:
-	cd $(WS_DIR)/git/src && make ai.dev
+	cd $(WS_DIR)/git/src && make ai.dev ai.extras
+
+## backend: Kill backend
+.PHONY: backend.kill
+backend.kill:
+	cd "$(WS_DIR)/git/src" && make ai.kill
 
 ## Local Make commands
 ## ---

@@ -43,7 +43,8 @@ manually source ./FrontEnd/.envrc if you want
 The repository currently only requires Node to run and runs on Node 22 or 23, so
 there is no .tool-versions or asdf pinning.
 
-Make sure that in .FrontEnd, the following are configured
+These are set in `./src/.envrc` so make sure to use asdf .direnv and run from
+this mono repo to set or source this.
 
 Add these assignments to your .env file. These are in the TNE.ai 1Password
 account in the DevOps vault if you want to set manually, but make sure these are
@@ -79,6 +80,12 @@ make run
 make open
 # to start all over
 make kill
+# To start or stop just the frontend
+make frontend
+make frontend.kill
+# to start or stop just the openwebui backend
+make backend
+make backend.kill
 ```
 
 ## Local Common Problems
