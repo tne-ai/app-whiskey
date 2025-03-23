@@ -29,7 +29,7 @@
   const handleFile = (e: Event) => {
     const input = e.target as HTMLInputElement;
     const selectedFile = input.files?.[0];
-    
+
     if (!selectedFile) {
       file = null;
       return;
@@ -37,11 +37,11 @@
 
     // Client-side validation
     const errors = [];
-    
+
     if (selectedFile.size > 10 * 1024 * 1024) {
       errors.push('File exceeds 10MB limit');
     }
-    
+
     if (!['image/png', 'image/jpeg', 'application/pdf', 'text/csv'].includes(selectedFile.type)) {
       errors.push('Unsupported file type');
     }
@@ -58,11 +58,11 @@
 
   const upload = async () => {
     if (!file) return;
-    
+
     appState.setUploading(true);
     progress = 0;
     error = '';
-    
+
     try {
       const xhr = new XMLHttpRequest();
       const formData = new FormData();
@@ -71,11 +71,14 @@
       if (file.type === 'application/pdf') {
         try {
           const images = await convertPdfToImages(file);
-          formData.append('file', JSON.stringify({
-            type: 'pdf-images',
-            images: images,
-            originalName: file.name
-          }));
+          formData.append(
+            'file',
+            JSON.stringify({
+              type: 'pdf-images',
+              images: images,
+              originalName: file.name,
+            })
+          );
         } catch (err) {
           throw new Error('Failed to convert PDF to images: ' + (err instanceof Error ? err.message : String(err)));
         }
@@ -84,7 +87,8 @@
       }
 
       xhr.open('POST', '/api/documents');
-      
+      xhr.timeout = 5 * 60 * 1000; // 5m
+
       xhr.upload.addEventListener('progress', (e) => {
         if (e.lengthComputable) {
           progress = Math.round((e.loaded / e.total) * 100);
@@ -104,13 +108,13 @@
             reject(new Error(xhr.statusText));
           }
         };
-        
+
         xhr.onerror = () => reject(new Error('Network error'));
         xhr.send(formData);
       });
 
-      appState.setData({ 
-        modelAnalysis: response.modelAnalysis 
+      appState.setData({
+        modelAnalysis: response.modelAnalysis,
       });
     } catch (err) {
       error = err instanceof Error ? err.message : 'Upload failed';
@@ -123,7 +127,7 @@
   const handleDrag = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    
+
     if (e.type === 'dragover') {
       isDragging = true;
     } else if (e.type === 'dragleave') {
@@ -134,7 +138,7 @@
   const handleDrop = (e: DragEvent) => {
     e.preventDefault();
     isDragging = false;
-    
+
     const files = e.dataTransfer?.files;
     if (files?.length) {
       handleFile({ target: { files } } as unknown as Event);
@@ -152,7 +156,7 @@
     ondrop={handleDrop}
   >
     <input type="file" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.csv" onchange={handleFile} />
-    
+
     {#if file?.type.startsWith('image/')}
       <img src={previewUrl} alt="Preview" class="max-h-48 max-w-full object-contain" />
     {:else if file?.type === 'application/pdf'}
@@ -162,7 +166,12 @@
     {:else}
       <div class="text-center space-y-2">
         <svg class="w-12 h-12 text-gray-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+          />
         </svg>
         <p class="text-sm text-gray-600">
           <span class="font-semibold">Click to upload</span> or drag and drop
@@ -188,7 +197,7 @@
   </button>
 
   {#if isUploading}
-    <Progressbar progress={progress} class="mt-4" />
+    <Progressbar {progress} class="mt-4" />
   {/if}
 
   {#if error}
@@ -196,4 +205,4 @@
       {error}
     </Toast>
   {/if}
-</div> 
+</div>
