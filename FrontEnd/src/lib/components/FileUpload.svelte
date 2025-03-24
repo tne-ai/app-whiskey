@@ -4,6 +4,7 @@
   import PdfPreview from './PdfPreview.svelte';
   import CsvPreview from './CsvPreview.svelte';
   import { convertPdfToImages, type PdfPageImage } from '$lib/utils/pdfUtils';
+  import { onMount } from 'svelte';
 
   const { siteId } = $props<{ siteId: number }>();
 
@@ -15,6 +16,40 @@
 
   // Subscribe to the store
   const isUploading = $derived($appState.isUploading);
+
+  let uploadedFiles = $state<UploadedDocument[]>([]);
+
+  onMount(() => {
+    const stored = window.localStorage.getItem('uploadedFiles');
+    if (stored) {
+      uploadedFiles = JSON.parse(stored);
+    }
+  });
+
+  interface UploadedDocument {
+    name: string;
+    uploadDate: string;
+    type: string;
+    status: 'success' | 'failed';
+    wasteMassKg: number;
+  }
+
+  function trackDocument(uploadFile: File | null, success: boolean): void {
+    if (!uploadFile) return;
+    
+    const newDoc: UploadedDocument = {
+        name: uploadFile.name,
+        uploadDate: new Date().toISOString(),
+        type: uploadFile.type,
+        status: success ? 'success' : 'failed',
+        wasteMassKg: Math.floor(Math.random() * (1000 - 100 + 1)) + 100 // Random between 100-1000 kg
+    };
+    
+    const stored = window.localStorage.getItem('uploadedFiles');
+    const currentFiles = stored ? JSON.parse(stored) as UploadedDocument[] : [];
+    const updatedFiles = [...currentFiles, newDoc];
+    window.localStorage.setItem('uploadedFiles', JSON.stringify(updatedFiles));
+  }
 
   $effect(() => {
     if (file) {
@@ -80,6 +115,7 @@
             })
           );
         } catch (err) {
+          trackDocument(file, false);  // Track failed PDF conversion
           throw new Error('Failed to convert PDF to images: ' + (err instanceof Error ? err.message : String(err)));
         }
       } else {
@@ -102,14 +138,19 @@
       const response = await new Promise<ModelResponse>((resolve, reject) => {
         xhr.onload = () => {
           if (xhr.status >= 200 && xhr.status < 300) {
+            trackDocument(file, true);  // Track successful upload
             const data = JSON.parse(xhr.response) as ModelResponse;
             resolve(data);
           } else {
+            trackDocument(file, false);  // Track failed upload
             reject(new Error(xhr.statusText));
           }
         };
 
-        xhr.onerror = () => reject(new Error('Network error'));
+        xhr.onerror = () => {
+          trackDocument(file, false);  // Track failed upload
+          reject(new Error('Network error'));
+        };
         xhr.send(formData);
       });
 
