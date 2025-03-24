@@ -1,3 +1,4 @@
+
 export interface PartialModelAnalysis {
   _parseError?: Error;
   title?: string;
