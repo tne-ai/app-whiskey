@@ -16,7 +16,9 @@ install:
 
 ## run: Run $(APP) (start backend first)
 .PHONY: run
-run: backend frontend open
+run: backend frontend
+	sleep 10
+	make open
 
 ## kill: kill app-whiskey frontend
 .PHONY: kill
@@ -26,10 +28,10 @@ kill: backend.kill frontend.kill
 ## open: open the front and backend host windows
 .PHONY: open
 open:
+	open http://localhost:9998
+	open http://localhost:8888
 	open http://localhost:5174
 	open http://localhost:6573
-	open http://localhost:8888
-	open http://localhost:9998
 
 ## frontend: Run the Frontend
 # usage: $(call start_server,port of service, app, arguments...)
