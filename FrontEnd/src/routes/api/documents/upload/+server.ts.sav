@@ -1,0 +1,71 @@
+import { json, error } from '@sveltejs/kit';
+// Adjust these imports based on your environment setup
+// import { MODEL_API_KEY, MODEL_API_URL } from '$env/static/private';
+
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+const ALLOWED_TYPES = new Set([
+  'application/pdf',
+  'image/png',
+  'image/jpeg',
+  'text/csv',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  'application/vnd.ms-excel'
+]);
+
+export async function POST({ request }) {
+  try {
+    const formData = await request.formData();
+    const file = formData.get('file') as File;
+    const siteId = formData.get('siteId') as string;
+    const documentType = formData.get('documentType') as string;
+
+    // Validation
+    if (!file || typeof file === 'string') {
+      throw error(400, 'No file uploaded');
+    }
+    if (!siteId) {
+      throw error(400, 'Site ID is required');
+    }
+    if (!documentType) {
+      throw error(400, 'Document type is required');
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      throw error(413, 'File exceeds 10MB limit');
+    }
+    if (!ALLOWED_TYPES.has(file.type)) {
+      throw error(415, 'Unsupported file type');
+    }
+
+    // Convert file to text/base64 depending on type
+    let fileContent;
+    try {
+      if (file.type === 'text/csv') {
+        fileContent = await file.text();
+      } else {
+        const arrayBuffer = await file.arrayBuffer();
+        fileContent = Buffer.from(arrayBuffer).toString('base64');
+      }
+    } catch (err) {
+      throw error(500, 'Failed to read file');
+    }
+
+    // Return success response
+    return json({
+      success: true,
+      message: 'File processed successfully'
+    });
+
+  } catch (err) {
+    console.error('Upload error:', err);
+    
+    // If it's an error thrown by `error()`, pass it through
+    if (err instanceof Error && 'status' in err) {
+      throw err;
+    }
+    
+    // Otherwise return a generic 500 error
+    throw error(500, 'Failed to process file');
+  }
+} 
