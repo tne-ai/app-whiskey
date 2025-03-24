@@ -94,34 +94,36 @@ Here is a list of common Problems
 
 1. The Web frontend doesn't work? Make sure you have done a git pull in
    tne-app-content
-1. The Backend doesn't work? Go to the local installation and you should see the
+1. The Backend doesn't work? Ensure that your local `wastex_extraction` function is up to date. See below for how to reinstall.
+   Also, go to the local installation and you should see the
    Workspace > Model > Wastex Document -> JSON, start a new chat and just say
    hello world, it should return a JSON object. If it says "model not found", make
-   sure that Claude Sonnet 3.5 is enabled. Go to New Chat and look for that name.
-1. The google key is required and should be the
+   sure that you have wastex_extraction in your Functions and you have the openai api set in your connections
+1. The google key is required and should be set in the Functions tab as a valve for the wastex_extraction function
 
 ## Importing the custom function into Open Webui and set Google Gemini Key
 
-Note that the model import is currently broken, so you have to manually recreate
+Note that the model import is currently broken (for the deployed version), so you have to manually recreate
 the function and the model:
 
 1. In OWUI, click on icon in top right -> Admin Panel -> Function -> Import Functions
 1. Import the function at `OpenWebUI/function-wastex_extraction-export-1742661446105.json`
 1. Click on the Valve icon next to the function in Admin Settings > Function >
    wastex_extraction > Gear icon ⚙️. and fill in the google api
-   key. MODEL ID IS MEANINGLESS, just leave it blank
+   key. MODEL ID IS MEANINGLESS, just leave it blank.
 
 ## Currently Broken: Automatic Model Import
 
 1. Click on Workspace -> Models -> Import Models (This is currently broken)
    Import the model at `OpenWebUI/wastex-document---json-1741657611445.json`
+   (this might work locally)
 
 ## Manual import of Function and Model and Enable OpenAI
 
 1. can create it manually by going to
    Workspace > Models > Plus sign and copy and pasting the model parameters in
-1. Choose the newly imported `wastex_extraction` as the base model, system
-   prompt doesnt matter, open advanced params
+1. Choose the newly imported `wastex_extraction` as the base model. The system
+   prompt doesnt matter. Then open advanced params
 1. Set `context_length=204000`, `max_tokens=16384`, `num_keep=16384`
 1. Go to icon in top right -> Admin Panel -> Settings, Click on Connections in
    the left sidebar, and ensure the `https://api.openai.com/v1` connection is on
@@ -141,10 +143,19 @@ They include a clean csv, messy csv, pdf, and image.
 
 ## Where are the logs?
 
+LOCALLY:
 The logs are in two places, whereever your webui.db is you will find an
 audit.log and these also go to the standard output where you started open-webui
 and then the browser will show you the errors in the front end in the
 Javascript console.
+
+IN THE CLOUD:
+Try clicking this link: https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards/dashboard/Whiskey, or:
+1. Go to AWS access portal (I sign in through here: https://nedra.awsapps.com/start/)
+2. Go to cloudwatch
+3. click on dashboards in the left side panel
+4. Click on Whiskey
+5. There you will see both the Node js frontend logs and the open webui backend logs
 
 ## SSL Certification Verification problems
 
