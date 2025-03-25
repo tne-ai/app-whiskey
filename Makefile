@@ -15,9 +15,10 @@ install:
 	cd FrontEnd && npm install
 
 ## run: Run $(APP) (start backend first)
+# not the open is delayed until the backend starts fully
 .PHONY: run
 run: backend frontend
-	sleep 10
+	sleep 60
 	make open
 
 ## kill: kill app-whiskey frontend
@@ -47,7 +48,7 @@ frontend.kill:
 ## backend: Run OpenWebui and Jupyter to run code
 .PHONY: backend
 backend:
-	cd $(WS_DIR)/git/src && make ai.dev ai.extras
+	cd $(WS_DIR)/git/src && make ai.dev
 
 ## backend: Kill backend
 .PHONY: backend.kill

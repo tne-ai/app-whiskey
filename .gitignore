@@ -37,7 +37,6 @@
 .direnv/
 .dmypy.json
 .eggs/
-.env
 .hugo_build.lock
 .hypothesis/
 .idea/
