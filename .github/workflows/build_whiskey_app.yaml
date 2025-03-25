@@ -3,7 +3,7 @@ name: Build and deploy Persuasion Web UI
 on:
   push:
     branches:
-      - main
+      # - main
       - "releases/**"
     paths:
       - "FrontEnd/**"
