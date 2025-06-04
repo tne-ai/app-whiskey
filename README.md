@@ -7,6 +7,29 @@ This repositories are [app-whiskey](https://github.com/tne-ai/app-whiskey). This
 has the V1 data and demonstration backing files. It also has the prompt
 information and things that needed to be loaded into OpenWebUI.
 
+## Workflow for V1.1
+
+This eliminates the logistics section
+
+The dataflow in Mermaid.js format:
+
+```
+
+```
+
+Site Entry —> Site Database —> Site View —> Section 1
+Material Flow: [ OCR | CSV document ] —> JSON Storage of Invoice --> Material [ Submaterial Lookup then Mass/Volume Extraction ] ---> HITL Validation -—> Section 2
+Waste Removal Records —> Masses of Material —> Waste: Excess --> HITL Validation —> Section 3
+JSON Storage of Invoice --> Extract Shippers Name and hopefully address and site --> Google Lookup of the distances —> Logistics Emission Lookup —> Logistics --> HITL Validation —> Section 4
+Waste && Logistics —> Embodied Carbon —> Section 5
+Section 1 | Section 2 | Section 3 | Section 4 | Section 5 --> Report
+
+```
+
+```
+
+## Workflow for V1.1 which eliminates the
+
 ## The Cloud demonstration
 
 Here is the demonstration script:
@@ -151,6 +174,7 @@ Javascript console.
 
 IN THE CLOUD:
 Try clicking this link: https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards/dashboard/Whiskey, or:
+
 1. Go to AWS access portal (I sign in through here: https://nedra.awsapps.com/start/)
 2. Go to cloudwatch
 3. click on dashboards in the left side panel
