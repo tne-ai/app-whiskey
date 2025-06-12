@@ -1,0 +1,25 @@
+{
+	"/": [],
+	"/api/documents": [
+		"src/routes/api/documents/+server.ts"
+	],
+	"/company": [],
+	"/settings": [],
+	"/sites": [
+		"src/routes/sites/+page.server.ts"
+	],
+	"/sites/[siteId]": [
+		"src/routes/sites/[siteId]/+page.server.ts"
+	],
+	"/sites/[siteId]/add-document": [],
+	"/sites/[siteId]/details": [
+		"src/routes/sites/[siteId]/details/+page.server.ts"
+	],
+	"/sites/[siteId]/materials": [
+		"src/routes/sites/[siteId]/materials/+page.server.ts"
+	],
+	"/sites/[siteId]/waste": [
+		"src/routes/sites/[siteId]/waste/+page.server.ts"
+	],
+	"/team": []
+}
